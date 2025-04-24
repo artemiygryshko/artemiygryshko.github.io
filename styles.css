@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.main-block {
+    box-sizing: border-box;
+    width: 1300px;
+    margin: 0 auto;
+    ;
+    display: flex;
+    justify-content: center;
+}
+
+.left-column {
+    box-sizing: border-box;
+    background-color: rgb(49, 49, 184);
+    width: 400px;
+    padding-left: 20px;
+    color: white;
+    padding-top: 40px;
+}
+
+.right-column {
+    box-sizing: border-box;
+    width: 900px;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-bottom: 100px;
+}
+
+.left-column figure img {
+
+    width: 360px;
+    border-radius: 50%;
+}
+
+.left-column h2 {
+    border-bottom: 2px solid white;
+    height: 40px;
+    padding: 10px 0;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    ;
+}
+
+.personal-data-block div {
+    padding: 15px 0;
+    ;
+}
+
+.personal-data-block h3 {
+    padding: 5px 0;
+}
+
+.interests-block p {
+    padding: 10px 0;
+}
+
+.languages-block table {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.languages-block th {
+    text-align: left;
+}
+
+.languages-block td {
+    text-align: right;
+    padding: 10px 0;
+}
+
+.right-column-block {
+    border-bottom: 2px solid grey;
+    padding: 20px 0;
+}
+
+.right-column-block:first-child {
+    border-bottom: 3px solid grey;
+}
+
+
+.right-column-block table {
+    padding: 10px 0;
+    width: 100%;
+}
+
+.right-column-block td:last-child {
+    text-align: right;
+}
+
+.right-column-block h4 {
+    font-style: italic;
+    padding: 5px 0;
+}
+
+.job-place-container h4 span {
+    text-transform: uppercase;
+}
+
+.right-column-block p {
+    line-height: 1.5;
+}
+
+.right-column-block .font-regular {
+    font-style: normal;
+}
+
+.right-column .no-border {
+    border-bottom: none;
+}
+
+.border-bottom {
+    border-bottom: 2px solid grey;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
