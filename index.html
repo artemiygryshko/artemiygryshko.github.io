@@ -9,195 +9,140 @@
 </head>
 
 <body>
-  <div class="main-block">
-    <div class="left-column">
-      <figure>
-        <img src="images/photo_2022-03-02_23-47-18.jpg" alt="photo">
-      </figure>
-      <div class="personal-data-block">
-        <h2 class="left-column-title">Особисті дані</h2>
+  <div class="mainBlock">
+    <div class="rightColumn">
+      <div class="rightColumn_block">
+        <h1 class="rightColumn_block_nameTitle">Артем Гришко</h1>
+      </div>
+      <div class="rightColumn_block">
+        <h2 class="rightColumn_block_title">Досвід роботи</h2>
+        <div class="jobContainer">
+          <div class="flexListName">
+            <h3>Java-розробник</h3>
+            <span>вер 2009 - теп. час</span>
+          </div>
+          <p>EPAM, Київ</p>
+          <p>Розробка програмного забезпечення; додатків,веб-інтерфейсів відповідно до вимог технічного завдання.</p>
+        </div>
+        <div class="jobContainer">
+          <div class="flexListName">
+            <h3>Веб-розробник</h3>
+            <span>кві 2004 - сер 2009</span>
+          </div>
+          <p>SoftServe, Київ</p>
+          <p>Розробка програмного забезпечення; створення систем автоматичної перевірки програмного забезпечення;
+            створення, супровід і тестування веб-ресурсів.</p>
+        </div>
+        <div class="jobContainer">
+          <div class="flexListName">
+            <h3>Лаборант кафедри робототехніки</h3>
+            <span>сер 2002 - бер 2004</span>
+          </div>
+          <p>Національний університет "Львівська політехніка", Львів</p>
+          <p>Забезпечення студентів методичними матеріалами; складання звітів кафедри та інших документів; надання
+            допомоги викладачам у підготовці обладнання та проведенні занять.</p>
+        </div>
+      </div>
+      <div class="rightColumn_block">
+        <h2 class="rightColumn_block_title">Освіта і кваліфікації</h2>
+        <div class="educationContainer">
+          <div class="flexListName">
+            <h3>Бакалавр</h3>
+            <span>вер 2005 - лип 2009</span>
+          </div>
+          <p>Національний університет "Львівська політехніка", Львів</p>
+          <p>Спеціальність "Інформаційні системи і технології".</p>
+        </div>
+      </div>
+      <div class="rightColumn_block">
+        <h2 class="rightColumn_block_title">Курси</h2>
+        <div class="coursesContainer">
+          <div class="flexListName coursesContainer_block">
+            <h3>Англійська для IT</h3>
+            <span>вер 2004 - чер 2005</span>
+          </div>
+          <p>Мовна школа Speak Up (Київ)</p>
+          <div class="flexListName coursesContainer_block ">
+            <h3>Cisco: побудова розподілених мереж</h3>
+            <span>тра 2003 - бер 2004</span>
+          </div>
+          <p>Учбовий центр "Мережеві технології" (Київ)</p>
+          <div class="flexListName coursesContainer_block">
+            <h3>Програмування на Java</h3>
+            <span>січ 2003 - бер 2003</span>
+          </div>
+          <p>JavaRush (онлайн)</p>
+          <div class="flexListName coursesContainer_block">
+            <h3>Програмування на С#</h3>
+            <span>вер 2002 - лис 2002</span>
+          </div>
+          <p>Регіональний центр IT (Харків)</p>
+        </div>
+      </div>
+      <div class="rightColumn_block">
+        <h2 class="rightColumn_block_title">Навички</h2>
+        <div class="skillsContainer">
+          <h3>C#, C++, Java</h2>
+        </div>
+      </div>
+      <div class="rightColumn_block">
+        <h2 class="rightColumn_block_title">Мої роботи</h2>
+        <ol class="worksList">
+          <li>Google</li>
+        </ol>
+      </div>
+    </div>
+    <div class="leftColumn">
+      <div class="leftColumn_block">
+        <figure class="photoBlock">
+          <img class="photoBlock_image" src="images/photo_2022-03-02_23-47-18.jpg" alt="photo">
+        </figure>
+      </div>
+      <div class="leftColumn_block personalData">
+        <h2 class="leftColumn_block_title">Особисті дані</h2>
         <div>
           <h3>Ім'я</h3>
           <p>Артем Гришко</p>
         </div>
         <div>
           <h3>Адреса</h3>
-          <p>вул. Ковпака, буд. 17, кв. 48</p>
-          <p>02000 Київ</p>
+          <address>вул. Ковпака, буд. 17, кв. 48 <br />
+            02000 Київ</address>
         </div>
         <div>
           <h3>Номер телефону</h3>
-          <p>+380664521238</p>
+          <a href="tel:+380999999999">+380999999999</a>
         </div>
         <div>
           <h3>Електронна адреса</h3>
-          <p>obrazets@cvmaker.ua</p>
+          <a href="mailto:obrazets@cvmaker.ua">obrazets@cvmaker.ua</a>
         </div>
         <div>
           <h3>Дата народження</h3>
-          <p>07-12-1985</p>
+          <time datetime="1985-12-07">07-12-1985</time>
         </div>
       </div>
-      <div class="interests-block">
-        <h2>Інтереси</h3>
-          <p>Вивчення графічних програм</p>
-          <p>Роботехніка</p>
-          <p>Психологія</p>
-          <p>Дайвінг</p>
+      <div class="leftColumn_block interests">
+        <h2 class="leftColumn_block_title">Інтереси</h3>
+          <ul>
+            <li>Вивчення графічних програм</li>
+            <li>Роботехніка</li>
+            <li>Психологія</li>
+            <li>Дайвінг</li>
+          </ul>
       </div>
-      <div class="languages-block">
-        <h2>Мови</h3>
-          <table>
-            <tr>
-              <th>Англійська</th>
-              <td>Добре</td>
-            </tr>
-            <tr>
-              <th>Німецька</th>
-              <td>Середній рівень</td>
-            </tr>
-            <tr>
-              <th>Українська</th>
-              <td>Рідна мова</td>
-            </tr>
-          </table>
+      <div class="leftColumn_block languages">
+        <h2 class="leftColumn_block_title">Мови</h3>
+          <ul>
+            <li>Англійська <span>добре</span></li>
+            <li>Німецька <span>середній рівень</span></li>
+            <li>Українська <span>Рідна мова</span></li>
+          </ul>
       </div>
 
 
     </div>
-    <div class="right-column">
-      <div class="right-column-block">
-        <h1>Віктор Савчук</h1>
-      </div>
-      <div class="right-column-block">
-        <h2>Досвід роботи</h2>
-      </div>
-      <div class="right-column-block">
-        <div class="job-place-container">
-          <table>
-            <tr>
-              <td>
-                <h3>Java-розробник</h3>
-              </td>
-              <td>
-                вер 2009-теп. час
-              </td>
-            </tr>
-          </table>
-          <h4><span>Epam</span>, Київ</h4>
-          <p>Розробка програмного забезпечення; додатків,веб-інтерфейсів відповідно до вимог технічного завдання.</p>
-        </div>
-        <div class="job-place-container">
-          <table>
-            <tr>
-              <td>
-                <h3>Веб-розробник</h3>
-              </td>
-              <td>
-                кві 2004 - сер 2009
-              </td>
-            </tr>
-          </table>
-          <h4>SoftServe, Київ</h4>
-          <p>Розробка програмного забезпечення; створення систем автоматичної перевірки програмного забезпечення;
-            створення, супровід і тестування веб-ресурсів.</p>
-        </div>
-        <div class="job-place-container">
-          <table>
-            <tr>
-              <td>
-                <h3>Лаборант кафедри робототехніки</h3>
-              </td>
-              <td>
-                сер 2002 - бер 2004
-              </td>
-            </tr>
-          </table>
-          <h4>Національний університет "Львівська політехніка", Львів</h4>
-          <p>Забезпечення студентів методичними матеріалами; складання звітів кафедри та інших документів; надання
-            допомоги викладачам у підготовці обладнання та проведенні занять.</p>
-        </div>
-      </div>
-      <div class="right-column-block">
-        <h2>Освіта і кваліфікації</h2>
-      </div>
-      <div class="right-column-block">
-        <div class="education-container">
-          <table>
-            <tr>
-              <td>
-                <h3>Бакалавр</h3>
-              </td>
-              <td>
-                вер 2005-лип 2009
-              </td>
-            </tr>
-          </table>
-          <h4>Національний університет "Львівська політехніка", Львів</h4>
-          <p>Спеціальність "Інформаційні системи і технології".</p>
-        </div>
-      </div>
-      <div class="right-column-block">
-        <h2>Курси</h2>
-      </div>
-      <div class="right-column-block">
-        <table>
-          <tr>
-            <td>
-              <h3>Англійська для IT</h3>
-            </td>
-            <td>
-              вер 2004 - чер 2005
-            </td>
-          </tr>
-        </table>
-        <p>Мовна школа Speak Up (Київ)</p>
-        <table>
-          <tr>
-            <td>
-              <h3>Cisco: побудова розподілених мереж</h3>
-            </td>
-            <td>
-              тра 2003 - бер 2004
-            </td>
-          </tr>
-        </table>
-        <p>Учбовий центр "Мережеві технології" (Київ)</p>
-        <table>
-          <tr>
-            <td>
-              <h3>Програмування на Java</h3>
-            </td>
-            <td>
-              січ 2003 - бер 2003
-            </td>
-          </tr>
-        </table>
-        <p>JavaRush (онлайн)</p>
-        <table>
-          <tr>
-            <td>
-              <h3>Програмування на С#</h3>
-            </td>
-            <td>
-              вер 2002 - лис 2002
-            </td>
-          </tr>
-        </table>
-        <p>Регіональний центр IT (Харків)</p>
-      </div>
-      <div class="right-column-block">
-        <h2>Навички</h2>
-      </div>
-      <div class="right-column-block  no-border">
-        <h4 class="font-regular">C#, C++, Java</h2>
-      </div>
-      <div class="right-column-block no-border">
-        <h3 class="border-bottom">Мої роботи</h3>
-        <ol>
-          <li>Google</li>
-        </ol>
-      </div>
+  </div>
 </body>
 
 </html>
