@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.return {
+  display: flex;
+  width: 200px;
+  height: 100px;
+  background-color: rgb(85, 0, 255);
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 10px auto;
+
+}
+
+.return:hover {
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
+
+.return a {
+  color: #fff;
+}
+
+.page {
+  position: relative;
+  margin: 20px auto;
+  max-width: 900px;
+  min-width: 375px;
+  text-align: center;
+  font-weight: bold;
+  background: linear-gradient(to right bottom,
+      rgba(37, 30, 31, 1),
+      rgba(70, 58, 55, 1) 100%);
+  padding: 20px 0 80px 0;
+  text-transform: uppercase;
+}
+
+.menu {
+  max-width: 800px;
+  min-width: 375px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  background-color: #fff;
+  position: relative;
+}
+
+.specialOffer {
+  max-width: 240px;
+  min-width: 200px;
+  position: relative;
+}
+
+.specialOffer img {
+  width: 100%;
+  height: 100%;
+}
+
+.specialOffer figcaption {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 30px;
+  line-height: .9;
+  position: absolute;
+  bottom: 10px;
+  left: -12px;
+  margin-right: 12px;
+}
+
+.specialOffer span {
+  color: #fff;
+}
+
+.specialOffer span:first-of-type {
+  display: block;
+  font-size: 42px;
+}
+
+span+.yellow-color {
+  color: yellow;
+}
+
+
+
+.menu_list {
+  max-width: 560px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.menu_list div:first-child {
+  width: 100%;
+}
+
+.menu_position {
+  max-width: 225px;
+  width: 40%;
+  min-width: 175px;
+  border-bottom: 1px solid grey;
+  text-transform: uppercase;
+  position: relative;
+  padding: 20px 0;
+}
+
+.menu_position span {
+  display: block;
+}
+
+.menu_position span:last-child {
+  color: grey;
+}
+
+.menu_position::after {
+  display: block;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: grey;
+  transform: rotate(45deg);
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  translate: -5px;
+}
+
+.menu-btn {
+  width: 150px;
+  height: 60px;
+  position: absolute;
+  right: 50px;
+  bottom: 20px;
+  background-color: #000;
+  padding-top: 20px;
+
+}
+
+.menu-btn a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu-btn:hover {
+  transform: scale(1.1);
+  transition: all 1.25s ease;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.menu-btn:hover>a {
+  color: #000;
+}
+
+@media (max-width:729px) {
+  .menu {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .specialOffer {
+    width: 100%;
+    min-width: 375px;
+  }
+
+  .menu_list {
+    width: 100%;
+    min-width: 375px;
+  }
+}
