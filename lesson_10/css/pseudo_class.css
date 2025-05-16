@@ -1,0 +1,4 @@
+.login_btn:hover {
+    background-color: #fff;
+    color: var(--main-color);
+}

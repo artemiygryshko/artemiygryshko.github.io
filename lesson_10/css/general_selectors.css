@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+:root {
+    --main-color: #D52047;
+
+}
+
+/* padding */
+
+.pt-10 {
+padding-top: 10px;
+}
+/* end of paddings */
+
+/* flex-box */
+.d-flex {
+    display:flex;
+}
+
+.ai-center {
+    align-items: center;
+}
+
+.jc-sb {
+    justify-content: space-between;
+}
+
+.jc-sa {
+    justify-content: space-around;
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+.fw-w {
+  flex-wrap: wrap;
+}
+/* End of flex-box */
+
+/* text */
+.c-white {
+color: #fff;
+}
+
+.tt-up {
+    text-transform: uppercase;
+}
