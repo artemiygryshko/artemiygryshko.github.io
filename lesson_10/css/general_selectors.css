@@ -8,20 +8,27 @@
 
 
 :root {
-    --main-color: #D52047;
-
+    --main-font: "Lato", sans-serif;
+    --main-color: #ED4C5C;
+    --sec-color: #fff;
 }
 
-/* padding */
-
-.pt-10 {
-padding-top: 10px;
+img {
+    display: block;
+    width: 100%;
 }
-/* end of paddings */
 
+.relative {
+  position: relative;
+}
+.bg-cover {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 /* flex-box */
 .d-flex {
-    display:flex;
+    display: flex;
 }
 
 .ai-center {
@@ -41,15 +48,25 @@ padding-top: 10px;
 }
 
 .fw-w {
-  flex-wrap: wrap;
+    flex-wrap: wrap;
 }
+
 /* End of flex-box */
 
 /* text */
 .c-white {
-color: #fff;
+    color: #fff;
 }
 
 .tt-up {
     text-transform: uppercase;
 }
+
+
+
+
+
+
+/* ----------- MEDIA -------------- */
+
+/* ----------END OF MEDIA ---------- */

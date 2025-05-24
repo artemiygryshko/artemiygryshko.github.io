@@ -6,41 +6,360 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="images/cloudbudget_logo.svg" type="image/svg">
   <title>Cloudbudget</title>
+  <script src="https://kit.fontawesome.com/fbc67dce8a.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-  <div class="hero_section">
-    <header class="d-flex ai-center">
-      <div class="container d-flex jc-sb">
-        <div class="logo d-flex ai-center">
-          <img class="logo_image" src="images/cloudbudget_logo.svg" alt="logo">
-          <div class="logo_name tt-up c-white">Cloudbudget</div>
-        </div>
-        <nav class="d-flex ai-center fw-w">
-          <ul class="header_nav d-flex jc-sa ai-center">
-            <li>
-              <a class="nav_link tt-up c-white" href="#">features</a>
-            </li>
-            <li>
-              <a class="nav_link tt-up c-white" href="#">technology</a>
-            </li>
-            <li><a class="nav_link tt-up c-white" href="#">contact</a>
-            </li>
-            <li>
-              <a class="nav_link tt-up c-white" href="#">sign up</a>
-            </li>
-          </ul>
+  <div class="hero-section d-flex bg-cover">
+    <div class="container">
+      <header class="d-flex jc-center mobile-wrapper">
+        <nav class="d-flex ai-center jc-sb">
+          <div class="logo d-flex ai-center">
+            <div class="logo-img">
+              <img src="images/cloudbudget_logo.svg" alt="cloudbudget logo">
+            </div>
+            <div class="logo-name tt-up c-white logo-hide">Cloudbudget</div>
+          </div>
+          <div id="menu" class="menu">
+            <div id="menu-icons" class="menu-icons">
+              <i id="menu-burger" class="fa-solid fa-bars menu-icon menu-burger"></i>
+              <i id="menu-xmark" class="fa-solid fa-xmark menu-icon hide menu-xmark"></i>
+            </div>
+            <ul id="menu-nav-list" class="menu-nav-list d-flex ai-center jc-center mobile-menu_closed">
+              <li>
+                <a class="tt-up" href="#">features</a>
+              </li>
+              <li>
+                <a class="tt-up" href="#">technology</a>
+              </li>
+              <li><a class="tt-up" href="#">contact</a>
+              </li>
+              <li>
+                <a class="tt-up" href="#">sign up</a>
+              </li>
+            </ul>
+          </div>
+          <div class="login d-flex ai-center jc-center">
+            <div class="login-icons">
+              <a href="#">
+                <i class="fa-solid fa-right-to-bracket login-icon"></i>
+              </a>
+            </div>
+            <div class="login-btn jc-center ai-center tt-up c-white">
+              <a class="d-flex jc-center ai-center" href="#">login</a>
+            </div>
+          </div>
         </nav>
-        <div class="login_btn d-flex ai-center jc-center tt-up c-white">login</div>
+      </header>
+    </div>
+    <div id="hero-info" class="container hero-info fw-w mobile-wrapper">
+      <h1 class="hero-info-title tt-up c-white">Cloudbudget</h1>
+      <p class="hero-info-text c-white">Cloud budget managment for everyone. Only </br> &#8364;69.95 a Month After a 7
+        Day
+        Trial of</br> Up to &#8364;4.99 </p>
+      <div class="main-btn btn_filled-white d-flex ai-center jc-center tt-up">
+        <a class="d-flex jc-center ai-center btn_filled-white" href="№">sign in</a>
       </div>
-    </header>
-    <div class="hero_info d-flex jc-center fw-w">
-      <h1 class="hero_info_title tt-up c-white">Cloudbudge</h1>
-      <div class="hero_info_text c-white">Cloud budget managment for everyone. Only &#8364 69.95 a Month After a 7 Day Trial of Up to &#8364 4.99 </div>
-      <div class="hero_info_btn d-flex ai-center jc-center tt-up">sign in</div>
     </div>
   </div>
+  <section class="media-section">
+    <div class="container mobile-wrapper">
+      <div class="row-2 d-flex fw-w">
+        <div class="section-info section-column col col-1-2">
+          <div class="media-content-wrapper">
+            <div class="info-title">
+              <h2>Easy to Use Cloud Budget Management Software</h2>
+            </div>
+          </div>
+          <div class="media-content-wrapper">
+            <p class="info-text">
+              Our software is made so you can access and manage your budget and expenses online at any time from any
+              device. It provides detailed income and expense reports with graphs so you can easilly see your spending
+              patterns and budget at a glance. Read below to find out more.
+            </p>
+            <div class="info-link">
+              <a href="#">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="section-media section-column col col-1-2">
+          <div class="media-content-wrapper relative">
+            <video>
+              <source src="video/video1.mp4" type="video/mp4">
+            </video>
+            <div class="video-play-btn d-flex jc-center ai-center btn_filled-red">
+              <i class="fa-solid fa-play"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="list-section features-section grey-bg">
+    <div class="container mobile-wrapper">
+      <div class="list-section-header">
+        <h2>Features</h2>
+      </div>
+      <div class="row-3 features-row d-flex fw-w">
+        <div class="row-3-item col col-1-2 col-1-3  d-flex jc-center">
+          <div class="features-item">
+            <div class="bg-cover features-item-bg features-bg-1 relative">
+              <div class="features-description">
+                <h3>Supports All Currencies and Cards</h3>
+                <p>We support all popular currencies and is fully customizable to add</p>
+                <div>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row-3-item col col-1-2 col-1-3  d-flex jc-center">
+          <div class="features-item">
+            <div class="bg-cover features-item-bg features-bg-2 relative">
+              <div class="features-description">
+                <h3>Manage your expenses on the go</h3>
+                <p>You can access your account from anywhere in the world on any device</p>
+                <div>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row-3-item col col-1-2 col-1-3  d-flex jc-center">
+          <div class="features-item">
+            <div class="bg-cover features-item-bg features-bg-3 relative">
+              <div class="features-description">
+                <h3>Cloud Budget Management Software</h3>
+                <p>Our software is made so you can access and manage your budget</p>
+                <div>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section class="list-section technologies-section">
+    <div class="container mobile-wrapper">
+      <div class="list-section-header">
+        <h2>Technologies</h2>
+      </div>
+      <div class="row-4 technologies-row d-flex ai-center fw-w">
+        <div class="technologies-item col col-1-2 col-1-3 col-1-4 d-flex jc-center ai-center">
+          <div class="technologies-item-wrap relative">
+            <div class="number">01</div>
+            <h3>Cloud Storage</h3>
+            <p>Access your accou nt from anywhere in the world on any device</p>
+            <div class="technologies-icon">
+              <svg width="70" height="56" viewBox="0 0 70 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M43.75 43.1797H37.9609V24.25C37.9609 23.9063 37.6797 23.625 37.3359 23.625H32.6484C32.3047 23.625 32.0234 23.9063 32.0234 24.25V43.1797H26.25C25.7265 43.1797 25.4375 43.7813 25.7578 44.1875L34.5078 55.2578C34.5663 55.3325 34.641 55.3929 34.7262 55.4345C34.8115 55.476 34.9051 55.4976 35 55.4976C35.0948 55.4976 35.1885 55.476 35.2737 55.4345C35.359 55.3929 35.4337 55.3325 35.4922 55.2578L44.2422 44.1875C44.5625 43.7813 44.2734 43.1797 43.75 43.1797Z"
+                  fill="#ED4C5C" />
+                <path
+                  d="M58.3906 16.6484C54.8125 7.21094 45.6953 0.5 35.0156 0.5C24.3359 0.5 15.2188 7.20312 11.6406 16.6406C4.94531 18.3984 0 24.5 0 31.75C0 40.3828 6.99219 47.375 15.6172 47.375H18.75C19.0938 47.375 19.375 47.0938 19.375 46.75V42.0625C19.375 41.7188 19.0938 41.4375 18.75 41.4375H15.6172C12.9844 41.4375 10.5078 40.3906 8.66406 38.4922C6.82812 36.6016 5.85156 34.0547 5.9375 31.4141C6.00781 29.3516 6.71094 27.4141 7.98438 25.7812C9.28906 24.1172 11.1172 22.9062 13.1484 22.3672L16.1094 21.5938L17.1953 18.7344C17.8672 16.9531 18.8047 15.2891 19.9844 13.7812C21.149 12.2868 22.5286 10.973 24.0781 9.88281C27.2891 7.625 31.0703 6.42969 35.0156 6.42969C38.9609 6.42969 42.7422 7.625 45.9531 9.88281C47.5078 10.9766 48.8828 12.2891 50.0469 13.7812C51.2266 15.2891 52.1641 16.9609 52.8359 18.7344L53.9141 21.5859L56.8672 22.3672C61.1016 23.5078 64.0625 27.3594 64.0625 31.75C64.0625 34.3359 63.0547 36.7734 61.2266 38.6016C60.33 39.5033 59.2635 40.2183 58.0888 40.7051C56.914 41.1919 55.6544 41.4408 54.3828 41.4375H51.25C50.9062 41.4375 50.625 41.7188 50.625 42.0625V46.75C50.625 47.0938 50.9062 47.375 51.25 47.375H54.3828C63.0078 47.375 70 40.3828 70 31.75C70 24.5078 65.0703 18.4141 58.3906 16.6484Z"
+                  fill="#ED4C5C" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="technologies-item col col-1-2 col-1-3 col-1-4 d-flex jc-center ai-center">
+          <div class="technologies-item-wrap relative">
+            <div class="number">02</div>
+            <h3>Security</h3>
+            <p>All your information is stored on secure cloud servers</p>
+            <div class="technologies-icon">
+              <svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M33.9732 3.48691L55.8744 10.9506C56.4094 11.1375 56.8477 11.7498 56.8348 12.317V43.4092C56.8348 43.9828 56.4674 44.7305 56.0227 45.0785L33.8057 62.3906C33.5865 62.5646 33.29 62.6549 32.9936 62.6549C32.6971 62.6549 32.407 62.5646 32.1814 62.3906L9.96445 45.0785C9.51973 44.724 9.15234 43.9764 9.15234 43.4092V12.317C9.15234 11.7498 9.59063 11.1311 10.1256 10.9506L32.0268 3.48691C32.291 3.39668 32.6455 3.35156 33 3.35156C33.3545 3.35156 33.709 3.39668 33.9732 3.48691ZM33 57.1377L52.207 42.1717V14.6115L33 8.06309L13.793 14.6115V42.1717L33 57.1377Z"
+                  fill="#ED4C5C" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M25.9682 34.0828L20.973 39.0779C20.8771 39.1748 20.8233 39.3057 20.8233 39.4421C20.8233 39.5785 20.8771 39.7093 20.973 39.8062L23.1645 41.9977C23.3643 42.1975 23.693 42.1975 23.8928 41.9977L28.8879 37.0025C32.4779 39.2648 37.2732 38.833 40.3992 35.707C44.0279 32.0783 44.0279 26.2002 40.3992 22.5715C36.7705 18.9428 30.8924 18.9428 27.2637 22.5715C24.1377 25.6975 23.7059 30.4992 25.9682 34.0828ZM37.4795 25.4912C35.4686 23.4738 32.2008 23.4738 30.1834 25.4912C28.166 27.5086 28.1725 30.7699 30.1834 32.7873C32.1943 34.8047 35.4621 34.8047 37.4795 32.7873C39.4969 30.7764 39.4969 27.5086 37.4795 25.4912Z"
+                  fill="#ED4C5C" />
+              </svg>
+
+            </div>
+          </div>
+        </div>
+        <div class="technologies-item col col-1-2 col-1-3 col-1-4 d-flex jc-center ai-center">
+          <div class="technologies-item-wrap relative">
+            <div class="number">03</div>
+            <h3>PDF Download</h3>
+            <p>Download any of your reports in PDF format</p>
+            <div class="technologies-icon">
+              <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M23.7229 35.6695C23.7229 34.2157 22.7128 33.3472 20.9318 33.3472C20.2049 33.3472 19.7133 33.4179 19.455 33.4868V38.1564C19.7611 38.2253 20.136 38.2502 20.6506 38.2502C22.5502 38.2502 23.7229 37.2879 23.7229 35.6695Z"
+                  fill="#ED4C5C" />
+                <path
+                  d="M34.7532 33.3931C33.9555 33.3931 33.439 33.4638 33.1329 33.5346V43.8801C33.439 43.9509 33.9306 43.9509 34.3764 43.9509C37.6132 43.9738 39.7251 42.1909 39.7251 38.4147C39.75 35.1301 37.8255 33.3931 34.7532 33.3931Z"
+                  fill="#ED4C5C" />
+                <path
+                  d="M55.8861 27.3155H54.5891V21.0581C54.588 21.0184 54.5842 20.9787 54.5776 20.9395C54.5797 20.6878 54.4907 20.4439 54.327 20.2527L43.9146 8.36156L43.9069 8.3539C43.7747 8.21041 43.6061 8.10532 43.4191 8.04974L43.3617 8.03061C43.2822 8.01079 43.2007 8.00052 43.1187 8H17.5286C16.3598 8 15.4109 8.95076 15.4109 10.1177V27.3155H14.1139C12.442 27.3155 11.0876 28.6699 11.0876 30.3419V46.082C11.0876 47.752 12.4439 49.1084 14.1139 49.1084H15.4109V59.8843C15.4109 61.0512 16.3598 62.002 17.5286 62.002H52.4714C53.6383 62.002 54.5891 61.0512 54.5891 59.8843V49.1084H55.8861C57.558 49.1084 58.9124 47.752 58.9124 46.082V30.3419C58.9124 28.6699 57.5561 27.3155 55.8861 27.3155ZM17.5286 10.1177H42.059V20.9529C42.059 21.5383 42.5334 22.0108 43.1187 22.0108H52.4733V27.3155H17.5286V10.1177ZM43.5262 38.2961C43.5262 41.3225 42.4243 43.4115 40.8958 44.7008C39.2315 46.0839 36.6987 46.742 33.6016 46.742C31.7479 46.742 30.4356 46.6234 29.5422 46.5086V30.977C30.8564 30.7666 32.5686 30.6499 34.3764 30.6499C37.3778 30.6499 39.3253 31.1893 40.8499 32.339C42.4932 33.5576 43.5262 35.505 43.5262 38.2961ZM15.9102 46.5794V30.977C17.0121 30.7895 18.5616 30.6499 20.7424 30.6499C22.9481 30.6499 24.5206 31.0726 25.5747 31.9163C26.5828 32.714 27.2619 34.0282 27.2619 35.5758C27.2619 37.1254 26.7473 38.4377 25.8081 39.3291C24.5876 40.4788 22.7817 40.9953 20.6697 40.9953C20.2011 40.9953 19.7783 40.9724 19.4512 40.9246V46.5794H15.9102ZM52.4714 59.3104H17.5286V49.1084H52.4714V59.3104ZM55.5398 33.6992H49.4622V37.3128H55.14V40.2225H49.4622V46.5794H45.8754V30.7666H55.5398V33.6992Z"
+                  fill="#ED4C5C" />
+              </svg>
+
+            </div>
+          </div>
+        </div>
+        <div class="technologies-item col col-1-2 col-1-3 col-1-4 d-flex jc-center ai-center">
+          <div class="technologies-item-wrap relative">
+            <div class="number">04</div>
+            <h3>CSV Download</h3>
+            <p>All your information is stored on secure cloud servers</p>
+            <div class="technologies-icon">
+              <svg width="47" height="54" viewBox="0 0 47 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M44.0258 18.9597H42.7512V12.8182C42.7501 12.7791 42.7464 12.7402 42.7399 12.7017C42.7417 12.455 42.6535 12.2161 42.4918 12.0296L32.2608 0.356737L32.2533 0.349227C32.192 0.283125 32.1225 0.225081 32.0465 0.176491L31.9788 0.135184C31.9138 0.0990936 31.8451 0.0701355 31.7739 0.0488159L31.7175 0.0300407C31.6394 0.010591 31.5592 0.000506586 31.4787 0H6.32996C5.18128 0 4.2488 0.933151 4.2488 2.07847V18.9578H2.97416C1.33104 18.9578 0 20.2871 0 21.9281V37.3768C0 39.0159 1.33292 40.3471 2.97416 40.3471H4.2488V50.9215C4.2488 52.0669 5.18128 53 6.32996 53H40.67C41.8168 53 42.7512 52.0669 42.7512 50.9215V40.3471H44.0258C45.6671 40.3471 47 39.0177 47 37.3768V21.9281C47 20.289 45.669 18.9597 44.0258 18.9597ZM6.32996 2.07847H30.4372V12.713C30.4372 13.2876 30.9034 13.7513 31.4787 13.7513H40.6719V18.9578H6.32996V2.07847ZM21.9001 30.5574C19.3734 29.6562 17.7058 28.2593 17.7058 26.0531C17.7058 23.464 19.8942 21.5057 23.4568 21.5057C25.1939 21.5057 26.4328 21.8436 27.3352 22.2698L26.5682 25.0167C25.5851 24.5385 24.5051 24.2925 23.4116 24.2976C21.9227 24.2976 21.2008 24.9942 21.2008 25.7602C21.2008 26.7291 22.0336 27.1553 24.0189 27.8988C26.7035 28.8901 27.9424 30.2852 27.9424 32.4256C27.9424 34.9716 26.0042 37.1327 21.8324 37.1327C20.0953 37.1327 18.3826 36.6595 17.5254 36.1864L18.2247 33.3719C19.4053 33.9739 20.7082 34.2976 22.0336 34.3182C23.6128 34.3182 24.4475 33.6629 24.4475 32.6734C24.4475 31.7272 23.7275 31.1883 21.9001 30.5574ZM3.99124 29.521C3.99124 24.3633 7.6892 21.5038 12.2877 21.5038C14.0699 21.5038 15.4216 21.8624 16.0308 22.1572L15.3088 24.8815C14.3956 24.4986 13.4134 24.3069 12.423 24.3183C9.71772 24.3183 7.59896 25.9611 7.59896 29.3389C7.59896 32.3561 9.40188 34.2713 12.4456 34.2713C13.5059 34.2713 14.6339 34.0704 15.3314 33.7756L15.8296 36.4774C15.2205 36.7684 13.7766 37.1308 11.9512 37.1308C6.69656 37.1327 3.99124 33.845 3.99124 29.521ZM40.67 50.362H6.32996V40.3489H40.67V50.362ZM37.8914 36.9074H33.8776L29.0084 21.7291H32.774L34.6221 28.1485C35.1391 29.9716 35.6128 31.684 35.9738 33.5747H36.0415C36.4259 31.7704 36.8844 29.9827 37.4158 28.2161L39.3559 21.731H43.0069L37.8914 36.9074Z"
+                  fill="#ED4C5C" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="media-section section-bg">
+    <div class="container mobile-wrapper">
+      <div class="row-2 d-flex fw-w">
+        <div class="section-info section-column col col-1-2">
+          <div class="media-content-wrapper">
+            <div class="info-title c-white">
+              <h2>Stay focused on saving money</h2>
+            </div>
+          </div>
+          <div class="media-content-wrapper c-white">
+            <p class="info-text">
+              It is important to stay focused on saving money in any way you can. We help you monitor your spending
+              habits so you can easily spot and cut any unnecessary expenses. Simply join today to get started!
+            </p>
+            <div class="info-icons">
+              <a href="#">
+                <i class="fa-brands fa-google-play"></i>
+              </a>
+              <a href="#">
+                <i class="fa-brands fa-app-store-ios"></i>
+              </a>
+              <a href="#">
+                <i class="fa-brands fa-windows"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="section-media section-column col col-1-2">
+          <div class="media-content-wrapper relative section-img">
+            <img src="/images/Slider.png" alt="Man in the restaurant">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="media-section form-section">
+    <div class="container mobile-wrapper">
+      <div class="row-2 d-flex fw-w">
+        <div class="section-column col col-1-2 contact-info">
+          <div class="media-content-wrapper">
+            <div class="info-title">
+              <h2>Contact</h2>
+            </div>
+          </div>
+          <div class="media-content-wrapper">
+            <p class="info-text">
+              Questions or concerns? Just fill out the form below and our support team will get back to you within 24
+              hours
+            </p>
+          </div>
+        </div>
+        <div class="section-column col col-1-2">
+          <div class="section-form">
+            <form action="#">
+              <div class="form-row-2 d-flex fw-w">
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+              </div>
+              <input type="tel" placeholder="Phone Number">
+              <select name="" id="">
+                <option value="">Select Service</option>
+                <option value="">Option 1</option>
+                <option value="">Option 2</option>
+              </select>
+              <input type="submit" value="Submit Now" class="main-btn btn_filled-red">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="list-section footer-section grey-bg">
+    <div class="container mobile-wrapper">
+      <div class="row-4 footer-row d-flex fw-w jc-center">
+        <div class="footer-item col col-1-2 col-1-3 col-1-4 d-flex">
+          <div class="footer-item-wrap">
+            <h3>Address</h3>
+            <address>Pipang Ltd, Griva Digeni, <br>
+              81-83 Jacovides Tower, 1st Floor <br>
+              1090 Picosia USA</address>
+
+          </div>
+        </div>
+        <div class="footer-item col col-1-2 col-1-3 col-1-4 d-flex">
+          <div class="footer-item-wrap">
+            <h3>Services</h3>
+            <ul>
+              <li>
+                <a href="#">Overview</a>
+              </li>
+              <li>
+                <a href="#">Features</a>
+              </li>
+              <li>
+                <a href="#">Technology</a>
+              </li>
+              <li>
+                <a href="#">Terms & Conditions</a>
+              </li>
+              <li>
+                <a href="#">Privacy</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-item col col-1-2 col-1-3 col-1-4 d-flex">
+          <div class="footer-item-wrap get-touch">
+            <h3>Get in Touch</h3>
+            <div>
+              <a href="mailto:info@cloudbudget.com">info@cloudbudget.com</a>
+            </div>
+            <div>
+              <a href="tel:+18447217120">+1 844-721-7120</a>
+            </div>
+            <div class="footer-icons d-flex">
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-item col col-1-2 col-1-3 col-1-4 d-flex">
+          <div class="footer-item-wrap">
+            <h3>We support</h3>
+            <div class="payment-img">
+              <img src="/images/payments.png" alt="payments picture">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        &copy; Copyright 2018 CloudBudget
+      </div>
+    </div>
+  </footer>
+  <script src="/js/script.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,16 @@
-.login_btn:hover {
-    background-color: #fff;
+.login-btn:hover {
+    background-color: var(--sec-color);
+}
+
+.login-btn a:hover {
     color: var(--main-color);
+}
+
+.hero-info-btn:hover {
+    background: transparent;
+    border: 1px solid var(--sec-color);
+}
+
+.hero-info-btn a:hover {
+    color: var(--sec-color);
 }
