@@ -437,7 +437,9 @@ header a {
 .footer-item h3 {
   margin-bottom: 33px;
 }
-
+.footer-item address {
+  font-style: normal;
+}
 .get-touch div {
   margin-bottom: 12px;
 }
