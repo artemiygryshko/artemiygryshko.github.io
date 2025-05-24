@@ -423,7 +423,7 @@ header a {
   color: var(--sec-color);
 }
 
-.footer-section {
+.footer-section *{
   text-align: left;
   color: #101010;
 }
