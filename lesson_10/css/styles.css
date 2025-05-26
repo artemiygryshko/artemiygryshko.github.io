@@ -80,13 +80,16 @@ header a {
   width: 100%;
   height: calc(100vh - 60px);
   gap: 30px;
-  transition: all .5sec ease;
+  transition: all .75s ease;
+
 }
+
 
 .mobile-menu_closed {
   height: 0;
   overflow: hidden;
-  transition: all .5sec ease;
+  transition: all .75s ease;
+
 }
 
 .menu-nav-list a {
@@ -119,10 +122,12 @@ header a {
 
 .hero-info_hide {
   opacity: 0;
+    transition: all .75s ease;
 }
 
 .hero-info {
   margin: auto;
+    transition: all .75s ease;
 }
 
 .hero-info-title {
@@ -245,6 +250,7 @@ header a {
   width: 33px;
   height: 33px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .list-section {
@@ -421,6 +427,7 @@ header a {
 
 .section-form input[type="submit"] {
   color: var(--sec-color);
+  cursor: pointer;
 }
 
 .footer-section,
