@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-style: normal;
+    color: #000;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.just-center {
+    justify-content: center;
+}
+
+.space-bw {
+    justify-content: space-between;
+}
+
+.fl-dir-col {
+    flex-direction: column;
+}
+
+.fl-dir-row {
+    flex-direction: row;
+}
+
+.fw-wr {
+    flex-wrap: wrap;
+}
+
+.bg-filled-main {
+    background-color: var(--main-bg-color);
+}
+
+.c-white {
+    color: #fff;
+}
