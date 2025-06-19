@@ -111,7 +111,7 @@ body {
 .menu-btn-burger {
     width: 34px;
     height: 34px;
-    background-image: url("/assets/icons/burger-menu.svg");
+    background-image: url("../assets/icons/burger-menu.svg");
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -227,13 +227,13 @@ body {
     left: -12px;
     width: 39px;
     height: 43px;
-    background: url("/assets/icons/rays.svg");
+    background: url("../assets/icons/rays.svg");
 }
 
 .offer-icon {
     width: 48px;
     height: 48px;
-    background: #FFF4E5 center no-repeat url("/assets/icons/lightening.svg");
+    background: #FFF4E5 center no-repeat url("../assets/icons/lightening.svg");
     border-radius: 6px;
     margin-left: 14px;
 }
@@ -357,7 +357,7 @@ body {
     height: 54px;
     border: 4px solid #FFFFFF4D;
     border-radius: 68px;
-    background: #FFFFFF33 center no-repeat url("/assets/icons/play-btn.svg");
+    background: #FFFFFF33 center no-repeat url("../assets/icons/play-btn.svg");
     cursor: pointer;
 
 }
@@ -486,7 +486,7 @@ body {
     height: 54px;
     border-radius: 6px;
     border: 1px solid #F1F1F3;
-    background: #FCFCFD no-repeat center url("/assets/icons/arrow-top-right.svg");
+    background: #FCFCFD no-repeat center url("../assets/icons/arrow-top-right.svg");
 }
 
 .benefits-card-btn a {
@@ -518,27 +518,27 @@ body {
 }
 
 .courses-card-img-1 {
-    background-image: url("/assets/images/courses-image-1.png");
+    background-image: url("../assets/images/courses-image-1.png");
 }
 
 .courses-card-img-2 {
-    background-image: url("/assets/images/courses-image-2.png");
+    background-image: url("../assets/images/courses-image-2.png");
 }
 
 .courses-card-img-3 {
-    background-image: url("/assets/images/courses-image-3.png");
+    background-image: url("../assets/images/courses-image-3.png");
 }
 
 .courses-card-img-4 {
-    background-image: url("/assets/images/courses-image-4.png");
+    background-image: url("../assets/images/courses-image-4.png");
 }
 
 .courses-card-img-5 {
-    background-image: url("/assets/images/courses-image-5.png");
+    background-image: url("../assets/images/courses-image-5.png");
 }
 
 .courses-card-img-6 {
-    background-image: url("/assets/images/courses-image-6.png");
+    background-image: url("../assets/images/courses-image-6.png");
 }
 
 .courses-card-header {
@@ -752,11 +752,11 @@ body {
 }
 
 .available-feature {
-    background: #FFF4E5 center no-repeat url("/assets/icons/available-mark.svg");
+    background: #FFF4E5 center no-repeat url("../assets/icons/available-mark.svg");
 }
 
 .not-available-feature {
-    background: border-box #FFF center no-repeat url("/assets/icons/not-available-mark.svg");
+    background: border-box #FFF center no-repeat url("../assets/icons/not-available-mark.svg");
     border: 1px solid #F1F1F3;
 }
 
@@ -881,14 +881,14 @@ body {
     height: 40px;
     margin-left: auto;
     border-radius: 50%;
-    background: #FFFFFF center no-repeat url("/assets/icons/grey-arrow-right.svg");
+    background: #FFFFFF center no-repeat url("../assets/icons/grey-arrow-right.svg");
 
 }
 
 /* ---------list-item-closed --------- */
 
 .list-item-closed .faq-question-icon {
-    background-image: url("/assets/icons/question-icon-plus.svg");
+    background-image: url("../assets/icons/question-icon-plus.svg");
 }
 
 .list-item-closed .faq-answer {
@@ -907,7 +907,7 @@ body {
 }
 
 .list-item-opened .faq-question-icon {
-    background-image: url("/assets/icons/question-icon-cross.svg");
+    background-image: url("../assets/icons/question-icon-cross.svg");
 }
 
 /* --------end 0f list-item-opened -------- */
@@ -961,15 +961,15 @@ body {
 }
 
 .list-item-mail:before {
-    background: center no-repeat url("/assets/icons/mail-icon.svg");
+    background: center no-repeat url("../assets/icons/mail-icon.svg");
 }
 
 .list-item-phone:before {
-    background: center no-repeat url("/assets/icons/phone-icon.svg");
+    background: center no-repeat url("../assets/icons/phone-icon.svg");
 }
 
 .list-item-location:before {
-    background: no-repeat center url("/assets/icons/location-icon.svg")
+    background: no-repeat center url("../assets/icons/location-icon.svg")
 }
 
 .social-logo {

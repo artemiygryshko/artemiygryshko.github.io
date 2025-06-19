@@ -82,6 +82,10 @@
     background-repeat: no-repeat;
 }
 
+    div.photo-wrapper img{
+        width: 40em;
+    }
+
 .speaker-info {
     margin-bottom: 40px;
 }
@@ -233,17 +237,10 @@
 
     .photo-wrapper {
         width: calc(100%/3 - 13.333333px);
-        overflow: hidden;
 
     }
 
-    div.photo-wrapper img{
-        width: 40em;
-    }
-/* 
-    .img {
-                width: 40em !important;
-    } */
+
 
     .speaker-level div {
         font-size: 1rem;
