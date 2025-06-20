@@ -64,3 +64,11 @@ document.addEventListener("click", (e) => {
         }
     }
 })
+
+// function showTarget(e) {
+//     console.log(e.target)
+//     let number = parseInt(e.target.id)
+//     console.log(number)
+// }
+
+// document.onclick = showTarget;

@@ -397,7 +397,10 @@ body {
     border: 1px solid #F1F1F3;
     border-radius: 6px;
     background-color: #FCFCFD;
+}
 
+.header-view-btn:hover {
+    background-color: #fff;
 }
 
 .header-view-btn a,
@@ -444,8 +447,12 @@ body {
 .line-wrapper {
     width: 100%;
     padding: 0 30px;
-    margin: 30px 0;
+    margin-bottom: 30px;
     justify-content: end;
+}
+
+.line-wrapper:first-child {
+    margin-top: 30px;
 }
 
 .benefits-card-number {
@@ -1369,7 +1376,11 @@ body {
 
     .line-wrapper {
         padding: 0 40px;
-        margin: 40px 0;
+        margin-bottom: 40px;
+    }
+
+    .line-wrapper:first-child {
+        margin-top: 40px;
     }
 
     .benefits-card-number,
@@ -1682,7 +1693,11 @@ body {
 
     .line-wrapper {
         padding: 0 50px;
-        margin: 50px 0;
+        margin-bottom: 50px;
+    }
+
+    .line-wrapper:first-child {
+        margin-top: 50px;
     }
 
     .benefits-card-number,
