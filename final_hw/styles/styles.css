@@ -9,6 +9,7 @@ html {
 body {
     font-family: "Be Vietnam Pro", sans-serif;
     background: #F7F7F8;
+    position: relative;
 }
 
 .container {
@@ -82,6 +83,7 @@ body {
     background-color: #fff;
     border-bottom: 1px solid #F1F1F3;
     z-index: 10;
+    transition: all 0.3s ease;
 }
 
 .menu-item a {
@@ -129,6 +131,7 @@ body {
 
 .menu-btn-hide {
     display: none;
+    transition: all 5s ease;
 }
 
 

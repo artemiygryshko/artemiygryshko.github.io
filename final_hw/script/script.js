@@ -1,56 +1,9 @@
-//<header class="main-header">
-//   <div class="container">
-//     <nav>
-//       <div class="header-container">
-//         <div class="desktop-wrapper d-flex align-center">
-//           <div class="logo bg-filled-main">
-//             <a href="/" title="Home" rel="home" class="d-flex align-center just-center">
-//               <img src="assets/icons/shape-17.svg" alt="logo image">
-//             </a>
-//           </div>
-//           <div class="menu">
-//             <ul id="menu-list" class="menu-list d-flex align-center">
-//               <li class="menu-item">
-//                 <a href="#" class="menu-link" id="1">Home</a>
-//               </li>
-//               <li class="menu-item">
-//                 <a href="pages/courses-page.html" class="menu-link" id="2">Courses</a>
-//               </li>
-//               <li class="menu-item">
-//                 <a href="#" class="menu-link" id="3">About Us</a>
-//               </li>
-//               <li class="menu-item">
-//                 <a href="#" class="menu-link" id="4">Pricing</a>
-//               </li>
-//               <li class="menu-item">
-//                 <a href="#" class="menu-link" id="5">Contact</a>
-//               </li>
-//             </ul>
-//             <div id="menu-btn" class="menu-btn">
-//               <div id="menu-btn-burger" class="menu-btn-burger">
-//               </div>
-//               <div id="menu-btn-close" class="menu-btn-close d-flex just-center menu-btn-hide"> <i
-//                   class="fa-solid fa-x c-white"></i>
-//               </div>
-//             </div>
-//           </div>
-//           <div class="login d-flex fw-wrap ">
-//             <div class="login-btn d-flex align-center just-center">Sign in</div>
-//             <div class="login-btn d-flex align-center just-center bg-filled-main c-white">Login</div>
-//           </div>
-//         </div>
-//       </div>
-//     </nav>
-//   </div>
-// </header>
-
-
 let body = document.querySelector("body");
 
 
 function createMainHeader() {
   let header = document.createElement("header");
-  header.classMane = `main-header`;
+  header.className = `main-header`;
   header.innerHTML = `<div class="container">
                         <nav>
                           <div class="header-container">
@@ -72,55 +25,122 @@ function createMainHeader() {
                                 </div>
                               </div>
                               <div class="login d-flex fw-wrap ">
-                                <div class="login-btn d-flex align-center just-center">Sign in</div>
-                                <div class="login-btn d-flex align-center just-center bg-filled-main c-white">Login</div>
+                                <div class="login-btn d-flex align-center just-center"></div>
+                                <div class="login-btn d-flex align-center just-center bg-filled-main c-white"></div>
                               </div>
                             </div>
                           </div>
                         </nav>
                       </div>`;
-  body.prepand(header);
+  body.prepend(header);
 }
 
 function feelMainHeader(element) {
   let menuList = document.querySelector(".menu-list");
-  for (let i = 0; i < element.sections.length; i++) {
+  for (let i = 0; i < element.sections.length - 2; i++) {
     let menuItem = document.createElement("li");
     menuItem.classList = "menu-item";
     let menuLink = document.createElement("a");
-    a.href = "#";
-    a.className = "menu-link";
-    a.id = `${i + 1}`;
-    a.textContent = element.sections[i].title;
+    menuLink.href = "#";
+    menuLink.className = "menu-link";
+    menuLink.id = `${i + 1}`;
+    menuLink.textContent = element.sections[i].title;
     menuItem.append(menuLink);
     menuList.append(menuItem);
   }
+
+  let loginBtn = document.querySelectorAll(".login-btn");
+  let counter = element.sections.length - 2;
+  for (let i = 0; i < loginBtn.length; i++) {
+    let menuLink = document.createElement("a");
+    menuLink.href = "#";
+    menuLink.className = "menu-link";
+    menuLink.id = `${counter}`;
+    menuLink.textContent = element.sections[counter].title;
+    counter++;
+    loginBtn[i].append(menuLink);
+  }
+
+  const menuBtn = document.getElementById("menu-btn");
+  const menuBtnBurger = document.getElementById("menu-btn-burger");
+  const menuBtnClose = document.getElementById("menu-btn-close");
+
+  menuBtn.addEventListener("click", () => {
+    menuBtnBurger.classList.toggle("menu-btn-hide");
+    menuBtnClose.classList.toggle("menu-btn-hide");
+    menuList.classList.toggle("mobile-menu-open")
+
+  })
+}
+
+
+function createMainOffer(element) {
+  let specOffer = document.createElement("div");
+  specOffer.classList = "spec-offer d-flex just-center";
+  specOffer.innerHTML = `<a href="#" class="bg-filled-main">
+                          <span class="c-white">${element.offers.mainOffer}</span>
+                          <span class="c-white arrow-hide">
+                            <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"> 
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M-2.62268e-07 6.5C-2.80374e-07 6.08579 0.335786 5.75 0.75 5.75L11.3879 5.75L7.23017 1.79062C6.93159 1.50353 6.92228 1.02875 7.20937 0.730167C7.49647 0.431589 7.97125 0.422279 8.26983 0.709374L13.7698 5.95937C13.9169 6.10078 14 6.29599 14 6.5C14 6.70401 13.9169 6.89922 13.7698 7.04062L8.26983 12.2906C7.97125 12.5777 7.49647 12.5684 7.20937 12.2698C6.92228 11.9713 6.93159 11.4965 7.23017 11.2094L11.3879 7.25L0.75 7.25C0.335786 7.25 -2.44163e-07 6.91421 -2.62268e-07 6.5Z" fill="white" />
+                            </svg>
+                           </span>
+                        </a>
+                        <div class="close-btn">
+                          <i class="fa-solid fa-x c-white"></i>
+                        </div>`;
+  body.append(specOffer);
+
+}
+
+function createMainFooter() {
+
 }
 
 
 
+async function buildMainPage() {
+  const url = 'https://artemiygryshko.github.io/final_hw/json/header-data.json'
+  let data = {};
+  await axios.get(url)
+    .then((response) => {
+      data = response.data
+      console.log(data)
+    })
+
+    .catch((error) => console.log(error))
+
+
+  createMainHeader();
+  feelMainHeader(data);
+  createMainOffer(data);
+}
+
+
+buildMainPage();
+
+
+
+// async function justcheck() {
+//   const url = 'https://semegenkep.github.io/itca/superheroes.json'
+//   let data = {};
+//   await axios.get(url)
+//     .then((response) => {
+//       console.log("++")
+//     })
+//     .catch((error) => console.log(error))
+
+
+
+
+// }
+
+
+// justcheck()
 
 
 
 
 
-
-
-
-
-
-
-const menuBtn = document.getElementById("menu-btn");
-const menuBtnBurger = document.getElementById("menu-btn-burger");
-const menuBtnClose = document.getElementById("menu-btn-close");
-const menuList = document.getElementById("menu-list");
-
-menuBtn.addEventListener("click", () => {
-  menuBtnBurger.classList.toggle("menu-btn-hide");
-  menuBtnClose.classList.toggle("menu-btn-hide");
-  menuList.classList.toggle("mobile-menu-open")
-
-})
 
 const swiper = new Swiper('.swiper', {
   // Optional parameters
