@@ -1,0 +1,25 @@
+    {
+        "sections": [
+            {
+                "title": "Home"
+            },
+            {
+                "title": "Courses"
+            },
+            {
+                "title": "About Us"
+            },
+            {
+                "title": "Pricing"
+            },
+            {
+                "title": "Contact"
+            },
+            {
+                "title": "Sign Up"
+            },
+            {
+                "title": "Login"
+            }
+        ]
+    }
