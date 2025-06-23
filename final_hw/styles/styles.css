@@ -31,6 +31,10 @@ body {
     padding-top: 81px;
 }
 
+.closed-offer-padding {
+    padding-top: 20px;
+}
+
 .header-container {
     position: relative;
     width: 100%;
@@ -168,6 +172,10 @@ body {
     align-items: end;
 }
 
+.spec-offer-hide {
+    display: none;
+}
+
 .spec-offer a {
     max-width: 1860px;
     width: 100%;
@@ -204,6 +212,29 @@ body {
 .arrow-hide {
     margin-left: 12px;
     display: none;
+}
+
+.spec-offer-full-screen {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(168, 255, 180, 0.5);
+}
+
+.spec-offer-full-screen-hide {
+    display: none;
+}
+
+.spec-offer-full-screen-text {
+    background-color: #5bff53;
+}
+
+.spec-offer-full-screen-btn {
+    position: absolute;
+    right: 50px;
+    top: 50px;
 }
 
 .hero-main {

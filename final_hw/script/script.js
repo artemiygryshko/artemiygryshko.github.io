@@ -76,6 +76,8 @@ function feelMainHeader(element) {
 
 function createMainOffer(element) {
   let specOffer = document.createElement("div");
+  console.log(element)
+  console.log(element.offers.mainOffer)
   specOffer.classList = "spec-offer d-flex just-center";
   specOffer.innerHTML = `<a href="#" class="bg-filled-main">
                           <span class="c-white">${element.offers.mainOffer}</span>
@@ -84,18 +86,58 @@ function createMainOffer(element) {
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M-2.62268e-07 6.5C-2.80374e-07 6.08579 0.335786 5.75 0.75 5.75L11.3879 5.75L7.23017 1.79062C6.93159 1.50353 6.92228 1.02875 7.20937 0.730167C7.49647 0.431589 7.97125 0.422279 8.26983 0.709374L13.7698 5.95937C13.9169 6.10078 14 6.29599 14 6.5C14 6.70401 13.9169 6.89922 13.7698 7.04062L8.26983 12.2906C7.97125 12.5777 7.49647 12.5684 7.20937 12.2698C6.92228 11.9713 6.93159 11.4965 7.23017 11.2094L11.3879 7.25L0.75 7.25C0.335786 7.25 -2.44163e-07 6.91421 -2.62268e-07 6.5Z" fill="white" />
                             </svg>
                            </span>
-                        </a>
-                        <div class="close-btn">
-                          <i class="fa-solid fa-x c-white"></i>
-                        </div>`;
-  body.append(specOffer);
+                        </a>`
+  let closeBtn = document.createElement("div");
+  closeBtn.classList = "close-btn";
+  closeBtn.innerHTML = `<i class="fa-solid fa-x c-white"></i>`;
+  specOffer.append(closeBtn);
+  if (sessionStorage.getItem("special offer")) {
+    specOffer.classList.add("spec-offer-hide");
+    let header = document.querySelector(".main-header");
+    header.classList.add("closed-offer-padding");
+  }
 
+  let specOfferFullScreen = document.createElement("div");
+  specOfferFullScreen.classList = "spec-offer-full-screen d-flex align-center just-center spec-offer-full-screen-hide";
+  let text = document.createElement("div");
+  text.classList = "spec-offer-full-screen-text";
+  text.textContent = "U closed my offer, so I will   blow your mind every 15sec";
+  let offerCloseBtn = document.createElement("div");
+  offerCloseBtn.textContent = "x"
+  offerCloseBtn.classList = "spec-offer-full-screen-btn";
+  offerCloseBtn.addEventListener("click", () => {
+    specOfferFullScreen.classList.toggle("spec-offer-full-screen-hide");
+  })
+  specOfferFullScreen.append(text, offerCloseBtn);
+  body.append(specOffer);
+  body.append(specOfferFullScreen);
+
+  let sessionCheckOut = function () {
+    let value = sessionStorage.getItem("special offer");
+    if (value) {
+      setTimeout(() => {
+        if (value === "false" && specOfferFullScreen.classList.contains("spec-offer-full-screen-hide")) {
+          specOfferFullScreen.classList.toggle("spec-offer-full-screen-hide");
+        }
+        sessionCheckOut()
+      }, 15000)
+    }
+  }
+
+  sessionCheckOut()
+
+  closeBtn.addEventListener("click", () => {
+    specOffer.classList.add("spec-offer-hide");
+    let header = document.querySelector(".main-header");
+    header.classList.add("closed-offer-padding");
+    sessionStorage.setItem("special offer", false);
+    sessionCheckOut()
+  })
 }
 
 function createMainFooter() {
 
 }
-
 
 
 async function buildMainPage() {
@@ -118,24 +160,6 @@ async function buildMainPage() {
 
 buildMainPage();
 
-
-
-// async function justcheck() {
-//   const url = 'https://semegenkep.github.io/itca/superheroes.json'
-//   let data = {};
-//   await axios.get(url)
-//     .then((response) => {
-//       console.log("++")
-//     })
-//     .catch((error) => console.log(error))
-
-
-
-
-// }
-
-
-// justcheck()
 
 
 
@@ -179,11 +203,13 @@ const swiper = new Swiper('.swiper', {
 
     1280: {
       slidesPerView: 7,
+      loop: false,
     },
   },
 
   slideActiveClass: 'swiper-slide-active',
 },
+
 );
 
 
