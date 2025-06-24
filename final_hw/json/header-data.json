@@ -22,7 +22,51 @@
                 "title": "Login"
             }
         ],
-        "offers": 
-            {"mainOffer" : "Free Courses 🌟 Sale Ends Soon, Get It Now"}
-        
+        "offers": {
+            "mainOffer": {
+                "title": "<span>Unlock</span> Your Creative Potential",
+                "description": [
+                    "with Online Design and Development Courses.",
+                    "Learn from Industry Experts and Enhance Your Skills."
+                ],
+                "icon": "assets/icons/lightening.svg",
+                "buttons": [
+                    "Explore Courses",
+                    "View Pricing"
+                ]
+            },
+            "specOffer": {
+                "title": "Free Courses 🌟 Sale Ends Soon, Get It Now"
+            }
+        },
+        "sponsors": [
+            {
+                "name": "zapier",
+                "logo": "assets/icons/logo-zapier.svg"
+            },
+            {
+                "name": "spotify",
+                "logo": "assets/icons/logo-spotify.svg"
+            },
+            {
+                "name": "zoom",
+                "logo": "assets/icons/logo-zoom.svg"
+            },
+            {
+                "name": "amazon",
+                "logo": "assets/icons/logo-amazon.svg"
+            },
+            {
+                "name": "adobe",
+                "logo": "assets/icons/logo-adobe.svg"
+            },
+            {
+                "name": "notion",
+                "logo": "assets/icons/logo-notion.svg"
+            },
+            {
+                "name": "netflix",
+                "logo": "assets/icons/logo-netflix.svg"
+            }
+        ]
     }

@@ -2,7 +2,7 @@ let body = document.querySelector("body");
 
 
 function createMainHeader() {
-  let header = document.createElement("header");
+  let header = document.querySelector("header");
   header.className = `main-header`;
   header.innerHTML = `<div class="container">
                         <nav>
@@ -32,7 +32,6 @@ function createMainHeader() {
                           </div>
                         </nav>
                       </div>`;
-  body.prepend(header);
 }
 
 function feelMainHeader(element) {
@@ -74,13 +73,12 @@ function feelMainHeader(element) {
 }
 
 
-function createMainOffer(element) {
+function createSpecOffer(element) {
   let specOffer = document.createElement("div");
-  console.log(element)
-  console.log(element.offers.mainOffer)
+  let header = document.querySelector(".main-header");
   specOffer.classList = "spec-offer d-flex just-center";
   specOffer.innerHTML = `<a href="#" class="bg-filled-main">
-                          <span class="c-white">${element.offers.mainOffer}</span>
+                          <span class="c-white">${element.offers.specOffer.title}</span>
                           <span class="c-white arrow-hide">
                             <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"> 
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M-2.62268e-07 6.5C-2.80374e-07 6.08579 0.335786 5.75 0.75 5.75L11.3879 5.75L7.23017 1.79062C6.93159 1.50353 6.92228 1.02875 7.20937 0.730167C7.49647 0.431589 7.97125 0.422279 8.26983 0.709374L13.7698 5.95937C13.9169 6.10078 14 6.29599 14 6.5C14 6.70401 13.9169 6.89922 13.7698 7.04062L8.26983 12.2906C7.97125 12.5777 7.49647 12.5684 7.20937 12.2698C6.92228 11.9713 6.93159 11.4965 7.23017 11.2094L11.3879 7.25L0.75 7.25C0.335786 7.25 -2.44163e-07 6.91421 -2.62268e-07 6.5Z" fill="white" />
@@ -93,21 +91,23 @@ function createMainOffer(element) {
   specOffer.append(closeBtn);
   if (sessionStorage.getItem("special offer")) {
     specOffer.classList.add("spec-offer-hide");
-    let header = document.querySelector(".main-header");
     header.classList.add("closed-offer-padding");
   }
 
   let specOfferFullScreen = document.createElement("div");
   specOfferFullScreen.classList = "spec-offer-full-screen d-flex align-center just-center spec-offer-full-screen-hide";
   let text = document.createElement("div");
-  text.classList = "spec-offer-full-screen-text";
+  text.classList = "spec-offer-full-screen-text d-flex align-center just-center c-white";
   text.textContent = "U closed my offer, so I will   blow your mind every 15sec";
   let offerCloseBtn = document.createElement("div");
-  offerCloseBtn.textContent = "x"
+  offerCloseBtn.innerHTML = `<div class="menu-btn-close d-flex just-center">
+                                    <i class="fa-solid fa-x c-white"></i>
+                                  </div>`;
   offerCloseBtn.classList = "spec-offer-full-screen-btn";
   offerCloseBtn.addEventListener("click", () => {
     specOfferFullScreen.classList.toggle("spec-offer-full-screen-hide");
-  })
+  });
+
   specOfferFullScreen.append(text, offerCloseBtn);
   body.append(specOffer);
   body.append(specOfferFullScreen);
@@ -115,6 +115,10 @@ function createMainOffer(element) {
   let sessionCheckOut = function () {
     let value = sessionStorage.getItem("special offer");
     if (value) {
+      if (value === "false") {
+        specOffer.classList.add("spec-offer-hide");
+        header.classList.add("closed-offer-padding");
+      }
       setTimeout(() => {
         if (value === "false" && specOfferFullScreen.classList.contains("spec-offer-full-screen-hide")) {
           specOfferFullScreen.classList.toggle("spec-offer-full-screen-hide");
@@ -127,13 +131,134 @@ function createMainOffer(element) {
   sessionCheckOut()
 
   closeBtn.addEventListener("click", () => {
-    specOffer.classList.add("spec-offer-hide");
-    let header = document.querySelector(".main-header");
-    header.classList.add("closed-offer-padding");
     sessionStorage.setItem("special offer", false);
     sessionCheckOut()
   })
 }
+
+function fillMainHeroSection(element) {
+  let mainOffer = element.offers.mainOffer;
+  let heroSection = document.querySelector(".hero-section");
+  let container = document.createElement("div");
+  container.classList.add("container");
+  container.innerHTML = `<header class="hero-main-header d-flex just-center fw-wr">
+                          <div class="hero-main-wrapper d-flex just-center">
+                            <div class="hero-main-offer d-flex align-center">
+                              <div class="offer-rays"></div>
+                              <div class="offer-icon" style = "background: #FFF4E5 center no-repeat url("${mainOffer.icon}")></div>
+                              <div class="offer-text">
+                                ${mainOffer.title}
+                              </div>
+                            </div>
+                          </div>
+                          <div class="hero-main-wrapper">
+                            <div class="hero-main-descr d-flex fl-dir-col just-center align-center">
+                            </div>
+                          </div>
+                          <div class="hero-main-wrapper">
+                            <div class="hero-main-btn d-flex just-center">
+                            </div>
+                          </div>
+                        </header>`
+
+
+  heroSection.append(container);
+
+  let mainDescription = document.querySelector(".hero-main-descr");
+  for (let i = 0; i < mainOffer.description.length; i++) {
+    let span = document.createElement("span");
+    span.textContent = `${mainOffer.description[i]}`;
+    mainDescription.append(span);
+  }
+  let heroMainWrapper = document.querySelector(".hero-main-wrapper");
+  for (let i = 0; i < mainOffer.buttons.length; i++) {
+    let button = document.createElement("div");
+    button.textContent = `${mainOffer.buttons[i]}`;
+
+    if (isEven(i)) {
+      button.classList = "c-white bg-filled-main d-flex align-center just-center";
+    } else {
+      button.classList = "d-flex align-center just-center";
+    }
+
+    heroMainWrapper.append(button);
+  }
+
+
+  /* <div class="container">
+        <header class="hero-main-header d-flex just-center fw-wr">
+            <div class="hero-main-wrapper d-flex just-center">
+              <div class="hero-main-offer d-flex align-center">
+                <div class="offer-rays"></div>
+                <div class="offer-icon"></div>
+                <div class="offer-text">
+                  <span>Unlock</span> Your Creative Potential
+                </div>
+              </div>
+            </div>
+            <div class="hero-main-wrapper">
+              <div class="hero-main-descr d-flex fl-dir-col just-center align-center">
+                <span>with Online Design and Development Courses.</span>
+                <span>Learn from Industry Experts and Enhance Your Skills.</span>
+              </div>
+            </div>
+            <div class="hero-main-wrapper">
+              <div class="hero-main-btn d-flex just-center">
+                <div class="c-white bg-filled-main d-flex align-center just-center">Explore Courses</div>
+                <div class="d-flex align-center just-center">View Pricing</div>
+              </div>
+            </div>
+        </header>
+        <div class="sponsors">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="" class="d-flex align-center just-center">
+                    <img src="assets/icons/logo-zapier.svg" alt="zapier's logo">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="" class="d-flex align-center just-center">
+                    <img src="assets/icons/logo-spotify.svg" alt="spotify's logo">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="" class="d-flex align-center just-center">
+                    <img src="assets/icons/logo-zoom.svg" alt="zoom's logo">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="" class="d-flex align-center just-center">
+                    <img src="assets/icons/logo-amazon.svg" alt="amazon's logo">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="" class="d-flex align-center just-center">
+                    <img src="assets/icons/logo-adobe.svg" alt="adobe's logo">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="" class="d-flex align-center just-center">
+                    <img src="assets/icons/logo-notion.svg" alt="notion's logo">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="" class="d-flex align-center just-center">
+                    <img src="assets/icons/logo-netflix.svg" alt="netflix's logo">
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="video-container">
+            <img src="assets/images/image_1.png" alt="video image">
+            <div class="play-btn">
+            </div>
+          </div>
+        </div> */
+}
+
 
 function createMainFooter() {
 
@@ -154,14 +279,18 @@ async function buildMainPage() {
 
   createMainHeader();
   feelMainHeader(data);
-  createMainOffer(data);
+  createSpecOffer(data);
+  fillMainHeroSection(data);
 }
 
 
 buildMainPage();
 
 
-
+function isEven(n) {
+  n = Number(n);
+  return n === 0 || !!(n && !(n % 2));
+}
 
 
 

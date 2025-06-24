@@ -220,21 +220,43 @@ body {
     z-index: 999;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(168, 255, 180, 0.5);
+    background-color: #ff95007d;
+    transition: all 1s ease;
 }
 
 .spec-offer-full-screen-hide {
-    display: none;
+    height: 0px;
+    overflow: hidden;
+    transition: all 1s ease;
 }
 
 .spec-offer-full-screen-text {
-    background-color: #5bff53;
+    width: 30vw;
+    height: 40vh;
+    text-transform: uppercase;
+    border-radius: 30px;
+    border: 2px dotted #fff;
+    background-color: #ff9500;
 }
 
 .spec-offer-full-screen-btn {
     position: absolute;
     right: 50px;
     top: 50px;
+    border: 2px solid #262626;
+    border-radius: 50%;
+    opacity: .5;
+}
+
+.spec-offer-full-screen-btn:hover {
+    transform: scale(1.2);
+    color: #fff;
+    border: 2px solid #fff;
+    opacity: .75;
+}
+
+.spec-offer-full-screen-btn:active {
+    transform: translate(2px, 2px);
 }
 
 .hero-main {
@@ -281,7 +303,6 @@ body {
 
 .offer-text span {
     color: var(--main-bg-color);
-    cursor: pointer;
 }
 
 .hero-main-descr {
@@ -1304,6 +1325,10 @@ body {
         padding-top: 61px;
     }
 
+    .closed-offer-padding {
+        padding-top: 30px;
+    }
+
     .header-container {
         height: 81px;
         padding: 16px 0 20px 0;
@@ -1597,7 +1622,10 @@ body {
 @media screen and (min-width:1920px) {
     .main-header {
         padding-top: 75px;
+    }
 
+    .closed-offer-padding {
+        padding-top: 30px;
     }
 
     .header-container {
