@@ -265,31 +265,38 @@
         "sponsors": [
             {
                 "name": "zapier",
-                "logo": "assets/icons/logo-zapier.svg"
+                "logo": "assets/icons/logo-zapier.svg",
+                "url": "https://zapier.com/"
             },
             {
                 "name": "spotify",
-                "logo": "assets/icons/logo-spotify.svg"
+                "logo": "assets/icons/logo-spotify.svg",
+                "url": "https://www.spotify.com/"
             },
             {
                 "name": "zoom",
-                "logo": "assets/icons/logo-zoom.svg"
+                "logo": "assets/icons/logo-zoom.svg",
+                "url": "https://www.zoom.com/"
             },
             {
                 "name": "amazon",
-                "logo": "assets/icons/logo-amazon.svg"
+                "logo": "assets/icons/logo-amazon.svg",
+                "url": "https://amazon.com/"
             },
             {
                 "name": "adobe",
-                "logo": "assets/icons/logo-adobe.svg"
+                "logo": "assets/icons/logo-adobe.svg",
+                "url": "https://adobe.com/"
             },
             {
                 "name": "notion",
-                "logo": "assets/icons/logo-notion.svg"
+                "logo": "assets/icons/logo-notion.svg",
+                "url": "https://notion.com/"
             },
             {
                 "name": "netflix",
-                "logo": "assets/icons/logo-netflix.svg"
+                "logo": "assets/icons/logo-netflix.svg",
+                "url": "https://netflix.com/"
             }
         ]
     }

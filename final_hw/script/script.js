@@ -182,81 +182,124 @@ function fillMainHeroSection(element) {
     heroMainBtn.append(button);
   }
 
+  createSponsorSlider(element, container);
 
-  /* <div class="container">
-        <header class="hero-main-header d-flex just-center fw-wr">
-            <div class="hero-main-wrapper d-flex just-center">
-              <div class="hero-main-offer d-flex align-center">
-                <div class="offer-rays"></div>
-                <div class="offer-icon"></div>
-                <div class="offer-text">
-                  <span>Unlock</span> Your Creative Potential
-                </div>
-              </div>
-            </div>
-            <div class="hero-main-wrapper">
-              <div class="hero-main-descr d-flex fl-dir-col just-center align-center">
-                <span>with Online Design and Development Courses.</span>
-                <span>Learn from Industry Experts and Enhance Your Skills.</span>
-              </div>
-            </div>
-            <div class="hero-main-wrapper">
-              <div class="hero-main-btn d-flex just-center">
-                <div class="c-white bg-filled-main d-flex align-center just-center">Explore Courses</div>
-                <div class="d-flex align-center just-center">View Pricing</div>
-              </div>
-            </div>
-        </header>
-        <div class="sponsors">
-            <div class="swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <a href="" class="d-flex align-center just-center">
-                    <img src="assets/icons/logo-zapier.svg" alt="zapier's logo">
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="" class="d-flex align-center just-center">
-                    <img src="assets/icons/logo-spotify.svg" alt="spotify's logo">
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="" class="d-flex align-center just-center">
-                    <img src="assets/icons/logo-zoom.svg" alt="zoom's logo">
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="" class="d-flex align-center just-center">
-                    <img src="assets/icons/logo-amazon.svg" alt="amazon's logo">
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="" class="d-flex align-center just-center">
-                    <img src="assets/icons/logo-adobe.svg" alt="adobe's logo">
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="" class="d-flex align-center just-center">
-                    <img src="assets/icons/logo-notion.svg" alt="notion's logo">
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="" class="d-flex align-center just-center">
-                    <img src="assets/icons/logo-netflix.svg" alt="netflix's logo">
-                  </a>
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-        </div>
-        <div class="video-container">
-            <img src="assets/images/image_1.png" alt="video image">
-            <div class="play-btn">
-            </div>
-          </div>
-        </div> */
+
+
+  /* <div class="sponsors">
+       <div class="swiper">
+         <div class="swiper-wrapper">
+           <div class="swiper-slide">
+             <a href="" class="d-flex align-center just-center">
+               <img src="assets/icons/logo-zapier.svg" alt="zapier's logo">
+             </a>
+           </div>
+           <div class="swiper-slide">
+             <a href="" class="d-flex align-center just-center">
+               <img src="assets/icons/logo-spotify.svg" alt="spotify's logo">
+             </a>
+           </div>
+           <div class="swiper-slide">
+             <a href="" class="d-flex align-center just-center">
+               <img src="assets/icons/logo-zoom.svg" alt="zoom's logo">
+             </a>
+           </div>
+           <div class="swiper-slide">
+             <a href="" class="d-flex align-center just-center">
+               <img src="assets/icons/logo-amazon.svg" alt="amazon's logo">
+             </a>
+           </div>
+           <div class="swiper-slide">
+             <a href="" class="d-flex align-center just-center">
+               <img src="assets/icons/logo-adobe.svg" alt="adobe's logo">
+             </a>
+           </div>
+           <div class="swiper-slide">
+             <a href="" class="d-flex align-center just-center">
+               <img src="assets/icons/logo-notion.svg" alt="notion's logo">
+             </a>
+           </div>
+           <div class="swiper-slide">
+             <a href="" class="d-flex align-center just-center">
+               <img src="assets/icons/logo-netflix.svg" alt="netflix's logo">
+             </a>
+           </div>
+         </div>
+         <div class="swiper-pagination"></div>
+       </div>
+   </div>
+   <div class="video-container">
+       <img src="assets/images/image_1.png" alt="video image">
+       <div class="play-btn">
+       </div>
+     </div>
+   </div> */
 }
 
+function createSponsorSlider(elem1, elem2) {
+  let sponsors = elem1.sponsors;
+  let sponsorsDiv = document.createElement("div");
+  sponsorsDiv.classList = "sponsors";
+  let swiperDiv = document.createElement("div");
+  swiperDiv.classList = "swiper";
+  let swiperWrapperDiv = document.createElement("div");
+  swiperWrapperDiv.classList = "swiper-wrapper";
+  let swiperPagination = document.createElement("div");
+  swiperPagination.classList = "swiper-pagination";
+
+  for (let i = 0; i < sponsors.length; i++) {
+    let swiperSlide = document.createElement("div");
+    swiperSlide.classList = "swiper-slide";
+    let slideLink = document.createElement('a');
+    slideLink.classList = "d-flex align-center just-center";
+    slideLink.href = `${sponsors[i].url}`
+    let media = document.createElement("img");
+    media.src = `${sponsors[i].logo}`;
+    media.alt = `${sponsors[i].name}'s logo`;
+    slideLink.append(media);
+    swiperSlide.append(slideLink);
+    swiperWrapperDiv.append(swiperSlide);
+  }
+  swiperDiv.append(swiperWrapperDiv, swiperPagination);
+  sponsorsDiv.append(swiperDiv);
+  elem2.append(sponsorsDiv);
+
+  const swiper = new Swiper('.swiper', {
+    direction: 'horizontal',
+    loop: true,
+    autoplay: {
+      delay: 3000,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    spaceBetween: 0,
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+      },
+      480: {
+        slidesPerView: 3,
+      },
+      640: {
+        slidesPerView: 4,
+      },
+      820: {
+        slidesPerView: 5,
+      },
+      980: {
+        slidesPerView: 6,
+      },
+      1280: {
+        slidesPerView: 7,
+        loop: false,
+      },
+    },
+
+    slideActiveClass: 'swiper-slide-active',
+  },
+  );
+}
 
 function createMainFooter() {
 
@@ -293,51 +336,7 @@ function isEven(n) {
 
 
 
-const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
 
-  autoplay: {
-    delay: 3000,
-  },
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-  spaceBetween: 0,
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 2,
-    },
-    // when window width is >= 480px
-    480: {
-      slidesPerView: 3,
-    },
-    // when window width is >= 640px
-    640: {
-      slidesPerView: 4,
-    },
-
-    820: {
-      slidesPerView: 5,
-    },
-
-    980: {
-      slidesPerView: 6,
-    },
-
-    1280: {
-      slidesPerView: 7,
-      loop: false,
-    },
-  },
-
-  slideActiveClass: 'swiper-slide-active',
-},
-
-);
 
 
 const monthPriceBtn = document.getElementById("month-price-btn");
