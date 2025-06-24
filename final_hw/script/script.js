@@ -145,7 +145,7 @@ function fillMainHeroSection(element) {
                           <div class="hero-main-wrapper d-flex just-center">
                             <div class="hero-main-offer d-flex align-center">
                               <div class="offer-rays"></div>
-                              <div class="offer-icon" style = "background: #FFF4E5 center no-repeat url("${mainOffer.icon}")></div>
+                              <div class="offer-icon" style = "background: #FFF4E5 center no-repeat url('${mainOffer.icon}')"></div>
                               <div class="offer-text">
                                 ${mainOffer.title}
                               </div>
@@ -160,8 +160,6 @@ function fillMainHeroSection(element) {
                             </div>
                           </div>
                         </header>`
-
-
   heroSection.append(container);
 
   let mainDescription = document.querySelector(".hero-main-descr");
@@ -170,7 +168,7 @@ function fillMainHeroSection(element) {
     span.textContent = `${mainOffer.description[i]}`;
     mainDescription.append(span);
   }
-  let heroMainWrapper = document.querySelector(".hero-main-wrapper");
+  let heroMainBtn = document.querySelector(".hero-main-btn");
   for (let i = 0; i < mainOffer.buttons.length; i++) {
     let button = document.createElement("div");
     button.textContent = `${mainOffer.buttons[i]}`;
@@ -181,7 +179,7 @@ function fillMainHeroSection(element) {
       button.classList = "d-flex align-center just-center";
     }
 
-    heroMainWrapper.append(button);
+    heroMainBtn.append(button);
   }
 
 
