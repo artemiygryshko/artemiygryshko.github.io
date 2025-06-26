@@ -35,6 +35,33 @@
                 "link": "#"
             },
             {
+                "title": "Our Testimonials",
+                "description": "Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.",
+                "testimonials": [
+                    {
+                        "testimonial": "The web design course provided a solid foundation for me. The instructors were knowledgeable and supportive, and the interactive learning environment was engaging. I highly recommend it!",
+                        "author": "Sarah L",
+                        "photo": "assets/images/Sarah_L.png"
+                    },
+                    {
+                        "testimonial": "The UI/UX design course exceeded my expectations. The instructor's expertise and practical assignments helped me improve my design skills. I feel more confident in my career now. Thank you!",
+                        "author": "Jason M",
+                        "photo": "assets/images/Jason_M.png"
+                    },
+                    {
+                        "testimonial": "The mobile app development course was fantastic! The step-by-step tutorials and hands-on projects helped me grasp the concepts easily. I'm now building my own app. Great course!",
+                        "author": "Emily R",
+                        "photo": "assets/images/Emily_R.png"
+                    },
+                    {
+                        "testimonial": "I enrolled in the graphic design course as a beginner, and it was the perfect starting point. The instructor's guidance and feedback improved my design abilities significantly. I'm grateful for this course!",
+                        "author": "Michael K",
+                        "photo": "assets/images/Michael_K.png"
+                    }
+                ],
+                "link": "#"
+            },
+            {
                 "title": "Courses",
                 "description": "Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.",
                 "courses": [

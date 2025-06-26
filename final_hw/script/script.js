@@ -492,13 +492,142 @@ function createCoursesSubsection(elem1, elem2) {
   section.append(container);
   elem2.append(section);
 }
+
+function createTestimonialsSubsection(elem1, elem2) {
+  let section = document.createElement("section");
+  section.classList = "info-section testimonials-section";
+  let obj = findTheSectionObject(elem1, "Our Testimonials");
+  let container = createSectionHeader(obj);
+
+  let row = document.createElement("div");
+  row.classList = "row row-2 d-flex fw-wr just-center ";
+
+  for (let i = 0; i < obj.courses.length; i++) {
+    let col = document.createElement("div");
+    col.classList = "col col-2-1 col-2-2 courses-card d-flex";
+
+    col.innerHTML = `
+        <div class="col col-2-1 col-2-2 story-card d-flex">
+          <div class="story-card-text">The web design course provided a solid foundation for me.
+            The instructors were
+            knowledgeable and supportive, and the interactive learning environment was engaging. I highly recommend
+            it!</div>
+          <div class="story-card-info d-flex align-center">
+            <div class="story-card-author d-flex align-center">
+              <div class="author-photo">
+                <img src="assets/images/Sarah_L.png" alt="Sarah L">
+              </div>
+              <div class="author-name">Sarah L</div>
+            </div>
+            <div class="story-card-btn">
+              <a href="#" class="d-flex align-center just-center">Read Full Story</a>
+            </div>
+          </div>
+        </div>`
+
+    row.append(col);
+  }
+
+  // <section class="info-section testimonials-section">
+  //   <div class="container">
+  //     <header>
+  //       <div class="header-descr">
+  //         <h2>Our Testimonials</h2>
+  //         <p>Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit
+  //           dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.</p>
+  //       </div>
+  //       <div class="header-view-btn">
+  //         <a href="#" class="d-flex align-center just-center">View All</a>
+  //       </div>
+  //     </header>
+
+  //     <div class="row row-2 d-flex fw-wr just-center ">
+
+  //       <!-- TAKE FROM BACK_END THIS INFO -->
+
+
+  //       <div class="col col-2-1 col-2-2 story-card d-flex">
+  //         <div class="story-card-text">The web design course provided a solid foundation for me.
+  //           The instructors were
+  //           knowledgeable and supportive, and the interactive learning environment was engaging. I highly recommend
+  //           it!</div>
+  //         <div class="story-card-info d-flex align-center">
+  //           <div class="story-card-author d-flex align-center">
+  //             <div class="author-photo">
+  //               <img src="assets/images/Sarah_L.png" alt="Sarah L">
+  //             </div>
+  //             <div class="author-name">Sarah L</div>
+  //           </div>
+  //           <div class="story-card-btn">
+  //             <a href="#" class="d-flex align-center just-center">Read Full Story</a>
+  //           </div>
+  //         </div>
+  //       </div>
+  //       <div class="col col-2-1 col-2-2 story-card d-flex">
+  //         <div class="story-card-text">The UI/UX design course exceeded my expectations. The instructor's expertise
+  //           and practical assignments helped me improve my design skills. I feel more confident in my career now.
+  //           Thank you!</div>
+  //         <div class="story-card-info d-flex align-center">
+  //           <div class="story-card-author d-flex align-center">
+  //             <div class="author-photo">
+  //               <img src="assets/images/Jason_M.png" alt="Jason M">
+  //             </div>
+  //             <div class="author-name">Jason M</div>
+  //           </div>
+  //           <div class="story-card-btn">
+  //             <a href="#" class="d-flex align-center just-center">Read Full Story</a>
+  //           </div>
+  //         </div>
+  //       </div>
+  //       <div class="col col-2-1 col-2-2 story-card d-flex">
+  //         <div class="story-card-text">The mobile app development course was fantastic! The step-by-step tutorials and
+  //           hands-on projects helped me grasp the concepts easily. I'm now building my own app. Great course!</div>
+  //         <div class="story-card-info d-flex align-center">
+  //           <div class="story-card-author d-flex align-center">
+  //             <div class="author-photo">
+  //               <img src="assets/images/Emily_R.png" alt="Emily R">
+  //             </div>
+  //             <div class="author-name">Emily R</div>
+  //           </div>
+  //           <div class="story-card-btn">
+  //             <a href="#" class="d-flex align-center just-center">Read Full Story</a>
+  //           </div>
+  //         </div>
+  //       </div>
+  //       <div class="col col-2-1 col-2-2 story-card d-flex">
+  //         <div class="story-card-text">I enrolled in the graphic design course as a beginner, and it was the perfect
+  //           starting point. The instructor's guidance and feedback improved my design abilities significantly. I'm
+  //           grateful for this course!
+  //         </div>
+  //         <div class="story-card-info d-flex align-center">
+  //           <div class="story-card-author d-flex align-center">
+  //             <div class="author-photo">
+  //               <img src="assets/images/Michael_K.png" alt="Michael K">
+  //             </div>
+  //             <div class="author-name">Michael K</div>
+  //           </div>
+  //           <div class="story-card-btn">
+  //             <a href="#" class="d-flex align-center just-center">Read Full Story</a>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </div>
+
+  // </section>
+
+  container.append(row);
+  section.append(container);
+  elem2.append(section);
+
+}
 function fillMainSection(element) {
   let main = document.querySelector("main");
 
 
   createBenefitSubsection(element, main);
-  createCoursesSubsection(element, main)
-
+  createCoursesSubsection(element, main);
+  createTestimonialsSubsection(element, main)
 }
 
 async function buildMainPage() {
