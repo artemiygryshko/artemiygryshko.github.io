@@ -258,6 +258,34 @@
                                 "title": "Introduction to Bootstrap and React"
                             }
                         ]
+                    },
+                    {
+                        "title": "Advanced JavaScript",
+                        "shortDescription": "Take your JavaScript skills to the next level. Explore advanced concepts like closures, prototypes, asynchronous programming, and ES6 features. Build complex applications with confidence.",
+                        "images": [
+                            "assets/images/aj_1.png"
+                        ],
+                        "link": "#",
+                        "period": 6,
+                        "level": "Advance",
+                        "speaker": "Jennifer Wilson",
+                        "topics": [
+                            {
+                                "title": "HTML Fundamentals"
+                            },
+                            {
+                                "title": "CSS Styling and Layouts"
+                            },
+                            {
+                                "title": "JavaScript Basics"
+                            },
+                            {
+                                "title": "Building Responsive Websites"
+                            },
+                            {
+                                "title": "Introduction to Bootstrap and React"
+                            }
+                        ]
                     }
                 ]
             },

@@ -464,23 +464,22 @@ function createCoursesSubsection(elem1, elem2) {
   let container = createSectionHeader(obj);
 
   let row = document.createElement("div");
-  row.classList = "row row-2 d-flex fw-wr just-center "; 
+  row.classList = "row row-2 d-flex fw-wr just-center ";
   for (let i = 0; i < obj.courses.length; i++) {
     let col = document.createElement("div");
     col.classList = "col col-2-1 col-2-2 courses-card d-flex";
 
     col.innerHTML = `
-          <div class="courses-card-img courses-card-img-1">
+          <div class="courses-card-img" style = "background-image:url(${obj.courses[i].images[getRandomInt(obj.courses[i].images)]})">
              </div>
              <div class="courses-card-header d-flex fw-wr">
-               <div>4 weeks</div>
-               <div>Beginner</div>
-               <div>By John Smith </div>
+               <div>${obj.courses[i].period} weeks</div>
+               <div>${obj.courses[i].level}</div>
+               <div>By ${obj.courses[i].speaker} </div>
              </div>
              <div class="courses-card-info">
-               <h3>Web Design Fundamentals</h3>
-               <p>Learn the fundamentals of web design, including HTML, CSS, and responsive design principles. Develop
-                 the skills to create visually appealing and user-friendly websites.</p>
+               <h3>${obj.courses[i].title}</h3>
+               <p>${obj.courses[i].shortDescription}</p>
              </div>
              <div class="courses-card-btn">
                <a href="#" class="d-flex align-center just-center">Get it Now</a>
@@ -488,116 +487,6 @@ function createCoursesSubsection(elem1, elem2) {
 
     row.append(col);
   }
-
-
-  //       <div class="row row-2 d-flex fw-wr just-center ">
-  //         <div class="col col-2-1 col-2-2 courses-card d-flex">
-  //           <div class="courses-card-img courses-card-img-1">
-  //           </div>
-  //           <div class="courses-card-header d-flex fw-wr">
-  //             <div>4 weeks</div>
-  //             <div>Beginner</div>
-  //             <div>By John Smith </div>
-  //           </div>
-  //           <div class="courses-card-info">
-  //             <h3>Web Design Fundamentals</h3>
-  //             <p>Learn the fundamentals of web design, including HTML, CSS, and responsive design principles. Develop
-  //               the skills to create visually appealing and user-friendly websites.</p>
-  //           </div>
-  //           <div class="courses-card-btn">
-  //             <a href="#" class="d-flex align-center just-center">Get it Now</a>
-  //           </div>
-  //         </div>
-  //         <div class="col col-2-1 col-2-2 courses-card d-flex">
-  //           <div class="courses-card-img courses-card-img-2">
-  //           </div>
-  //           <div class="courses-card-header d-flex fw-wr">
-  //             <div>6 weeks</div>
-  //             <div>Intermediate</div>
-  //             <div>By Emily Johnson </div>
-  //           </div>
-  //           <div class="courses-card-info">
-  //             <h3>UI/UX Design</h3>
-  //             <p>Master the art of creating intuitive user interfaces (UI) and enhancing user experiences (UX). Learn
-  //               design principles, wireframing, prototyping, and usability testing techniques.</p>
-  //           </div>
-  //           <div class="courses-card-btn">
-  //             <a href="#" class="d-flex align-center just-center">Get it Now</a>
-  //           </div>
-  //         </div>
-  //         <div class="col col-2-1 col-2-2 courses-card d-flex">
-  //           <div class="courses-card-img courses-card-img-3">
-  //           </div>
-  //           <div class="courses-card-header d-flex fw-wr">
-  //             <div>8 weeks</div>
-  //             <div>Intermediate</div>
-  //             <div>By David Brown </div>
-  //           </div>
-  //           <div class="courses-card-info ">
-  //             <h3>Mobile App Development</h3>
-  //             <p>Dive into the world of mobile app development. Learn to build native iOS and Android applications using
-  //               industry-leading frameworks like Swift and Kotlin.</p>
-  //           </div>
-  //           <div class="courses-card-btn">
-  //             <a href="#" class="d-flex align-center just-center">Get it Now</a>
-  //           </div>
-  //         </div>
-  //         <div class="col col-2-1 col-2-2 courses-card d-flex">
-  //           <div class="courses-card-img courses-card-img-4">
-  //           </div>
-  //           <div class="courses-card-header d-flex fw-wr">
-  //             <div>10 weeks</div>
-  //             <div>Beginner</div>
-  //             <div>By Sarah Thompson </div>
-  //           </div>
-  //           <div class="courses-card-info">
-  //             <h3>Graphic Design for Beginners</h3>
-  //             <p>Discover the fundamentals of graphic design, including typography, color theory, layout design, and
-  //               image manipulation techniques. Create visually stunning designs for print and digital media.</p>
-  //           </div>
-  //           <div class="courses-card-btn">
-  //             <a href="#" class="d-flex align-center just-center">Get it Now</a>
-  //           </div>
-  //         </div>
-  //         <div class="col col-2-1 col-2-2 courses-card d-flex">
-  //           <div class="courses-card-img courses-card-img-5">
-  //           </div>
-  //           <div class="courses-card-header d-flex fw-wr">
-  //             <div>10 weeks</div>
-  //             <div>Intermediate</div>
-  //             <div>By Michael Adams </div>
-  //           </div>
-  //           <div class="courses-card-info">
-  //             <h3>Front-End Web Development</h3>
-  //             <p>Become proficient in front-end web development. Learn HTML, CSS, JavaScript, and popular frameworks
-  //               like Bootstrap and React. Build interactive and responsive websites.</p>
-  //           </div>
-  //           <div class="courses-card-btn">
-  //             <a href="#" class="d-flex align-center just-center">Get it Now</a>
-  //           </div>
-  //         </div>
-  //         <div class="col col-2-1 col-2-2 courses-card d-flex">
-  //           <div class="courses-card-img courses-card-img-6">
-  //           </div>
-  //           <div class="courses-card-header d-flex fw-wr">
-  //             <div>6 weeks</div>
-  //             <div>Advance</div>
-  //             <div>By Jennifer Wilson </div>
-  //           </div>
-  //           <div class="courses-card-info">
-  //             <h3>Advanced JavaScript</h3>
-  //             <p>Take your JavaScript skills to the next level. Explore advanced concepts like closures, prototypes,
-  //               asynchronous programming, and ES6 features. Build complex applications with confidence.</p>
-  //           </div>
-  //           <div class="courses-card-btn">
-  //             <a href="#" class="d-flex align-center just-center">Get it Now</a>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </div>
-
-  //   </section>
-
 
   container.append(row);
   section.append(container);
