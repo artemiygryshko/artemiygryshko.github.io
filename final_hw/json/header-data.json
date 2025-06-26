@@ -338,19 +338,22 @@
                 "address": "1 Poultry, London EC2R 8EJ, Велика Британія",
                 "link": "https://maps.app.goo.gl/AKgQprdXYUhSbUNR6"
             },
-            "socials": {
-                "facebook": {
+            "socials": [
+                {
+                    "name": "facebook",
                     "link": "https://facebook.com",
                     "logo": "assets/icons/linkedin-icon.svg"
                 },
-                "twitter": {
+                {
+                    "name": "twitter",
                     "link": "https://twitter.com",
                     "logo": "assets/icons/linkedin-icon.svg"
                 },
-                "linkedIn": {
+                {
+                    "name": "linkedIn",
                     "link": "https://linkedin.com",
                     "logo": "assets/icons/linkedin-icon.svg"
                 }
-            }
+            ]
         }
     }
