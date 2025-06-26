@@ -334,7 +334,36 @@
                 ]
             },
             {
-                "title": "Pricing"
+                "title": "Pricing",
+                "freePlan": {
+                    "perMonth": "0",
+                    "perYear": "0",
+                    "benefitsAvailable": [
+                        "Access to selected free courses.",
+                        "Limited course materials and resources.",
+                        "Basic community support.",
+                        "No certification upon completion.",
+                        "Ad-supported platform."
+                    ],
+                    "benefitsUnavailable": [
+                        "Access to exclusive Pro Plan community forums.",
+                        "Early access to new courses and updates."
+                    ]
+                },
+                "proPlan": {
+                    "perMonth": "79",
+                    "perYear": "790",
+                    "benefitsAvailable": [
+                        "Access to selected free courses.",
+                        "Limited course materials and resources.",
+                        "Basic community support.",
+                        "No certification upon completion.",
+                        "Ad-supported platform.",
+                        "Access to exclusive Pro Plan community forums.",
+                        "Early access to new courses and updates."
+                    ],
+                    "benefitsUnavailable": []
+                }
             },
             {
                 "title": "Contact"

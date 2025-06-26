@@ -497,27 +497,25 @@ function createTestimonialsSubsection(elem1, elem2) {
   let section = document.createElement("section");
   section.classList = "info-section testimonials-section";
   let obj = findTheSectionObject(elem1, "Our Testimonials");
+  console.log(obj)
   let container = createSectionHeader(obj);
 
   let row = document.createElement("div");
   row.classList = "row row-2 d-flex fw-wr just-center ";
 
-  for (let i = 0; i < obj.courses.length; i++) {
+  for (let i = 0; i < obj.testimonials.length; i++) {
     let col = document.createElement("div");
     col.classList = "col col-2-1 col-2-2 courses-card d-flex";
 
     col.innerHTML = `
         <div class="col col-2-1 col-2-2 story-card d-flex">
-          <div class="story-card-text">The web design course provided a solid foundation for me.
-            The instructors were
-            knowledgeable and supportive, and the interactive learning environment was engaging. I highly recommend
-            it!</div>
+          <div class="story-card-text">${obj.testimonials.testimonial}</div>
           <div class="story-card-info d-flex align-center">
             <div class="story-card-author d-flex align-center">
               <div class="author-photo">
-                <img src="assets/images/Sarah_L.png" alt="Sarah L">
+                <img src="${obj.testimonials.photo}" alt="Photo of ${obj.testimonials.author}">
               </div>
-              <div class="author-name">Sarah L</div>
+              <div class="author-name">${obj.testimonials.author}</div>
             </div>
             <div class="story-card-btn">
               <a href="#" class="d-flex align-center just-center">Read Full Story</a>
