@@ -342,12 +342,12 @@
                 {
                     "name": "facebook",
                     "link": "https://facebook.com",
-                    "logo": "assets/icons/linkedin-icon.svg"
+                    "logo": "assets/icons/facebook-icon.svg"
                 },
                 {
                     "name": "twitter",
                     "link": "https://twitter.com",
-                    "logo": "assets/icons/linkedin-icon.svg"
+                    "logo": "assets/icons/twitter-icon.svg"
                 },
                 {
                     "name": "linkedIn",

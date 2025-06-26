@@ -316,7 +316,7 @@ function createMainFooter(element) {
 
   wrapper.append(logoContacts);
 
-console.log(element.companyInfo.socials.length)
+  console.log(element.companyInfo.socials.length)
 
 
   let footerMenu = document.createElement("div");
@@ -366,76 +366,24 @@ console.log(element.companyInfo.socials.length)
              </div>`;
   let socialIcons = document.createElement("div");
   socialIcons.classList = "social-icons d-flex";
-  for (i=0; i<element.companyInfo.socials.length; i++) {
+  for (i = 0; i < element.companyInfo.socials.length; i++) {
     let socialWrapper = document.createElement("div");
     socialWrapper.classList = "social-logo";
     let socialLink = document.createElement("a");
     socialLink.classList = "d-flex align-center just-center";
-    socialLink.href = `https`
+    socialLink.href = `${element.companyInfo.socials[i].link}`;
     let img = document.createElement("img");
+    img.src = `${element.companyInfo.socials[i].logo}`;
+    img.alt = `${element.companyInfo.socials[i].name} icon`;
 
-
+    socialLink.append(img);
+    socialWrapper.append(socialLink);
+    socialIcons.append(socialWrapper);
   }
+  socialContainer.append(socialIcons);
+  footerMenu.append(socialContainer);
 
-  // <div class="d-flex fw-wr border-b space-bw ">
-  //       <div class="footer-logo-contacts">
-  //         <div class="footer-logo logo bg-filled-main">
-  //           <a href="/" title="Home" rel="home" class="d-flex align-center just-center">
-  //             <img src="assets/icons/shape-17.svg" alt="logo image">
-  //           </a>
-  //         </div>
-  //         <div class="contacts">
-  //           <ul class="contacts-list">
-  //             <li class="contacts-list-item list-item-mail d-flex align-center">
-  //               <a href="mailto:hello@skillbridge.com">hello@skillbridge.com</a>
-  //             </li>
-  //             <li class="contacts-list-item list-item-phone d-flex align-center">
-  //               <a href="tel:+9191813232309">+91 91813 23 2309</a>
-  //             </li>
-  //             <li class="contacts-list-item list-item-location d-flex align-center">
-  //               <address>
-  //                 <a href="https://maps.app.goo.gl/AKgQprdXYUhSbUNR6">1 Poultry, London EC2R 8EJ, Велика Британія</a>
-  //               </address>
-  //             </li>
-  //           </ul>
-  //         </div>
-  //       </div>
-  //       <div class="footer-menu d-flex fw-wr">
-  //         <div class="footer-list-container footer-col-3">
-  //           <ul class="footer-list d-flex fl-dir-col ">
-  //             <li>
-  //               <a href="#">Home</a>
-  //             </li>
-  //             <li>
-  //               <a href="#">Benefits</a>
-  //             </li>
-  //             <li>
-  //               <a href="#">Our Courses</a>
-  //             </li>
-  //             <li>
-  //               <a href="#">Our Testimonials</a>
-  //             </li>
-  //             <li>
-  //               <a href="#">Our FAQ</a>
-  //             </li>
-  //           </ul>
-  //         </div>
-  //         <div class="footer-list-container footer-col-3">
-  //           <ul class="footer-list  d-flex fl-dir-col">
-  //             <li>
-  //               <a href="#">About Us</a>
-  //             </li>
-  //             <li>
-  //               <a href="#">Company</a>
-  //             </li>
-  //             <li>
-  //               <a href="#">Achievements</a>
-  //             </li>
-  //             <li>
-  //               <a href="#">Our Goals</a>
-  //             </li>
-  //           </ul>
-  //         </div>
+  wrapper.append(footerMenu);
   //         <div class="socials-container d-flex fw-wr footer-list-container footer-col-3">
   //           <div class="socials-header">
   //             <a href="#">Social Profiles</a>
