@@ -280,6 +280,7 @@ function createMediaContainer(elem1, elem2) {
   mediaContainer.append(image, playBtn);
   elem2.append(mediaContainer);
 }
+
 function createMainFooter(element) {
   let footer = document.querySelector('.footer-section');
   let container = document.createElement("div");
@@ -311,13 +312,6 @@ function createMainFooter(element) {
                </li>
              </ul>
            </div>`;
-
-
-
-  wrapper.append(logoContacts);
-
-  console.log(element.companyInfo.socials.length)
-
 
   let footerMenu = document.createElement("div");
   footerMenu.classList = "footer-menu d-flex fw-wr";
@@ -382,43 +376,23 @@ function createMainFooter(element) {
   }
   socialContainer.append(socialIcons);
   footerMenu.append(socialContainer);
-
-  wrapper.append(footerMenu);
-  //         <div class="socials-container d-flex fw-wr footer-list-container footer-col-3">
-  //           <div class="socials-header">
-  //             <a href="#">Social Profiles</a>
-  //           </div>
-  //           <div class="social-icons d-flex">
-  //             <div class="social-logo">
-  //               <a href="#" class="d-flex align-center just-center">
-  //                 <img src="assets/icons/facebook-icon.svg" alt="Facebook icon">
-  //               </a>
-  //             </div>
-  //             <div class="social-logo">
-  //               <a href="#" class="d-flex align-center just-center">
-  //                 <img src="assets/icons/twitter-icon.svg" alt="Twitter icon">
-  //               </a>
-  //             </div>
-  //             <div class="social-logo">
-  //               <a href="#" class="d-flex align-center just-center">
-  //                 <img src="assets/icons/linkedin-icon.svg" alt="LinkedIn icon">
-  //               </a>
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </div>
-
-  //     <div class="footer-rights">
-  //       © 2023 Skillbridge. All rights reserved.
-  //     </div>
+  wrapper.append(logoContacts, footerMenu);
 
 
-  container.append(wrapper)
+  let footerRights = document.createElement("div");
+  footerRights.className = "footer-rights";
+  let now = new Date().getFullYear();
+  footerRights.textContent = `© ${now} Skillbridge. All rights reserved.`;
+
+
+  container.append(wrapper, footerRights);
   footer.append(container);
 
 }
 
+function fillMainSection(element) {
+  let main = document.querySelector("main");
+}
 
 async function buildMainPage() {
   const url = 'https://artemiygryshko.github.io/final_hw/json/header-data.json'
