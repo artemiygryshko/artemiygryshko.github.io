@@ -183,57 +183,9 @@ function fillMainHeroSection(element) {
   }
 
   createSponsorSlider(element, container);
+  createMediaContainer(element, container);
 
 
-
-  /* <div class="sponsors">
-       <div class="swiper">
-         <div class="swiper-wrapper">
-           <div class="swiper-slide">
-             <a href="" class="d-flex align-center just-center">
-               <img src="assets/icons/logo-zapier.svg" alt="zapier's logo">
-             </a>
-           </div>
-           <div class="swiper-slide">
-             <a href="" class="d-flex align-center just-center">
-               <img src="assets/icons/logo-spotify.svg" alt="spotify's logo">
-             </a>
-           </div>
-           <div class="swiper-slide">
-             <a href="" class="d-flex align-center just-center">
-               <img src="assets/icons/logo-zoom.svg" alt="zoom's logo">
-             </a>
-           </div>
-           <div class="swiper-slide">
-             <a href="" class="d-flex align-center just-center">
-               <img src="assets/icons/logo-amazon.svg" alt="amazon's logo">
-             </a>
-           </div>
-           <div class="swiper-slide">
-             <a href="" class="d-flex align-center just-center">
-               <img src="assets/icons/logo-adobe.svg" alt="adobe's logo">
-             </a>
-           </div>
-           <div class="swiper-slide">
-             <a href="" class="d-flex align-center just-center">
-               <img src="assets/icons/logo-notion.svg" alt="notion's logo">
-             </a>
-           </div>
-           <div class="swiper-slide">
-             <a href="" class="d-flex align-center just-center">
-               <img src="assets/icons/logo-netflix.svg" alt="netflix's logo">
-             </a>
-           </div>
-         </div>
-         <div class="swiper-pagination"></div>
-       </div>
-   </div>
-   <div class="video-container">
-       <img src="assets/images/image_1.png" alt="video image">
-       <div class="play-btn">
-       </div>
-     </div>
-   </div> */
 }
 
 function createSponsorSlider(elem1, elem2) {
@@ -301,7 +253,38 @@ function createSponsorSlider(elem1, elem2) {
   );
 }
 
-function createMainFooter() {
+function createMediaContainer(elem1, elem2) {
+  contentArr = [];
+  for (let el of elem1.sections) {
+    if (el.courses) {
+      let courses = el.courses;
+      for (i = 0; i < courses.length; i++) {
+        let images = courses[i].images;
+        for (j = 0; j < images.length; j++) {
+          contentArr.push(images[j])
+        }
+      }
+    }
+  }
+
+  let randomNumber = getRandomInt(contentArr);
+
+  let mediaContainer = document.createElement("div");
+  mediaContainer.classList = "video-container";
+  let image = document.createElement("img");
+  image.src = `${contentArr[randomNumber]}`;
+  image.alt = `video image`;
+  let playBtn = document.createElement("div");
+  playBtn.classList = "play-btn";
+
+  mediaContainer.append(image, playBtn);
+  elem2.append(mediaContainer);
+}
+function createMainFooter(element) {
+  let footer = document.querySelector('.footer-section');
+  let container = document.createElement("div");
+  container.classList = 'container';
+  footer.append(container);
 
 }
 
@@ -322,10 +305,24 @@ async function buildMainPage() {
   feelMainHeader(data);
   createSpecOffer(data);
   fillMainHeroSection(data);
+
+  
+createMainFooter(data)
 }
 
 
 buildMainPage();
+
+
+
+
+
+
+
+
+
+
+
 
 
 function isEven(n) {
@@ -333,6 +330,9 @@ function isEven(n) {
   return n === 0 || !!(n && !(n % 2));
 }
 
+function getRandomInt(arr) {
+  return Math.floor(Math.random() * (arr.length - 1));
+}
 
 
 

@@ -1,7 +1,25 @@
     {
         "sections": [
             {
-                "title": "Home"
+                "title": "Home",
+                "subsections": [
+                    {
+                        "title": "Benefits",
+                        "link": "#"
+                    },
+                    {
+                        "title": "Our Courses",
+                        "link": "#"
+                    },
+                    {
+                        "title": "Our Testimonials",
+                        "link": "#"
+                    },
+                    {
+                        "title": "Our FAQ",
+                        "link": "#"
+                    }
+                ]
             },
             {
                 "title": "Courses",
@@ -230,7 +248,21 @@
                 ]
             },
             {
-                "title": "About Us"
+                "title": "About Us",
+                "subtitles": [
+                    {
+                        "title": "Company",
+                        "link": "#"
+                    },
+                    {
+                        "title": "achievements",
+                        "link": "#"
+                    },
+                    {
+                        "title": "Our Goals",
+                        "link": "#"
+                    }
+                ]
             },
             {
                 "title": "Pricing"
@@ -298,5 +330,26 @@
                 "logo": "assets/icons/logo-netflix.svg",
                 "url": "https://netflix.com/"
             }
-        ]
-    }
+        ],
+        "companyInfo": {
+            "email": "hello@skillbridge.com",
+            "phone": "+9191813232309",
+            "location": {
+                "address": "1 Poultry, London EC2R 8EJ, Велика Британія",
+                "link": "https://maps.app.goo.gl/AKgQprdXYUhSbUNR6"
+            },
+            "socials": {
+                "facebook": {
+                    "link": "https://facebook.com",
+                    "logo": "assets/icons/linkedin-icon.svg"
+                },
+                "twitter": {
+                    "link": "https://twitter.com",
+                    "logo": "assets/icons/linkedin-icon.svg"
+                },
+                "linkedIn": {
+                    "link": "https://linkedin.com",
+                    "logo": "assets/icons/linkedin-icon.svg"
+                }
+            }
+        }
