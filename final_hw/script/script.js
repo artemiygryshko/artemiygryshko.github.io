@@ -542,8 +542,45 @@ function createPricingSubsection(elem1, elem2) {
   container.children[0].children[1].innerHTML = `<div id="month-price-btn" class="pricing-btn d-flex just-center align-center selected">Monthly</div>
             <div id="year-price-btn" class="pricing-btn d-flex just-center align-center">Yearly</div>`;
 
+  let row = document.createElement("div");
+  row.classList = "card-wrapper row row-2 d-flex fw-wr just-center";
 
+  for (let i = 0; i < obj.plans.length; i++) {
+    let col = document.createElement("div");
+    col.classList = "pricing-card col col-2-1 col-2-2";
 
+    let ul = document.createElement("ul");
+    for (j = 0; j < obj.plans[i].benefitsAvailable.length; j++) {
+      ul.innerHTML += `<li class="d-flex">
+               <div class="available-feature"></div><span>${obj.plans[i].benefitsAvailable[j]}</span>
+             </li>`
+    };
+    for (j = 0; j < obj.plans[i].benefitsUnavailable.length; j++) {
+      ul.innerHTML += `<li class="d-flex">
+               <div class="not-available-feature"></div><span>${obj.plans[i].benefitsUnavailable[j]}</span>
+             </li>`
+    };
+    col.innerHTML = `
+      <div class="card-plan-name d-flex align-center just-center">${obj.plans[i].name}</div>
+      <div class="card-price">
+          <span class="card-price-number">$${obj.plans[i].perMonth}</span>
+          <span class="card-price-number card-price-hide">$${obj.plans[i].perYear}</span>
+          /<span>month</span><span class="card-price-hide">yearly</span>
+      </div>
+      <div class="card-features">
+         <div class="features-list">
+           <div>Available Features</div>
+           ${ul.innerHTML}
+         </div>
+         <div class="card-btn">
+           <a href="#" class=" d-flex align-center just-center">Get Started</a>
+         </div>
+       </div>
+     </div>`;
+
+    row.append(col);
+  }
+  container.append(row);
   section.append(container);
   elem2.append(section);
 
@@ -578,6 +615,11 @@ async function buildMainPage() {
   fillMainHeroSection(data);
   createMainFooter(data);
   fillMainSection(data);
+
+
+
+  addListenersOnMainPage()
+
 }
 
 
@@ -606,29 +648,33 @@ function getRandomInt(arr) {
 
 
 
+function addListenersOnMainPage() {
+  addListenersOnPrices();
+}
+
+function addListenersOnPrices () {
+  const monthPriceBtn = document.getElementById("month-price-btn");
+  const yearPriceBtn = document.getElementById("year-price-btn");
+  let cardPrices = document.querySelectorAll(".card-price span");
 
 
 
-const monthPriceBtn = document.getElementById("month-price-btn");
-const yearPriceBtn = document.getElementById("year-price-btn");
-let cardPrices = document.querySelectorAll(".card-price span");
-
-
-
-monthPriceBtn.addEventListener("click", choosePrices);
-yearPriceBtn.addEventListener("click", choosePrices);
-function choosePrices(e) {
-  if (!e.target.classList.contains("selected")) {
-    e.target.classList.toggle("selected")
-    cardPrices.forEach(card => card.classList.toggle("card-price-hide"))
-    if (e.target == monthPriceBtn) {
-      yearPriceBtn.classList.toggle("selected");
-    }
-    else {
-      monthPriceBtn.classList.toggle("selected");
+  monthPriceBtn.addEventListener("click", choosePrices);
+  yearPriceBtn.addEventListener("click", choosePrices);
+  function choosePrices(e) {
+    if (!e.target.classList.contains("selected")) {
+      e.target.classList.toggle("selected")
+      cardPrices.forEach(card => card.classList.toggle("card-price-hide"))
+      if (e.target == monthPriceBtn) {
+        yearPriceBtn.classList.toggle("selected");
+      }
+      else {
+        monthPriceBtn.classList.toggle("selected");
+      }
     }
   }
 }
+
 
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("faq-question-icon")) {
