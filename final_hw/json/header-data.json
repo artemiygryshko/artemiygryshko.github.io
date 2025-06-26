@@ -36,14 +36,15 @@
             },
             {
                 "title": "Courses",
+                "description": "Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.",
                 "courses": [
                     {
                         "title": "Web Design Fundamentals",
                         "shortDescription": "Learn the fundamentals of web design, including HTML, CSS, and responsive design principles. Develop the skills to create visually appealing and user-friendly websites.",
                         "images": [
-                            "../assets/images/wdf_1.png",
-                            "../assets/images/wdf_2.png",
-                            "../assets/images/wdf_3.png"
+                            "assets/images/wdf_1.png",
+                            "assets/images/wdf_2.png",
+                            "assets/images/wdf_3.png"
                         ],
                         "link": "#",
                         "period": 4,
@@ -72,9 +73,9 @@
                         "shortDescription": "Master the art of creating intuitive user interfaces (UI) and enhancing user experiences (UX). Learn design principles, wireframing, prototyping, and usability testing techniques.",
                         "fullDescription": "Welcome to our UI/UX Design course! This comprehensive program will equip you with the knowledge and skills to create exceptional user interfaces (UI) and enhance user experiences (UX). Dive into the world of design thinking, wireframing, prototyping, and usability testing. Below is an overview of the curriculum",
                         "images": [
-                            "../assets/images/ui-design_1.png",
-                            "../assets/images/ui-design_2.png",
-                            "../assets/images/ui-design_3.png"
+                            "assets/images/ui-design_1.png",
+                            "assets/images/ui-design_2.png",
+                            "assets/images/ui-design_3.png"
                         ],
                         "link": "#",
                         "period": 6,
@@ -172,9 +173,9 @@
                         "title": "Mobile App Development",
                         "shortDescription": "Dive into the world of mobile app development. Learn to build native iOS and Android applications using industry-leading frameworks like Swift and Kotlin.",
                         "images": [
-                            "../assets/images/mad_1.png",
-                            "../assets/images/mad_2.png",
-                            "../assets/images/mad_3.png"
+                            "assets/images/mad_1.png",
+                            "assets/images/mad_2.png",
+                            "assets/images/mad_3.png"
                         ],
                         "link": "#",
                         "period": 8,
@@ -202,9 +203,9 @@
                         "title": "Graphic Design for Beginners",
                         "shortDescription": "Discover the fundamentals of graphic design, including typography, color theory, layout design, and image manipulation techniques. Create visually stunning designs for print and digital media.",
                         "images": [
-                            "../assets/images/gdb_1.png",
-                            "../assets/images/gdb_2.png",
-                            "../assets/images/gdb_3.png"
+                            "assets/images/gdb_1.png",
+                            "assets/images/gdb_2.png",
+                            "assets/images/gdb_3.png"
                         ],
                         "link": "#",
                         "period": 10,
@@ -232,9 +233,9 @@
                         "title": "Front-End Web Development",
                         "shortDescription": "Become proficient in front-end web development. Learn HTML, CSS, JavaScript, and popular frameworks like Bootstrap and React. Build interactive and responsive websites.",
                         "images": [
-                            "../assets/images/fewd_1.png",
-                            "../assets/images/fewd_2.png",
-                            "../assets/images/fewd_3.png"
+                            "assets/images/fewd_1.png",
+                            "assets/images/fewd_2.png",
+                            "assets/images/fewd_3.png"
                         ],
                         "link": "#",
                         "period": 10,

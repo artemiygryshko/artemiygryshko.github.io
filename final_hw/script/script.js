@@ -390,33 +390,43 @@ function createMainFooter(element) {
 
 }
 
-function createBenefitSubsection(elem1, elem2) {
-  let arr = [];
+function findTheSectionObject(elem1, elem2) {
+  let objSelected = {};
   elem1.sections.filter((el) => {
-    if (el.title === "Benefits") {
-      arr.push(el);
-      console.log(arr);
+    if (el.title === elem2) {
+      objSelected = el;
     }
   });
-  let section = document.createElement("section");
-  section.classList = "info-section benefits-section";
+  return objSelected;
+}
+
+function createSectionHeader(obj) {
 
   let container = document.createElement("div");
   container.classList = "container";
-
   let header = document.createElement("header");
   header.innerHTML = `<div class="header-descr">
-            <h2>${arr.title}</h2>
-            <p>${arr.description}</p>
+            <h2>${obj.title}</h2>
+            <p>${obj.description}</p>
           </div>
           <div class="header-view-btn">
             <a href="#" class="d-flex align-center just-center">View All</a>
           </div>`
+  container.append(header);
+  return container;
+}
+
+function createBenefitSubsection(elem1, elem2) {
+  let section = document.createElement("section");
+  section.classList = `info-section benefits-section`;
+
+  let obj = findTheSectionObject(elem1, "Benefits");
+  let container = createSectionHeader(obj);
 
   let row = document.createElement("div");
   row.classList = "row row-3 d-flex fw-wr just-center";
 
-  for (let i = 0; i < arr.benefits.length; i++) {
+  for (let i = 0; i < obj.benefits.length; i++) {
     let col = document.createElement("div");
     col.classList = "col col-3-1 col-3-2 col-3-3 benefits-card d-flex";
 
@@ -428,8 +438,8 @@ function createBenefitSubsection(elem1, elem2) {
           </div>
           <div class="line-wrapper">
             <div class="benefits-card-info">
-              <h3>${arr.benefits[i].benefit}</h3>
-              <p>${arr.benefits[i].description}</p>
+              <h3>${obj.benefits[i].benefit}</h3>
+              <p>${obj.benefits[i].description}</p>
             </div>
           </div>
           <div class="line-wrapper d-flex">
@@ -441,7 +451,7 @@ function createBenefitSubsection(elem1, elem2) {
     row.append(col);
   }
 
-  container.append(header, row);
+  container.append(row);
   section.append(container);
   elem2.append(section);
 }
@@ -450,24 +460,36 @@ function createBenefitSubsection(elem1, elem2) {
 function createCoursesSubsection(elem1, elem2) {
   let section = document.createElement("section");
   section.classList = "info-section courses-section";
+  let obj = findTheSectionObject(elem1, "Courses");
+  let container = createSectionHeader(obj);
 
-  let container = document.createElement("div");
-  container.classList = "container";
+  let row = document.createElement("div");
+  row.classList = "row row-2 d-flex fw-wr just-center "; 
+  for (let i = 0; i < obj.courses.length; i++) {
+    let col = document.createElement("div");
+    col.classList = "col col-2-1 col-2-2 courses-card d-flex";
+
+    col.innerHTML = `
+          <div class="courses-card-img courses-card-img-1">
+             </div>
+             <div class="courses-card-header d-flex fw-wr">
+               <div>4 weeks</div>
+               <div>Beginner</div>
+               <div>By John Smith </div>
+             </div>
+             <div class="courses-card-info">
+               <h3>Web Design Fundamentals</h3>
+               <p>Learn the fundamentals of web design, including HTML, CSS, and responsive design principles. Develop
+                 the skills to create visually appealing and user-friendly websites.</p>
+             </div>
+             <div class="courses-card-btn">
+               <a href="#" class="d-flex align-center just-center">Get it Now</a>
+             </div>`
+
+    row.append(col);
+  }
 
 
-
-  // <section class="info-section courses-section">
-  //     <div class="container">
-  //       <header>
-  //         <div class="header-descr">
-  //           <h2>Our Courses</h2>
-  //           <p>Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit
-  //             dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.</p>
-  //         </div>
-  //         <div class="header-view-btn">
-  //           <a href="#" class="d-flex align-center just-center">View All</a>
-  //         </div>
-  //       </header>
   //       <div class="row row-2 d-flex fw-wr just-center ">
   //         <div class="col col-2-1 col-2-2 courses-card d-flex">
   //           <div class="courses-card-img courses-card-img-1">
@@ -577,7 +599,7 @@ function createCoursesSubsection(elem1, elem2) {
   //   </section>
 
 
-  container.append();
+  container.append(row);
   section.append(container);
   elem2.append(section);
 }
