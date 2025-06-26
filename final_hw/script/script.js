@@ -392,6 +392,184 @@ function createMainFooter(element) {
 
 function fillMainSection(element) {
   let main = document.querySelector("main");
+console.log(element.sections[0].subsections[0])
+
+  createBenefitSection(element, main);
+
+  function createBenefitSection(elem1, elem2) {
+    let arr = elem1.sections[0].subsections[0];
+    let section = document.createElement("div");
+    section.classList = "info-section benefits-section";
+
+    let container = document.createElement("div");
+    container.classList = "container";
+
+    let header = document.createElement("header");
+    let headerDescription = document.createElement("div");
+    headerDescription.classList = "header-descr";
+    header.append(headerDescription);
+    header.innerHTML = `
+          <h2>${arr.title}</h2>
+          <p>${arr.description}</p>`;
+
+    let row = document.createElement("div");
+    row.classList = "row row-3 d-flex fw-wr just-center";
+
+    for (let i = 0; i < arr.benefits.length; i++) {
+      let col = document.createElement("div");
+      col.classList = "col col-3-1 col-3-2 col-3-3 benefits-card d-flex";
+
+      col.innerHTML = `
+          <div class="line-wrapper d-flex">
+            <div class="benefits-card-number">
+              0${i+1}
+            </div>
+          </div>
+          <div class="line-wrapper">
+            <div class="benefits-card-info">
+              <h3>${arr.benefits[i].benefit}</h3>
+              <p>${arr.benefits[i].description}</p>
+            </div>
+          </div>
+          <div class="line-wrapper d-flex">
+            <div class="benefits-card-btn">
+              <a href="#"></a>
+            </div>
+          </div>`;
+
+  row.append(col);
+    }
+
+    container.append(header, row);
+    section.append(container);
+    elem2.append(section);
+  }
+
+  // <section class="info-section benefits-section">
+  //   <div class="container">
+  //     
+  //     <div class="row row-3 d-flex fw-wr just-center">
+  //       <div class="col col-3-1 col-3-2 col-3-3 benefits-card d-flex">
+  //         <div class="line-wrapper d-flex">
+  //           <div class="benefits-card-number">
+  //             01
+  //           </div>
+  //         </div>
+  //         <div class="line-wrapper">
+  //           <div class="benefits-card-info">
+  //             <h3>Flexible Learning Schedule</h3>
+  //             <p>Fit your coursework around your existing commitments and obligations.</p>
+  //           </div>
+  //         </div>
+  //         <div class="line-wrapper d-flex">
+  //           <div class="benefits-card-btn">
+  //             <a href="#"></a>
+  //           </div>
+  //         </div>
+  //       </div>
+  //       <div class="col col-3-1 col-3-2 col-3-3 benefits-card d-flex">
+  //         <div class="line-wrapper d-flex">
+  //           <div class="benefits-card-number">
+  //             02
+  //           </div>
+  //         </div>
+  //         <div class="line-wrapper">
+  //           <div class="benefits-card-info">
+  //             <h3>Expert Instruction</h3>
+  //             <p>Learn from industry experts who have hands-on experience in design and development.</p>
+  //           </div>
+  //         </div>
+  //         <div class="line-wrapper d-flex">
+  //           <div class="benefits-card-btn">
+  //             <a href="#"></a>
+  //           </div>
+  //         </div>
+  //       </div>
+  //       <div class="col col-3-1 col-3-2 col-3-3 benefits-card d-flex">
+  //         <div class="line-wrapper d-flex">
+  //           <div class="benefits-card-number">
+  //             03
+  //           </div>
+  //         </div>
+  //         <div class="line-wrapper">
+  //           <div class="benefits-card-info">
+  //             <h3>Diverse Course Offerings</h3>
+  //             <p>Explore a wide range of design and development courses covering various topics.</p>
+  //           </div>
+  //         </div>
+  //         <div class="line-wrapper d-flex">
+  //           <div class="benefits-card-btn">
+  //             <a href="#"></a>
+  //           </div>
+  //         </div>
+  //       </div>
+  //       <div class="col col-3-1 col-3-2 col-3-3 benefits-card d-flex">
+  //         <div class="line-wrapper d-flex">
+  //           <div class="benefits-card-number">
+  //             04
+  //           </div>
+  //         </div>
+  //         <div class="line-wrapper">
+  //           <div class="benefits-card-info">
+  //             <h3>Updated Curriculum</h3>
+  //             <p>Access courses with up-to-date content reflecting the latest trends and industry practices.</p>
+  //           </div>
+  //         </div>
+  //         <div class="line-wrapper d-flex ">
+  //           <div class="benefits-card-btn">
+  //             <a href="#"></a>
+  //           </div>
+  //         </div>
+  //       </div>
+  //       <div class="col col-3-1 col-3-2 col-3-3 benefits-card benefits-card-hide d-flex">
+  //         <div class="line-wrapper d-flex">
+  //           <div class="benefits-card-number">
+  //             05
+  //           </div>
+  //         </div>
+  //         <div class="line-wrapper">
+  //           <div class="benefits-card-info">
+  //             <h3>Practical Projects and Assignments</h3>
+  //             <p>Develop a portfolio showcasing your skills and abilities to potential employers.</p>
+  //           </div>
+  //         </div>
+  //         <div class="line-wrapper d-flex">
+  //           <div class="benefits-card-btn">
+  //             <a href="#"></a>
+  //           </div>
+  //         </div>
+  //       </div>
+  //       <div class="col col-3-1 col-3-2 col-3-3 benefits-card benefits-card-hide d-flex">
+  //         <div class="line-wrapper d-flex">
+  //           <div class="benefits-card-number">
+  //             06
+  //           </div>
+  //         </div>
+  //         <div class="line-wrapper">
+  //           <div class="benefits-card-info">
+  //             <h3>Interactive Learning Environment</h3>
+  //             <p>Collaborate with fellow learners, exchanging ideas and feedback to enhance your understanding.</p>
+  //           </div>
+  //         </div>
+  //         <div class="line-wrapper d-flex">
+  //           <div class="benefits-card-btn">
+  //             <a href="#"></a>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </div>
+
+  // </section>
+
+
+
+
+
+
+
+
+
 }
 
 async function buildMainPage() {
@@ -411,6 +589,7 @@ async function buildMainPage() {
   createSpecOffer(data);
   fillMainHeroSection(data);
   createMainFooter(data);
+  fillMainSection(data);
 }
 
 
