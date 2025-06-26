@@ -1,52 +1,38 @@
     {
         "sections": [
             {
-                "title": "Home",
-                "subsections": [
+                "title": "Home"
+            },
+            {
+                "title": "Benefits",
+                "description": "Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.",
+                "benefits": [
                     {
-                        "title": "Benefits",
-                        "description": "Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.",
-                        "benefits": [
-                            {
-                                "benefit": "Flexible Learning Schedule",
-                                "description": "Fit your coursework around your existing commitments and obligations."
-                            },
-                            {
-                                "benefit": "Expert Instruction",
-                                "description": "Learn from industry experts who have hands-on experience in design and development."
-                            },
-                            {
-                                "benefit": "Diverse Course Offerings",
-                                "description": "Explore a wide range of design and development courses covering various topics."
-                            },
-                            {
-                                "benefit": "Updated Curriculum",
-                                "description": "Access courses with up-to-date content reflecting the latest trends and industry practices."
-                            },
-                            {
-                                "benefit": "Practical Projects and Assignments",
-                                "description": "Develop a portfolio showcasing your skills and abilities to potential employers."
-                            },
-                            {
-                                "benefit": "Interactive Learning Environment",
-                                "description": "Collaborate with fellow learners, exchanging ideas and feedback to enhance your understanding."
-                            }
-                        ],
-                        "link": "#"
+                        "benefit": "Flexible Learning Schedule",
+                        "description": "Fit your coursework around your existing commitments and obligations."
                     },
                     {
-                        "title": "Our Courses",
-                        "link": "#"
+                        "benefit": "Expert Instruction",
+                        "description": "Learn from industry experts who have hands-on experience in design and development."
                     },
                     {
-                        "title": "Our Testimonials",
-                        "link": "#"
+                        "benefit": "Diverse Course Offerings",
+                        "description": "Explore a wide range of design and development courses covering various topics."
                     },
                     {
-                        "title": "Our FAQ",
-                        "link": "#"
+                        "benefit": "Updated Curriculum",
+                        "description": "Access courses with up-to-date content reflecting the latest trends and industry practices."
+                    },
+                    {
+                        "benefit": "Practical Projects and Assignments",
+                        "description": "Develop a portfolio showcasing your skills and abilities to potential employers."
+                    },
+                    {
+                        "benefit": "Interactive Learning Environment",
+                        "description": "Collaborate with fellow learners, exchanging ideas and feedback to enhance your understanding."
                     }
-                ]
+                ],
+                "link": "#"
             },
             {
                 "title": "Courses",

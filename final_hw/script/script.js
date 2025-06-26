@@ -390,39 +390,40 @@ function createMainFooter(element) {
 
 }
 
-function fillMainSection(element) {
-  let main = document.querySelector("main");
-console.log(element.sections[0].subsections[0])
+function createBenefitSubsection(elem1, elem2) {
+  let arr = [];
+  elem1.sections.filter((el) => {
+    if (el.title === "Benefits") {
+      arr.push(el);
+      console.log(arr);
+    }
+  });
+  let section = document.createElement("section");
+  section.classList = "info-section benefits-section";
 
-  createBenefitSection(element, main);
+  let container = document.createElement("div");
+  container.classList = "container";
 
-  function createBenefitSection(elem1, elem2) {
-    let arr = elem1.sections[0].subsections[0];
-    let section = document.createElement("div");
-    section.classList = "info-section benefits-section";
+  let header = document.createElement("header");
+  header.innerHTML = `<div class="header-descr">
+            <h2>${arr.title}</h2>
+            <p>${arr.description}</p>
+          </div>
+          <div class="header-view-btn">
+            <a href="#" class="d-flex align-center just-center">View All</a>
+          </div>`
 
-    let container = document.createElement("div");
-    container.classList = "container";
+  let row = document.createElement("div");
+  row.classList = "row row-3 d-flex fw-wr just-center";
 
-    let header = document.createElement("header");
-    let headerDescription = document.createElement("div");
-    headerDescription.classList = "header-descr";
-    header.append(headerDescription);
-    header.innerHTML = `
-          <h2>${arr.title}</h2>
-          <p>${arr.description}</p>`;
+  for (let i = 0; i < arr.benefits.length; i++) {
+    let col = document.createElement("div");
+    col.classList = "col col-3-1 col-3-2 col-3-3 benefits-card d-flex";
 
-    let row = document.createElement("div");
-    row.classList = "row row-3 d-flex fw-wr just-center";
-
-    for (let i = 0; i < arr.benefits.length; i++) {
-      let col = document.createElement("div");
-      col.classList = "col col-3-1 col-3-2 col-3-3 benefits-card d-flex";
-
-      col.innerHTML = `
+    col.innerHTML = `
           <div class="line-wrapper d-flex">
             <div class="benefits-card-number">
-              0${i+1}
+              0${i + 1}
             </div>
           </div>
           <div class="line-wrapper">
@@ -437,138 +438,155 @@ console.log(element.sections[0].subsections[0])
             </div>
           </div>`;
 
-  row.append(col);
-    }
-
-    container.append(header, row);
-    section.append(container);
-    elem2.append(section);
+    row.append(col);
   }
 
-  // <section class="info-section benefits-section">
-  //   <div class="container">
-  //     
-  //     <div class="row row-3 d-flex fw-wr just-center">
-  //       <div class="col col-3-1 col-3-2 col-3-3 benefits-card d-flex">
-  //         <div class="line-wrapper d-flex">
-  //           <div class="benefits-card-number">
-  //             01
+  container.append(header, row);
+  section.append(container);
+  elem2.append(section);
+}
+
+
+function createCoursesSubsection(elem1, elem2) {
+  let section = document.createElement("section");
+  section.classList = "info-section courses-section";
+
+  let container = document.createElement("div");
+  container.classList = "container";
+
+
+
+  // <section class="info-section courses-section">
+  //     <div class="container">
+  //       <header>
+  //         <div class="header-descr">
+  //           <h2>Our Courses</h2>
+  //           <p>Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit
+  //             dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.</p>
+  //         </div>
+  //         <div class="header-view-btn">
+  //           <a href="#" class="d-flex align-center just-center">View All</a>
+  //         </div>
+  //       </header>
+  //       <div class="row row-2 d-flex fw-wr just-center ">
+  //         <div class="col col-2-1 col-2-2 courses-card d-flex">
+  //           <div class="courses-card-img courses-card-img-1">
+  //           </div>
+  //           <div class="courses-card-header d-flex fw-wr">
+  //             <div>4 weeks</div>
+  //             <div>Beginner</div>
+  //             <div>By John Smith </div>
+  //           </div>
+  //           <div class="courses-card-info">
+  //             <h3>Web Design Fundamentals</h3>
+  //             <p>Learn the fundamentals of web design, including HTML, CSS, and responsive design principles. Develop
+  //               the skills to create visually appealing and user-friendly websites.</p>
+  //           </div>
+  //           <div class="courses-card-btn">
+  //             <a href="#" class="d-flex align-center just-center">Get it Now</a>
   //           </div>
   //         </div>
-  //         <div class="line-wrapper">
-  //           <div class="benefits-card-info">
-  //             <h3>Flexible Learning Schedule</h3>
-  //             <p>Fit your coursework around your existing commitments and obligations.</p>
+  //         <div class="col col-2-1 col-2-2 courses-card d-flex">
+  //           <div class="courses-card-img courses-card-img-2">
+  //           </div>
+  //           <div class="courses-card-header d-flex fw-wr">
+  //             <div>6 weeks</div>
+  //             <div>Intermediate</div>
+  //             <div>By Emily Johnson </div>
+  //           </div>
+  //           <div class="courses-card-info">
+  //             <h3>UI/UX Design</h3>
+  //             <p>Master the art of creating intuitive user interfaces (UI) and enhancing user experiences (UX). Learn
+  //               design principles, wireframing, prototyping, and usability testing techniques.</p>
+  //           </div>
+  //           <div class="courses-card-btn">
+  //             <a href="#" class="d-flex align-center just-center">Get it Now</a>
   //           </div>
   //         </div>
-  //         <div class="line-wrapper d-flex">
-  //           <div class="benefits-card-btn">
-  //             <a href="#"></a>
+  //         <div class="col col-2-1 col-2-2 courses-card d-flex">
+  //           <div class="courses-card-img courses-card-img-3">
+  //           </div>
+  //           <div class="courses-card-header d-flex fw-wr">
+  //             <div>8 weeks</div>
+  //             <div>Intermediate</div>
+  //             <div>By David Brown </div>
+  //           </div>
+  //           <div class="courses-card-info ">
+  //             <h3>Mobile App Development</h3>
+  //             <p>Dive into the world of mobile app development. Learn to build native iOS and Android applications using
+  //               industry-leading frameworks like Swift and Kotlin.</p>
+  //           </div>
+  //           <div class="courses-card-btn">
+  //             <a href="#" class="d-flex align-center just-center">Get it Now</a>
   //           </div>
   //         </div>
-  //       </div>
-  //       <div class="col col-3-1 col-3-2 col-3-3 benefits-card d-flex">
-  //         <div class="line-wrapper d-flex">
-  //           <div class="benefits-card-number">
-  //             02
+  //         <div class="col col-2-1 col-2-2 courses-card d-flex">
+  //           <div class="courses-card-img courses-card-img-4">
+  //           </div>
+  //           <div class="courses-card-header d-flex fw-wr">
+  //             <div>10 weeks</div>
+  //             <div>Beginner</div>
+  //             <div>By Sarah Thompson </div>
+  //           </div>
+  //           <div class="courses-card-info">
+  //             <h3>Graphic Design for Beginners</h3>
+  //             <p>Discover the fundamentals of graphic design, including typography, color theory, layout design, and
+  //               image manipulation techniques. Create visually stunning designs for print and digital media.</p>
+  //           </div>
+  //           <div class="courses-card-btn">
+  //             <a href="#" class="d-flex align-center just-center">Get it Now</a>
   //           </div>
   //         </div>
-  //         <div class="line-wrapper">
-  //           <div class="benefits-card-info">
-  //             <h3>Expert Instruction</h3>
-  //             <p>Learn from industry experts who have hands-on experience in design and development.</p>
+  //         <div class="col col-2-1 col-2-2 courses-card d-flex">
+  //           <div class="courses-card-img courses-card-img-5">
+  //           </div>
+  //           <div class="courses-card-header d-flex fw-wr">
+  //             <div>10 weeks</div>
+  //             <div>Intermediate</div>
+  //             <div>By Michael Adams </div>
+  //           </div>
+  //           <div class="courses-card-info">
+  //             <h3>Front-End Web Development</h3>
+  //             <p>Become proficient in front-end web development. Learn HTML, CSS, JavaScript, and popular frameworks
+  //               like Bootstrap and React. Build interactive and responsive websites.</p>
+  //           </div>
+  //           <div class="courses-card-btn">
+  //             <a href="#" class="d-flex align-center just-center">Get it Now</a>
   //           </div>
   //         </div>
-  //         <div class="line-wrapper d-flex">
-  //           <div class="benefits-card-btn">
-  //             <a href="#"></a>
+  //         <div class="col col-2-1 col-2-2 courses-card d-flex">
+  //           <div class="courses-card-img courses-card-img-6">
   //           </div>
-  //         </div>
-  //       </div>
-  //       <div class="col col-3-1 col-3-2 col-3-3 benefits-card d-flex">
-  //         <div class="line-wrapper d-flex">
-  //           <div class="benefits-card-number">
-  //             03
+  //           <div class="courses-card-header d-flex fw-wr">
+  //             <div>6 weeks</div>
+  //             <div>Advance</div>
+  //             <div>By Jennifer Wilson </div>
   //           </div>
-  //         </div>
-  //         <div class="line-wrapper">
-  //           <div class="benefits-card-info">
-  //             <h3>Diverse Course Offerings</h3>
-  //             <p>Explore a wide range of design and development courses covering various topics.</p>
+  //           <div class="courses-card-info">
+  //             <h3>Advanced JavaScript</h3>
+  //             <p>Take your JavaScript skills to the next level. Explore advanced concepts like closures, prototypes,
+  //               asynchronous programming, and ES6 features. Build complex applications with confidence.</p>
   //           </div>
-  //         </div>
-  //         <div class="line-wrapper d-flex">
-  //           <div class="benefits-card-btn">
-  //             <a href="#"></a>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div class="col col-3-1 col-3-2 col-3-3 benefits-card d-flex">
-  //         <div class="line-wrapper d-flex">
-  //           <div class="benefits-card-number">
-  //             04
-  //           </div>
-  //         </div>
-  //         <div class="line-wrapper">
-  //           <div class="benefits-card-info">
-  //             <h3>Updated Curriculum</h3>
-  //             <p>Access courses with up-to-date content reflecting the latest trends and industry practices.</p>
-  //           </div>
-  //         </div>
-  //         <div class="line-wrapper d-flex ">
-  //           <div class="benefits-card-btn">
-  //             <a href="#"></a>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div class="col col-3-1 col-3-2 col-3-3 benefits-card benefits-card-hide d-flex">
-  //         <div class="line-wrapper d-flex">
-  //           <div class="benefits-card-number">
-  //             05
-  //           </div>
-  //         </div>
-  //         <div class="line-wrapper">
-  //           <div class="benefits-card-info">
-  //             <h3>Practical Projects and Assignments</h3>
-  //             <p>Develop a portfolio showcasing your skills and abilities to potential employers.</p>
-  //           </div>
-  //         </div>
-  //         <div class="line-wrapper d-flex">
-  //           <div class="benefits-card-btn">
-  //             <a href="#"></a>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div class="col col-3-1 col-3-2 col-3-3 benefits-card benefits-card-hide d-flex">
-  //         <div class="line-wrapper d-flex">
-  //           <div class="benefits-card-number">
-  //             06
-  //           </div>
-  //         </div>
-  //         <div class="line-wrapper">
-  //           <div class="benefits-card-info">
-  //             <h3>Interactive Learning Environment</h3>
-  //             <p>Collaborate with fellow learners, exchanging ideas and feedback to enhance your understanding.</p>
-  //           </div>
-  //         </div>
-  //         <div class="line-wrapper d-flex">
-  //           <div class="benefits-card-btn">
-  //             <a href="#"></a>
+  //           <div class="courses-card-btn">
+  //             <a href="#" class="d-flex align-center just-center">Get it Now</a>
   //           </div>
   //         </div>
   //       </div>
   //     </div>
-  //   </div>
 
-  // </section>
-
+  //   </section>
 
 
+  container.append();
+  section.append(container);
+  elem2.append(section);
+}
+function fillMainSection(element) {
+  let main = document.querySelector("main");
 
 
-
-
-
+  createBenefitSubsection(element, main);
+  createCoursesSubsection(element, main)
 
 }
 
