@@ -1,185 +1,27 @@
-let courses = [
-  {
-    title: "Web Design Fundamentals",
-    shortDescription: "Learn the fundamentals of web design, including HTML, CSS, and responsive design principles. Develop the skills to create visually appealing and user-friendly websites.",
-    images: [
-      "../assets/images/wdf_1.png",
-      "../assets/images/wdf_2.png",
-      "../assets/images/wdf_3.png",
-    ],
-    link: "#",
-    period: 4,
-    level: 'beginner',
-    speaker: "John Smith",
-    topics: [
-      { title: 'Introduction to HTML', },
-      { title: 'Stylish with CSS', },
-      { title: 'Introduction to Responsive Design', },
-      { title: 'Design Principles for Web', },
-      { title: "Buiding a Basic Website", },
-    ]
-  },
-  {
-    title: "UI/UX Design",
-    shortDescription: "Master the art of creating intuitive user interfaces (UI) and enhancing user experiences (UX). Learn design principles, wireframing, prototyping, and usability testing techniques.",
-    fullDescription: 'Welcome to our UI/UX Design course! This comprehensive program will equip you with the knowledge and skills to create exceptional user interfaces (UI) and enhance user experiences (UX). Dive into the world of design thinking, wireframing, prototyping, and usability testing. Below is an overview of the curriculum',
-    images: [
-      "../assets/images/ui-design_1.png",
-      "../assets/images/ui-design_2.png",
-      "../assets/images/ui-design_3.png",
-    ],
-    link: "#",
-    period: 6,
-    level: 'Intermediate',
-    speaker: "Emily Johnson",
-    topics: [
-      {
-        title: 'Introduction to UI/UX Design',
-        lessons: [{
-          name: 'Understanding UI/UX Design Principles',
-          duration: `45 minutes`,
-        },
-        {
-          name: 'Importance of User-Centered Design',
-          duration: `1 hour`,
-        },
-        {
-          name: 'The Role of UI/UX Design in Product Development',
-          duration: `45 minutes`,
-        },
-        ],
-      },
-      {
-        title: 'User Research and Personas',
-        lessons: [
-          {
-            name: 'Conducting User Research and Interviews',
-            duration: `1 hour`,
-          },
-          {
-            name: 'Analyzing User Needs and Behavior',
-            duration: `1 hour`,
-          },
-          {
-            name: 'Creating User Personas and Scenarios',
-            duration: `45 minutes`,
-          },
-        ],
-      },
-      {
-        title: 'Wirefarming and Prototyping',
-        lessons: [
-          {
-            name: 'Introduction to Wireframing Tools and Techniques',
-            duration: `1 hour`,
-          },
-          {
-            name: 'Creating Low-Fidelity Wireframes',
-            duration: `1 hour`,
-          },
-          {
-            name: 'Prototyping and Interactive Mockups',
-            duration: `1 hour`,
-          },
-        ]
-      },
-      {
-        title: 'Visual Design and Branding',
-        lessons: [
-          {
-            name: 'Color Theory and Typography in UI Design',
-            duration: `1 hour`,
-          },
-          {
-            name: 'Visual Hierarchy and Layout Design',
-            duration: `1 hour`,
-          },
-          {
-            name: 'Creating a Strong Brand Identity',
-            duration: `45 minutes`,
-          },
-        ]
-      },
-      {
-        title: "Usability Testing and Iteration",
-        lessons: [
-          {
-            name: 'Usability Testing Methods and Techniques',
-            duration: `1 hour`,
-          },
-          {
-            name: 'Analyzing Usability Test Results',
-            duration: `45 minutes`,
-          },
-          {
-            name: 'Iterating and Improving UX Designs',
-            duration: `45 minutes`,
-          },
-        ]
-      }
-    ]
-  },
-  {
-    title: "Mobile App Development",
-    shortDescription: "Dive into the world of mobile app development. Learn to build native iOS and Android applications using industry-leading frameworks like Swift and Kotlin.",
-    images: [
-      "../assets/images/mad_1.png",
-      "../assets/images/mad_2.png",
-      "../assets/images/mad_3.png",
-    ],
-    link: "#",
-    period: 8,
-    level: 'Intermediate',
-    speaker: "David Brown",
-    topics: [
-      { title: 'Introduction to Mobile App Development', },
-      { title: 'Fundamentals of Swift Programming (iOS)', },
-      { title: 'Fundamentals of Kotlin Programming (Android)', },
-      { title: 'Building User Interfaces', },
-      { title: 'App Deployment and Testing', },
-    ]
-  },
-  {
-    title: "Graphic Design for Beginners",
-    shortDescription: "Discover the fundamentals of graphic design, including typography, color theory, layout design, and image manipulation techniques. Create visually stunning designs for print and digital media.",
-    images: [
-      "../assets/images/gdb_1.png",
-      "../assets/images/gdb_2.png",
-      "../assets/images/gdb_3.png",
-    ],
-    link: "#",
-    period: 10,
-    level: 'Beginner',
-    speaker: "Sarah Thompson",
-    topics: [
-      { title: 'Introduction to Graphic Design', },
-      { title: 'Typography and Color Theory', },
-      { title: 'Layout Design and Composition', },
-      { title: 'Image Editing and Manipulation', },
-      { title: 'Designing for Print and Digital Medi', },
-    ]
-  },
-  {
-    title: "Front-End Web Development",
-    shortDescription: "Become proficient in front-end web development. Learn HTML, CSS, JavaScript, and popular frameworks like Bootstrap and React. Build interactive and responsive websites.",
-    images: [
-      "../assets/images/fewd_1.png",
-      "../assets/images/fewd_2.png",
-      "../assets/images/fewd_3.png",
-    ],
-    link: "#",
-    period: 10,
-    level: 'Intermediate',
-    speaker: "Michael Adams",
-    topics: [
-      { title: 'HTML Fundamentals', },
-      { title: 'CSS Styling and Layouts', },
-      { title: 'JavaScript Basics', },
-      { title: 'Building Responsive Websites', },
-      { title: "Introduction to Bootstrap and React", },
-    ]
-  }
-]
+
+
+
+
+async function buildMainPage() {
+  const url = 'https://artemiygryshko.github.io/final_hw/json/header-data.json'
+  let data = {};
+  await axios.get(url)
+    .then((response) => {
+      data = response.data
+      console.log(data)
+    })
+
+    .catch((error) => console.log(error))
+
+
+  createMainHeaderOnSeconadryPages();
+  feelMainHeader(data);
+  createSpecOffer(data);
+  createMainFooterOnSecondaryPages(data);
+}
+buildMainPage();
+
+
 
 
 
@@ -525,3 +367,8 @@ function showCourseHeroSectionInfo(e) {
 //   <div class="play-btn">
 //   </div>
 // </div>
+
+
+
+
+
