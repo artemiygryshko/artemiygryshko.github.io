@@ -586,6 +586,114 @@ function createPricingSubsection(elem1, elem2) {
 
 }
 
+function createFaqSubsection(elem1, elem2) {
+  let section = document.createElement("section");
+  section.classList = "info-section";
+  let obj = findTheSectionObject(elem1, "Frequently Asked Questions");
+  console.log(obj);
+  let container = createSectionHeader(obj);
+
+  // <section class="info-section">
+  //     <div class="container faq-wrapper d-flex fw-wr">
+  //       <header>
+  //         <div class="header-descr">
+  //           <h2>Frequently Asked <br> Questions</h2>
+  //           <p>Still you have any quastions? Contact our Team via <a
+  //               href="mailto:support@skillbridge.com">support@skillbridge.com</a></p>
+  //         </div>
+  //         <div class="header-view-btn">
+  //           <a href="#" class="d-flex align-center just-center">See All FAQ's</a>
+  //         </div>
+  //       </header>
+  //       <div class="faq-list-wrapper">
+  //         <ul class="faq-list">
+  //           <li class="faq-list-item list-item-closed">
+  //             <div class="faq-question d-flex align-center">
+  //               <div class="faq-question-text">Can I enroll in multiple courses at once?</div>
+  //               <div class="faq-question-icon"></div>
+  //             </div>
+  //             <div class="faq-answer">
+  //               <div class="faq-answer-text">Absolutely! You can enroll in multiple courses simultaneously and access
+  //                 them at your convenience.</div>
+  //               <div class="faq-answer-link">
+  //                 <a href="#" class="d-flex align-center">
+  //                   <div class="answer-link-text">Enrollment Process for Different Courses</div>
+  //                   <div class="answer-link-icon"></div>
+  //                 </a>
+  //               </div>
+  //             </div>
+  //           </li>
+  //           <li class="faq-list-item list-item-closed">
+  //             <div class="faq-question d-flex align-center">
+  //               <div class="faq-question-text">What kind of support can I expect from instructors?</div>
+  //               <div class="faq-question-icon"></div>
+  //             </div>
+  //             <div class="faq-answer">
+  //               <div class="faq-answer-text">Absolutely! You can enroll in multiple courses simultaneously and access
+  //                 them at your convenience.</div>
+  //               <div class="faq-answer-link">
+  //                 <a href="#" class="d-flex align-center">
+  //                   <div class="answer-link-text">Enrollment Process for Different Courses</div>
+  //                   <div class="answer-link-icon"></div>
+  //                 </a>
+  //               </div>
+  //             </div>
+  //           </li>
+  //           <li class="faq-list-item list-item-closed">
+  //             <div class="faq-question d-flex align-center">
+  //               <div class="faq-question-text">Are the courses self-paced or do they have specific start and end dates?
+  //               </div>
+  //               <div class="faq-question-icon"></div>
+  //             </div>
+  //             <div class="faq-answer">
+  //               <div class="faq-answer-text">Absolutely! You can enroll in multiple courses simultaneously and access
+  //                 them at your convenience.</div>
+  //               <div class="faq-answer-link">
+  //                 <a href="#" class="d-flex align-center">
+  //                   <div class="answer-link-text">Enrollment Process for Different Courses</div>
+  //                   <div class="answer-link-icon"></div>
+  //                 </a>
+  //               </div>
+  //             </div>
+  //           </li>
+  //           <li class="faq-list-item list-item-closed">
+  //             <div class="faq-question d-flex align-center">
+  //               <div class="faq-question-text">Are there any prerequisites for the courses?</div>
+  //               <div class="faq-question-icon"></div>
+  //             </div>
+  //             <div class="faq-answer">
+  //               <div class="faq-answer-text">Absolutely! You can enroll in multiple courses simultaneously and access
+  //                 them at your convenience.</div>
+  //               <div class="faq-answer-link">
+  //                 <a href="#" class="d-flex align-center">
+  //                   <div class="answer-link-text">Enrollment Process for Different Courses</div>
+  //                   <div class="answer-link-icon"></div>
+  //                 </a>
+  //               </div>
+  //             </div>
+  //           </li>
+  //           <li class="faq-list-item list-item-closed">
+  //             <div class="faq-question d-flex align-center">
+  //               <div class="faq-question-text">Can I download the course materials for offline access?</div>
+  //               <div class="faq-question-icon"></div>
+  //             </div>
+  //             <div class="faq-answer">
+  //               <div class="faq-answer-text">Absolutely! You can enroll in multiple courses simultaneously and access
+  //                 them at your convenience.</div>
+  //               <div class="faq-answer-link">
+  //                 <a href="#" class="d-flex align-center">
+  //                   <div class="answer-link-text">Enrollment Process for Different Courses</div>
+  //                   <div class="answer-link-icon"></div>
+  //                 </a>
+  //               </div>
+  //             </div>
+  //           </li>
+
+  //         </ul>
+  //       </div>
+  //     </div>
+  //   </section>
+}
 
 function fillMainSection(element) {
   let main = document.querySelector("main");
@@ -652,7 +760,7 @@ function addListenersOnMainPage() {
   addListenersOnPrices();
 }
 
-function addListenersOnPrices () {
+function addListenersOnPrices() {
   const monthPriceBtn = document.getElementById("month-price-btn");
   const yearPriceBtn = document.getElementById("year-price-btn");
   let cardPrices = document.querySelectorAll(".card-price span");

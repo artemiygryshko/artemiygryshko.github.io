@@ -595,30 +595,6 @@ body {
     background-size: cover;
 }
 
-.courses-card-img-1 {
-    background-image: url("../assets/images/courses-image-1.png");
-}
-
-.courses-card-img-2 {
-    background-image: url("../assets/images/courses-image-2.png");
-}
-
-.courses-card-img-3 {
-    background-image: url("../assets/images/courses-image-3.png");
-}
-
-.courses-card-img-4 {
-    background-image: url("../assets/images/courses-image-4.png");
-}
-
-.courses-card-img-5 {
-    background-image: url("../assets/images/courses-image-5.png");
-}
-
-.courses-card-img-6 {
-    background-image: url("../assets/images/courses-image-6.png");
-}
-
 .courses-card-header {
     justify-content: start;
     gap: 10px;

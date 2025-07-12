@@ -371,7 +371,67 @@
                 ]
             },
             {
-                "title": "Contact"
+                "title": "Frequently Asked Questions",
+                "description": "Still you have any questions? Contact our Team via",
+                "questions": [
+                    {
+                        "question": "Can I enroll in multiple courses at once?",
+                        "answer": "Absolutely! You can enroll in multiple courses simultaneously and access them at your convenience.",
+                        "suggestion": "Enrollment Process for Different Courses"
+                    },
+                    {
+                        "question": "What kind of support can I expect from instructors?",
+                        "answer": "Our instructors are dedicated to your success! You can expect prompt and detailed answers to your questions through our messaging system, as well as feedback on assignments and guidance during live Q&A sessions.",
+                        "suggestion": "Instructor Support & Communication"
+                    },
+                    {
+                        "question": "Are the courses self-paced or do they have specific start and end dates?",
+                        "answer": "Our courses are primarily self-paced, allowing you the flexibility to learn at your own speed. However, some specialized programs or bootcamps may have recommended schedules or live components with set dates to foster a collaborative learning environment.",
+                        "suggestion": "Course Structure and Pacing Options"
+                    },
+                    {
+                        "question": "Are there any prerequisites for the courses?",
+                        "answer": "Most of our introductory courses have no prerequisites, making them accessible to beginners. More advanced courses may require foundational knowledge or completion of prior courses, which will be clearly outlined in the course description.",
+                        "suggestion": "Prerequisite Information for Courses"
+                    },
+                    {
+                        "question": "Can I download the course materials for offline access?",
+                        "answer": "Yes, many of our course materials, such as lectures, readings, and supplementary resources, are available for download, allowing you to study offline at your convenience. Please note that interactive elements or quizzes may require an internet connection.",
+                        "suggestion": "Offline Access to Course Content"
+                    },
+                    {
+                        "question": "How long do I have access to a course after enrolling?",
+                        "answer": "Once you enroll in a course, you typically have lifetime access to the materials, including any future updates. This allows you to revisit the content whenever you need a refresher.",
+                        "suggestion": "Course Access Duration"
+                    },
+                    {
+                        "question": "Do I receive a certificate upon completion of a course?",
+                        "answer": "Yes, upon successful completion of each course, you'll receive a verifiable certificate of completion. This certificate can be a great addition to your professional portfolio or LinkedIn profile.",
+                        "suggestion": "Course Certificates and Recognition"
+                    },
+                    {
+                        "question": "What are the technical requirements to access the courses?",
+                        "answer": "You'll need a stable internet connection and a modern web browser (like Chrome, Firefox, Safari, or Edge) to access our courses. Some courses may recommend specific software, which will be noted in their descriptions.",
+                        "suggestion": "Technical Requirements for Online Learning"
+                    },
+                    {
+                        "question": "Is there a community forum or group for students?",
+                        "answer": "Absolutely! We encourage peer-to-peer learning. Many courses feature dedicated discussion forums or private community groups where you can interact with fellow students, share insights, and get support.",
+                        "suggestion": "Student Community and Discussion Forums"
+                    },
+                    {
+                        "question": "What is your refund policy?",
+                        "answer": "We offer a 30-day money-back guarantee if you're not satisfied with your purchase. Please review our full refund policy for specific terms and conditions.",
+                        "suggestion": "Refund Policy Details"
+                    }
+                ]
+            },
+            {
+                "title": "Contact",
+                "supportInfo": {
+                    "email": "support@skillbridge.com",
+                    "phone": "+91 00000 00000"
+                }
             },
             {
                 "title": "Sign Up"
