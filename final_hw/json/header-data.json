@@ -324,7 +324,7 @@
                         ]
                     }
                 ],
-                "link": "pages/courses-page.html"
+                "link": "courses-page.html"
             },
             {
                 "title": "About Us",
@@ -347,7 +347,7 @@
                         "link": "#"
                     }
                 ],
-                "link": "pages/about-page.html"
+                "link": "about-page.html"
             },
             {
                 "title": "Pricing",
@@ -390,7 +390,7 @@
                         "benefitsUnavailable": []
                     }
                 ],
-                "link": "pages/pricing-page.html"
+                "link": "pricing-page.html"
             },
             {
                 "title": "Frequently Asked Questions",
@@ -459,7 +459,7 @@
                     "email": "support@skillbridge.com",
                     "phone": "+91 00000 00000"
                 },
-                "link": "pages/contact-page.html"
+                "link": "contact-page.html"
             },
             {
                 "title": "Sign Up"

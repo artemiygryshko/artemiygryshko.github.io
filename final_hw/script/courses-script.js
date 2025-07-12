@@ -7,8 +7,7 @@ async function buildMainPage() {
   let data = {};
   await axios.get(url)
     .then((response) => {
-      data = response.data
-      console.log(data)
+      data = response.data;
     })
 
     .catch((error) => console.log(error))
