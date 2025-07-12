@@ -462,10 +462,12 @@
                 "link": "contact-page.html"
             },
             {
-                "title": "Sign Up"
+                "title": "Sign Up",
+                 "link": "signup-page.html"
             },
             {
-                "title": "Login"
+                "title": "Login",
+                "link": "login-page.html"
             }
         ],
         "offers": {

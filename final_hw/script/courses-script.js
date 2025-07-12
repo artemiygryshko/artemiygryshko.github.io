@@ -8,6 +8,7 @@ async function buildMainPage() {
   await axios.get(url)
     .then((response) => {
       data = response.data;
+      console.log(data)
     })
 
     .catch((error) => console.log(error))

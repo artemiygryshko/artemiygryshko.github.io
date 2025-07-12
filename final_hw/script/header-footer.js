@@ -42,7 +42,19 @@ function feelMainHeader(element) {
                 let menuItem = document.createElement("li");
                 menuItem.classList = "menu-item";
                 let menuLink = document.createElement("a");
-                menuLink.href = `${element.sections[i].link}`;
+                if (!sessionStorage.getItem("choosed menu link") || sessionStorage.getItem("choosed menu link") === "menuItem1") {
+                    if (menuArray[j] === "Home") {
+                        menuLink.href = `${element.sections[i].link}`;
+                    }
+                    else {menuLink.href = `pages/${element.sections[i].link}`;}
+                }
+                else {
+                    if (menuArray[j] === "Home") {
+                        menuLink.href = `../${element.sections[i].link}`;
+                    }
+                    else {menuLink.href = `${element.sections[i].link}`;}
+                }
+
                 // menuLink.href = "#" 
                 menuLink.className = "menu-link";
                 menuLink.id = `${element.sections[i].id}`;
