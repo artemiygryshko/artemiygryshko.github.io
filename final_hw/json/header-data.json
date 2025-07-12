@@ -297,7 +297,9 @@
                         "title": "Advanced JavaScript",
                         "shortDescription": "Take your JavaScript skills to the next level. Explore advanced concepts like closures, prototypes, asynchronous programming, and ES6 features. Build complex applications with confidence.",
                         "images": [
-                            "assets/images/aj_1.png"
+                            "assets/images/aj_1.png",
+                            "assets/images/gdb_3.png",
+                            "assets/images/mad_2.png"                            
                         ],
                         "link": "#",
                         "period": 6,

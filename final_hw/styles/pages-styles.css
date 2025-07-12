@@ -134,10 +134,10 @@ div.photo-wrapper img {
 }
 
 .topics-list-item {
-    margin: 0 24px;
-    padding: 24px 0;
     width: 100%;
     height: inherit;
+    padding: 24px 0 20px;
+    margin: 0 24px;
 }
 
 
@@ -182,7 +182,6 @@ div.photo-wrapper img {
 @media screen and (min-width:620px) {
     .topics-list-item {
         width: calc(100%/2 - 48px);
-        margin: 0 24px;
     }
 }
 
@@ -284,6 +283,17 @@ div.photo-wrapper img {
 
     .curriculum h3 {
         font-size: 1.125rem;
+    }
+
+    .topics-list .topics-list-item {
+        border-bottom: none;
+    }
+
+    .topics-list-item {
+        width: calc(100%/5);
+        padding: 0 40px;
+        margin: 24px 0;
+
     }
 
     .topics-list .skills-list-item {

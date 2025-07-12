@@ -1,7 +1,7 @@
 function createMainHeader() {
-  let header = document.querySelector("header");
-  header.className = `main-header`;
-  header.innerHTML = `<div class="container">
+    let header = document.querySelector("header");
+    header.className = `main-header`;
+    header.innerHTML = `<div class="container">
                         <nav>
                           <div class="header-container">
                             <div class="desktop-wrapper d-flex align-center">
@@ -33,57 +33,62 @@ function createMainHeader() {
 
 
 function feelMainHeader(element) {
-  let menuArray = ["Home", "Courses", "About Us", "Pricing", "Contact"]
-  let menuList = document.querySelector(".menu-list");
-  let counter = 1;
-  for (let i = 0; i < element.sections.length; i++) {
-    for (let j = 0; j < menuArray.length; j++) {
-      if (element.sections[i].title === menuArray[j]) {
-        let menuItem = document.createElement("li");
-        menuItem.classList = "menu-item";
-        let menuLink = document.createElement("a");
-        menuLink.href = `${element.sections[i].link}`;
-        menuLink.className = "menu-link";
-        menuLink.id = `${element.sections[i].id}`;
-        menuLink.textContent = element.sections[i].title;
-        menuItem.append(menuLink);
-        menuList.append(menuItem);
-        counter++
-      }
+    let menuArray = ["Home", "Courses", "About Us", "Pricing", "Contact"]
+    let menuList = document.querySelector(".menu-list");
+    let counter = 1;
+    for (let i = 0; i < element.sections.length; i++) {
+        for (let j = 0; j < menuArray.length; j++) {
+            if (element.sections[i].title === menuArray[j]) {
+                let menuItem = document.createElement("li");
+                menuItem.classList = "menu-item";
+                let menuLink = document.createElement("a");
+                menuLink.href = `${element.sections[i].link}`;
+                // menuLink.href = "#" 
+                menuLink.className = "menu-link";
+                menuLink.id = `${element.sections[i].id}`;
+                menuLink.textContent = element.sections[i].title;
+                menuLink.addEventListener('click', function (e) {
+                    setCounter(e);
+                })
+                menuItem.append(menuLink);
+                menuList.append(menuItem);
+                counter++
+            }
+        }
+
     }
 
-  }
+    let loginBtn = document.querySelectorAll(".login-btn");
+    let loginCounter = element.sections.length - 2;
+    for (let i = 0; i < loginBtn.length; i++) {
+        let menuLink = document.createElement("a");
+        menuLink.href = `${element.sections[loginCounter].link}`;
+        menuLink.className = "menu-link";
+        menuLink.id = `menuItem${counter}`;
+        menuLink.textContent = element.sections[loginCounter].title;
+        counter++;
+        loginCounter++;
+        loginBtn[i].append(menuLink);
+    }
 
-  let loginBtn = document.querySelectorAll(".login-btn");
-  let loginCounter = element.sections.length - 2;
-  for (let i = 0; i < loginBtn.length; i++) {
-    let menuLink = document.createElement("a");
-    menuLink.href = `${element.sections[loginCounter].link}`;
-    menuLink.className = "menu-link";
-    menuLink.id = `menuItem${counter}`;
-    menuLink.textContent = element.sections[loginCounter].title;
-    counter++;
-    loginCounter++;
-    loginBtn[i].append(menuLink);
-  }
+    const menuBtn = document.getElementById("menu-btn");
+    const menuBtnBurger = document.getElementById("menu-btn-burger");
+    const menuBtnClose = document.getElementById("menu-btn-close");
 
-  const menuBtn = document.getElementById("menu-btn");
-  const menuBtnBurger = document.getElementById("menu-btn-burger");
-  const menuBtnClose = document.getElementById("menu-btn-close");
+    menuBtn.addEventListener("click", () => {
+        menuBtnBurger.classList.toggle("menu-btn-hide");
+        menuBtnClose.classList.toggle("menu-btn-hide");
+        menuList.classList.toggle("mobile-menu-open")
 
-  menuBtn.addEventListener("click", () => {
-    menuBtnBurger.classList.toggle("menu-btn-hide");
-    menuBtnClose.classList.toggle("menu-btn-hide");
-    menuList.classList.toggle("mobile-menu-open")
-
-  })
+    })
 }
 
 function createSpecOffer(element) {
-  let specOffer = document.createElement("div");
-  let header = document.querySelector(".main-header");
-  specOffer.classList = "spec-offer d-flex just-center";
-  specOffer.innerHTML = `<a href="#" class="bg-filled-main">
+    let body = document.querySelector("body");
+    let specOffer = document.createElement("div");
+    let header = document.querySelector(".main-header");
+    specOffer.classList = "spec-offer d-flex just-center";
+    specOffer.innerHTML = `<a href="#" class="bg-filled-main">
                           <span class="c-white">${element.offers.specOffer.title}</span>
                           <span class="c-white arrow-hide">
                             <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg"> 
@@ -91,69 +96,69 @@ function createSpecOffer(element) {
                             </svg>
                            </span>
                         </a>`
-  let closeBtn = document.createElement("div");
-  closeBtn.classList = "close-btn";
-  closeBtn.innerHTML = `<i class="fa-solid fa-x c-white"></i>`;
-  specOffer.append(closeBtn);
-  if (sessionStorage.getItem("special offer")) {
-    specOffer.classList.add("spec-offer-hide");
-    header.classList.add("closed-offer-padding");
-  }
-
-  let specOfferFullScreen = document.createElement("div");
-  specOfferFullScreen.classList = "spec-offer-full-screen d-flex align-center just-center spec-offer-full-screen-hide";
-  let text = document.createElement("div");
-  text.classList = "spec-offer-full-screen-text d-flex align-center just-center c-white";
-  text.textContent = "U closed my offer, so I will   blow your mind every 15sec";
-  let offerCloseBtn = document.createElement("div");
-  offerCloseBtn.innerHTML = `<div class="menu-btn-close d-flex just-center">
-                                    <i class="fa-solid fa-x c-white"></i>
-                                  </div>`;
-  offerCloseBtn.classList = "spec-offer-full-screen-btn";
-  offerCloseBtn.addEventListener("click", () => {
-    specOfferFullScreen.classList.toggle("spec-offer-full-screen-hide");
-  });
-
-  specOfferFullScreen.append(text, offerCloseBtn);
-  body.append(specOffer);
-  body.append(specOfferFullScreen);
-
-  let sessionCheckOut = function () {
-    let value = sessionStorage.getItem("special offer");
-    if (value) {
-      if (value === "false") {
+    let closeBtn = document.createElement("div");
+    closeBtn.classList = "close-btn";
+    closeBtn.innerHTML = `<i class="fa-solid fa-x c-white"></i>`;
+    specOffer.append(closeBtn);
+    if (sessionStorage.getItem("special offer")) {
         specOffer.classList.add("spec-offer-hide");
         header.classList.add("closed-offer-padding");
-      }
-      setTimeout(() => {
-        if (value === "false" && specOfferFullScreen.classList.contains("spec-offer-full-screen-hide")) {
-          specOfferFullScreen.classList.toggle("spec-offer-full-screen-hide");
-        }
-        sessionCheckOut()
-      }, 15000)
     }
-  }
 
-  sessionCheckOut()
+    let specOfferFullScreen = document.createElement("div");
+    specOfferFullScreen.classList = "spec-offer-full-screen d-flex align-center just-center spec-offer-full-screen-hide";
+    let text = document.createElement("div");
+    text.classList = "spec-offer-full-screen-text d-flex align-center just-center c-white";
+    text.textContent = "U closed my offer, so I will   blow your mind every 15sec";
+    let offerCloseBtn = document.createElement("div");
+    offerCloseBtn.innerHTML = `<div class="menu-btn-close d-flex just-center">
+                                    <i class="fa-solid fa-x c-white"></i>
+                                  </div>`;
+    offerCloseBtn.classList = "spec-offer-full-screen-btn";
+    offerCloseBtn.addEventListener("click", () => {
+        specOfferFullScreen.classList.toggle("spec-offer-full-screen-hide");
+    });
 
-  closeBtn.addEventListener("click", () => {
-    sessionStorage.setItem("special offer", false);
+    specOfferFullScreen.append(text, offerCloseBtn);
+    body.append(specOffer);
+    body.append(specOfferFullScreen);
+
+    let sessionCheckOut = function () {
+        let value = sessionStorage.getItem("special offer");
+        if (value) {
+            if (value === "false") {
+                specOffer.classList.add("spec-offer-hide");
+                header.classList.add("closed-offer-padding");
+            }
+            setTimeout(() => {
+                if (value === "false" && specOfferFullScreen.classList.contains("spec-offer-full-screen-hide")) {
+                    specOfferFullScreen.classList.toggle("spec-offer-full-screen-hide");
+                }
+                sessionCheckOut()
+            }, 15000)
+        }
+    }
+
     sessionCheckOut()
-  })
+
+    closeBtn.addEventListener("click", () => {
+        sessionStorage.setItem("special offer", false);
+        sessionCheckOut()
+    })
 }
 
 function createMainFooter(element) {
-  let footer = document.querySelector('.footer-section');
-  let container = document.createElement("div");
-  container.classList = 'container';
+    let footer = document.querySelector('.footer-section');
+    let container = document.createElement("div");
+    container.classList = 'container';
 
-  let wrapper = document.createElement("div");
-  wrapper.classList = "d-flex fw-wr border-b space-bw";
+    let wrapper = document.createElement("div");
+    wrapper.classList = "d-flex fw-wr border-b space-bw";
 
-  let logoContacts = document.createElement("div");
-  logoContacts.classList = "footer-logo-contacts";
+    let logoContacts = document.createElement("div");
+    logoContacts.classList = "footer-logo-contacts";
 
-  logoContacts.innerHTML = `<div class="footer-logo logo bg-filled-main">
+    logoContacts.innerHTML = `<div class="footer-logo logo bg-filled-main">
              <a href="/" title="Home" rel="home" class="d-flex align-center just-center">
                <img src="assets/icons/shape-17.svg" alt="logo image">
              </a>
@@ -174,9 +179,9 @@ function createMainFooter(element) {
              </ul>
            </div>`;
 
-  let footerMenu = document.createElement("div");
-  footerMenu.classList = "footer-menu d-flex fw-wr";
-  footerMenu.innerHTML = `
+    let footerMenu = document.createElement("div");
+    footerMenu.classList = "footer-menu d-flex fw-wr";
+    footerMenu.innerHTML = `
             <div class="footer-list-container footer-col-3">
              <ul class="footer-list d-flex fl-dir-col ">
                <li>
@@ -213,41 +218,41 @@ function createMainFooter(element) {
              </ul>
            </div>`;
 
-  let socialContainer = document.createElement("div");
-  socialContainer.classList = "socials-container d-flex fw-wr footer-list-container footer-col-3";
-  socialContainer.innerHTML = `
+    let socialContainer = document.createElement("div");
+    socialContainer.classList = "socials-container d-flex fw-wr footer-list-container footer-col-3";
+    socialContainer.innerHTML = `
              <div class="socials-header">
                <a href="#">Social Profiles</a>
              </div>`;
-  let socialIcons = document.createElement("div");
-  socialIcons.classList = "social-icons d-flex";
-  for (i = 0; i < element.companyInfo.socials.length; i++) {
-    let socialWrapper = document.createElement("div");
-    socialWrapper.classList = "social-logo";
-    let socialLink = document.createElement("a");
-    socialLink.classList = "d-flex align-center just-center";
-    socialLink.href = `${element.companyInfo.socials[i].link}`;
-    let img = document.createElement("img");
-    img.src = `${element.companyInfo.socials[i].logo}`;
-    img.alt = `${element.companyInfo.socials[i].name} icon`;
+    let socialIcons = document.createElement("div");
+    socialIcons.classList = "social-icons d-flex";
+    for (i = 0; i < element.companyInfo.socials.length; i++) {
+        let socialWrapper = document.createElement("div");
+        socialWrapper.classList = "social-logo";
+        let socialLink = document.createElement("a");
+        socialLink.classList = "d-flex align-center just-center";
+        socialLink.href = `${element.companyInfo.socials[i].link}`;
+        let img = document.createElement("img");
+        img.src = `${element.companyInfo.socials[i].logo}`;
+        img.alt = `${element.companyInfo.socials[i].name} icon`;
 
-    socialLink.append(img);
-    socialWrapper.append(socialLink);
-    socialIcons.append(socialWrapper);
-  }
-  socialContainer.append(socialIcons);
-  footerMenu.append(socialContainer);
-  wrapper.append(logoContacts, footerMenu);
-
-
-  let footerRights = document.createElement("div");
-  footerRights.className = "footer-rights";
-  let now = new Date().getFullYear();
-  footerRights.textContent = `© ${now} Skillbridge. All rights reserved.`;
+        socialLink.append(img);
+        socialWrapper.append(socialLink);
+        socialIcons.append(socialWrapper);
+    }
+    socialContainer.append(socialIcons);
+    footerMenu.append(socialContainer);
+    wrapper.append(logoContacts, footerMenu);
 
 
-  container.append(wrapper, footerRights);
-  footer.append(container);
+    let footerRights = document.createElement("div");
+    footerRights.className = "footer-rights";
+    let now = new Date().getFullYear();
+    footerRights.textContent = `© ${now} Skillbridge. All rights reserved.`;
+
+
+    container.append(wrapper, footerRights);
+    footer.append(container);
 
 }
 
@@ -257,9 +262,9 @@ function createMainFooter(element) {
 
 // secondary pages
 function createMainHeaderOnSeconadryPages() {
-  let header = document.querySelector("header");
-  header.className = `main-header`;
-  header.innerHTML = `<div class="container">
+    let header = document.querySelector("header");
+    header.className = `main-header`;
+    header.innerHTML = `<div class="container">
                         <nav>
                           <div class="header-container">
                             <div class="desktop-wrapper d-flex align-center">
@@ -290,17 +295,17 @@ function createMainHeaderOnSeconadryPages() {
 }
 
 function createMainFooterOnSecondaryPages(element) {
-  let footer = document.querySelector('.footer-section');
-  let container = document.createElement("div");
-  container.classList = 'container';
+    let footer = document.querySelector('.footer-section');
+    let container = document.createElement("div");
+    container.classList = 'container';
 
-  let wrapper = document.createElement("div");
-  wrapper.classList = "d-flex fw-wr border-b space-bw";
+    let wrapper = document.createElement("div");
+    wrapper.classList = "d-flex fw-wr border-b space-bw";
 
-  let logoContacts = document.createElement("div");
-  logoContacts.classList = "footer-logo-contacts";
+    let logoContacts = document.createElement("div");
+    logoContacts.classList = "footer-logo-contacts";
 
-  logoContacts.innerHTML = `<div class="footer-logo logo bg-filled-main">
+    logoContacts.innerHTML = `<div class="footer-logo logo bg-filled-main">
              <a href="/" title="Home" rel="home" class="d-flex align-center just-center">
                <img src="../assets/icons/shape-17.svg" alt="logo image">
              </a>
@@ -321,9 +326,9 @@ function createMainFooterOnSecondaryPages(element) {
              </ul>
            </div>`;
 
-  let footerMenu = document.createElement("div");
-  footerMenu.classList = "footer-menu d-flex fw-wr";
-  footerMenu.innerHTML = `
+    let footerMenu = document.createElement("div");
+    footerMenu.classList = "footer-menu d-flex fw-wr";
+    footerMenu.innerHTML = `
             <div class="footer-list-container footer-col-3">
              <ul class="footer-list d-flex fl-dir-col ">
                <li>
@@ -360,41 +365,61 @@ function createMainFooterOnSecondaryPages(element) {
              </ul>
            </div>`;
 
-  let socialContainer = document.createElement("div");
-  socialContainer.classList = "socials-container d-flex fw-wr footer-list-container footer-col-3";
-  socialContainer.innerHTML = `
+    let socialContainer = document.createElement("div");
+    socialContainer.classList = "socials-container d-flex fw-wr footer-list-container footer-col-3";
+    socialContainer.innerHTML = `
              <div class="socials-header">
                <a href="#">Social Profiles</a>
              </div>`;
-  let socialIcons = document.createElement("div");
-  socialIcons.classList = "social-icons d-flex";
-  for (i = 0; i < element.companyInfo.socials.length; i++) {
-    let socialWrapper = document.createElement("div");
-    socialWrapper.classList = "social-logo";
-    let socialLink = document.createElement("a");
-    socialLink.classList = "d-flex align-center just-center";
-    socialLink.href = `${element.companyInfo.socials[i].link}`;
-    let img = document.createElement("img");
-    img.src = `../${element.companyInfo.socials[i].logo}`;
-    img.alt = `${element.companyInfo.socials[i].name} icon`;
+    let socialIcons = document.createElement("div");
+    socialIcons.classList = "social-icons d-flex";
+    for (i = 0; i < element.companyInfo.socials.length; i++) {
+        let socialWrapper = document.createElement("div");
+        socialWrapper.classList = "social-logo";
+        let socialLink = document.createElement("a");
+        socialLink.classList = "d-flex align-center just-center";
+        socialLink.href = `${element.companyInfo.socials[i].link}`;
+        let img = document.createElement("img");
+        img.src = `../${element.companyInfo.socials[i].logo}`;
+        img.alt = `${element.companyInfo.socials[i].name} icon`;
 
-    socialLink.append(img);
-    socialWrapper.append(socialLink);
-    socialIcons.append(socialWrapper);
-  }
-  socialContainer.append(socialIcons);
-  footerMenu.append(socialContainer);
-  wrapper.append(logoContacts, footerMenu);
-
-
-  let footerRights = document.createElement("div");
-  footerRights.className = "footer-rights";
-  let now = new Date().getFullYear();
-  footerRights.textContent = `© ${now} Skillbridge. All rights reserved.`;
+        socialLink.append(img);
+        socialWrapper.append(socialLink);
+        socialIcons.append(socialWrapper);
+    }
+    socialContainer.append(socialIcons);
+    footerMenu.append(socialContainer);
+    wrapper.append(logoContacts, footerMenu);
 
 
-  container.append(wrapper, footerRights);
-  footer.append(container);
+    let footerRights = document.createElement("div");
+    footerRights.className = "footer-rights";
+    let now = new Date().getFullYear();
+    footerRights.textContent = `© ${now} Skillbridge. All rights reserved.`;
+
+
+    container.append(wrapper, footerRights);
+    footer.append(container);
 
 }
 
+function showHeroSectionInfoOnSecondaryPages(element) {
+    let infoContainer = document.querySelector(".info-container");
+    let obj = [];
+    for (i = 0; i < element.sections.length; i++) {
+        if (element.sections[i].id === sectionCounter) {
+            obj = element.sections[i];
+        }
+    }
+    infoContainer.textContent = '';
+    let heroInfo = document.createElement("div");
+    heroInfo.classList = "hero-info row-2 d-flex fw-wr space-bw";
+    let heroTitle = document.createElement("div");
+    heroTitle.classList = "hero-title col-1 col-2-1";
+    heroTitle.innerHTML = `<h1>${obj.heroSectionInfo.title}</h1>`;
+    let heroText = document.createElement("div");
+    heroText.classList = "hero-text col-1 col-2-1";
+    heroText.innerHTML = `<p>${obj.heroSectionInfo.description}</p>`;
+    heroInfo.append(heroTitle, heroText);
+    infoContainer.append(heroInfo);
+}

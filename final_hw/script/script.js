@@ -543,6 +543,7 @@ function getRandomInt(arr) {
 
 function addListenersOnMainPage() {
   addListenersOnPrices();
+
 }
 
 function addListenersOnPrices() {

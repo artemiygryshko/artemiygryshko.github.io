@@ -1,5 +1,5 @@
 
-
+let courses = [];
 
 
 async function buildMainPage() {
@@ -17,97 +17,69 @@ async function buildMainPage() {
   createMainHeaderOnSeconadryPages();
   feelMainHeader(data);
   createSpecOffer(data);
+  showHeroSectionInfoOnSecondaryPages(data);
   createMainFooterOnSecondaryPages(data);
-}
-buildMainPage();
 
 
-
-
-
-showMainHeroSectionInfo();
-
-let menuListLinks = document.querySelectorAll(".menu-link");
-
-// for (let i = 0; i < menuListLinks.length; i++) {
-//   menuListLinks[i].addEventListener('click', console.log('hello'));
-// }
-
-menuListLinks.forEach(el => {
-  el.addEventListener('click', function (e) {
-    setCounter(e);
-    showMainHeroSectionInfo();
+  for (let i = 0; i < data.sections.length; i++) {
+    if (data.sections[i].courses) {
+      courses = data.sections[i].courses;
+    }
   }
-  )
-})
 
 
-
-// document.onclick = setCounter;
-
-
-// function showTarget(e) {
-//   console.log(e.target.className)
-//   console.log(sectionCounter)
-//   // let number = parseInt(e.target.id)
-//   // console.log(number)
-// }
-// document.onclick = showTarget;
+  fillMainCourses(data)
+}
 
 
 
 
-// let mainContainer = document.querySelector("main .container");
 
-// let mainTemplateWrapper = document.getElementById("main-template-wrapper").innerHTML;
+function fillMainCourses(element) {
+  let main = document.querySelector("main");
+  main.innerHTML = "";
+  let container = document.createElement("div");
+  container.classList = "container";
 
-// for (let course of courses) {
-//   let rendered = Mustache.render(mainTemplateWrapper, course);
-//   mainContainer.innerHTML += rendered;
-// }
+  let showMoreBtn = document.createElement("div");
+  showMoreBtn.classList = "d-flex align-center just-center show-more-btn";
+  showMoreBtn.innerHTML = 'Show More Courses';
+  showMoreBtn.onclick = () => {
+    if (coursesIteration < courses.length) {
+      showCourses();
+    }
+  }
+  container.append(showMoreBtn)
 
-// let skillsLists = document.querySelectorAll(".skills-list");
-// console.log(skillsLists);
 
 
 
-// for (let i = 0; i < skillsLists.length; i++) {
-//   let a = "";
-//   for (let j = 0; j < courses[i].skills.length; j++) {
-//     let listItem = `<li class="skills-list-item">
-//       <div class="skills-number">${j + 1}</div>
-//       <p>${courses[i].skills[j]}</p>
-//     </li>`;
-//     a += listItem;
-//   }
-//   skillsLists[i].innerHTML = a;
-// }
+
+  main.append(container)
+
+  showCourses(element);
+}
+
+
+
+
+
+buildMainPage();
 
 
 let coursesIteration = 0;
 let counter = 2;
 let courseCounter = 0;
 
-let coursesContainer = document.querySelector("main .container");
+// let coursesContainer = document.querySelector("main .container");
 
 function changeCoursesCounter(e) {
   courseCounter = parseInt(e.target.id) - 1;
 }
 
 
-
-let showMoreBtn = document.createElement("div");
-showMoreBtn.classList = "d-flex align-center just-center show-more-btn";
-showMoreBtn.innerHTML = 'Show More Courses';
-coursesContainer.append(showMoreBtn);
-
-showMoreBtn.onclick = () => {
-  if (coursesIteration < courses.length) {
-    showCourses();
-  }
-}
-
-function showCourses() {
+function showCourses(element) {
+  let showMoreBtn = document.querySelector(".show-more-btn")
   let i = coursesIteration;
   for (i; i < counter; i++) {
     if (courses[i]) {
@@ -137,7 +109,7 @@ function showCourses() {
         photoWrapper.classList = "photo-wrapper d-flex align-center just-center";
         let image = document.createElement("img");
         image.classList = "img";
-        image.setAttribute("src", `${courses[i].images[j]}`);
+        image.setAttribute("src", `../${courses[i].images[j]}`);
         image.setAttribute('alt', `Image of ${courses[i].title} #${j + 1}`);
         photoWrapper.append(image);
         photoContainer.append(photoWrapper);
@@ -157,8 +129,8 @@ function showCourses() {
 
       let curriculum = document.createElement("div");
       curriculum.classList = "curriculum";
-      curriculum.innerHTML = `<div class="curriculum-title"> 
-                            <h3>Curriculum</h3>    
+      curriculum.innerHTML = `<div class="curriculum-title">
+                            <h3>Curriculum</h3>
                             </div>`;
 
       let curriculumList = document.createElement("ul");
@@ -194,7 +166,7 @@ function showCourses() {
   }
 }
 
-showCourses();
+
 
 
 
@@ -267,106 +239,32 @@ function showSingleCourse(e) {
     rowDiv.append(colDiv);
   }
 
-
-
-
-
   videoContainer.append(img, playBtn);
-
-
-  // <div class="row row-3 d-flex fw-wr just-center">
-  //       <div class="col col-3-1 col-3-2 col-3-3 benefits-card d-flex">
-  //         <div class="line-wrapper d-flex">
-  //           <div class="benefits-card-number">
-  //             01
-  //           </div>
-  //         </div>
-  //         <div class="line-wrapper">
-  //           <div class="benefits-card-info">
-  //             <h3>Flexible Learning Schedule</h3>
-  //             <p>Fit your coursework around your existing commitments and obligations.</p>
-  //           </div>
-  //         </div>
-  //         <div class="line-wrapper d-flex">
-  //           <div class="benefits-card-btn">
-  //             <a href="#"></a>
-  //           </div>
-  //         </div>
-  //       </div>
-
-
   coursesContainer.append(videoContainer, rowDiv);
 
 }
 
 
-function showCourseHeroSectionInfo(e) {
-  changeCoursesCounter(e);
-  infoContainer.textContent = '';
-  let heroInfo = document.createElement("div");
-  heroInfo.classList = "hero-info row-2 d-flex fw-wr space-bw";
-  let heroTitle = document.createElement("div");
-  heroTitle.classList = "hero-title col-1 col-2-1";
-  heroTitle.innerHTML = `<h1>${courses[courseCounter].title}</h1>`;
-  let heroText = document.createElement("div");
-  heroText.classList = "hero-text col-1 col-2-1";
-  if (courses[courseCounter].fullDescription) {
-    heroText.innerHTML = `<p>${courses[courseCounter].fullDescription}</p>`;
-  }
-  else {
-    heroText.innerHTML = `<p>${courses[courseCounter].shortDescription}</p>`;
-  }
+// function showCourseHeroSectionInfo(e) {
+//   changeCoursesCounter(e);
+//   infoContainer.textContent = '';
+//   let heroInfo = document.createElement("div");
+//   heroInfo.classList = "hero-info row-2 d-flex fw-wr space-bw";
+//   let heroTitle = document.createElement("div");
+//   heroTitle.classList = "hero-title col-1 col-2-1";
+//   heroTitle.innerHTML = `<h1>${courses[courseCounter].title}</h1>`;
+//   let heroText = document.createElement("div");
+//   heroText.classList = "hero-text col-1 col-2-1";
+//   if (courses[courseCounter].fullDescription) {
+//     heroText.innerHTML = `<p>${courses[courseCounter].fullDescription}</p>`;
+//   }
+//   else {
+//     heroText.innerHTML = `<p>${courses[courseCounter].shortDescription}</p>`;
+//   }
 
-  heroInfo.append(heroTitle, heroText);
-  infoContainer.append(heroInfo);
-}
-
-
-
-
-
-
-
-// <section class="course-section">
-//   <header class="d-flex fw-wr">
-//     <div class="header-descr">
-//       <h2>{{title}}</h2>
-//       <p>{{description}}</p>
-//     </div>
-//     <div class="header-view-btn">
-//       <a href="#" class="d-flex align-center just-center">View Course</a>
-//     </div>
-//   </header>
-//   <div class="photo-container  d-flex fw-wr">
-
-//   </div>
-//   <div class="speaker-info d-flex fw-wr align-center">
-//     <div class="speaker-level d-flex">
-//       <div>{{period}} months</div>
-//       <div>{{level}}</div>
-//     </div>
-//     <div class="speaker-name">{{speaker}}</div>
-//   </div>
-//   <div class="curriculum">
-//     <div class="curriculum-title">
-//       <h3>Curriculum</h3>
-//     </div>
-//     <ul class="skills-list d-flex fw-wr ">
-//     </ul>
-//   </div>
-// </section>
-
-
-
-
-
-
-
-//<div class="video-container">
-//   <img src="assets/images/image_1.png" alt="video image">
-//   <div class="play-btn">
-//   </div>
-// </div>
+//   heroInfo.append(heroTitle, heroText);
+//   infoContainer.append(heroInfo);
+// }
 
 
 
