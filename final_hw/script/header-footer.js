@@ -46,13 +46,13 @@ function feelMainHeader(element) {
                     if (menuArray[j] === "Home") {
                         menuLink.href = `${element.sections[i].link}`;
                     }
-                    else {menuLink.href = `pages/${element.sections[i].link}`;}
+                    else { menuLink.href = `pages/${element.sections[i].link}`; }
                 }
                 else {
                     if (menuArray[j] === "Home") {
                         menuLink.href = `../${element.sections[i].link}`;
                     }
-                    else {menuLink.href = `${element.sections[i].link}`;}
+                    else { menuLink.href = `${element.sections[i].link}`; }
                 }
 
                 // menuLink.href = "#" 
@@ -74,10 +74,19 @@ function feelMainHeader(element) {
     let loginCounter = element.sections.length - 2;
     for (let i = 0; i < loginBtn.length; i++) {
         let menuLink = document.createElement("a");
-        menuLink.href = `${element.sections[loginCounter].link}`;
+        if (!sessionStorage.getItem("choosed menu link") || sessionStorage.getItem("choosed menu link") === "menuItem1") {
+            menuLink.href = `pages/${element.sections[loginCounter].link}`;
+        }
+        else {
+            menuLink.href = `${element.sections[loginCounter].link}`;
+        }
+
         menuLink.className = "menu-link";
         menuLink.id = `menuItem${counter}`;
         menuLink.textContent = element.sections[loginCounter].title;
+        menuLink.addEventListener('click', function (e) {
+            setCounter(e);
+        })
         counter++;
         loginCounter++;
         loginBtn[i].append(menuLink);
