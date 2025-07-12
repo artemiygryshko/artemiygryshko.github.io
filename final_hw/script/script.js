@@ -590,8 +590,35 @@ function createFaqSubsection(elem1, elem2) {
   let section = document.createElement("section");
   section.classList = "info-section";
   let obj = findTheSectionObject(elem1, "Frequently Asked Questions");
-  console.log(obj);
   let container = createSectionHeader(obj);
+  container.classList.add("faq-wrapper", "d-flex", "fw-wr");
+  console.log(obj)
+
+  let listWrapper = document.createElement("div");
+  listWrapper.classList = "faq-list-wrapper";
+  let faqList = document.createElement("ul");
+  faqList.classList = "faq-list";
+  for (let i = 0; i < 5; i++) {
+    let listItem = document.createElement("li");
+    listItem.classList = "faq-list-item list-item-closed";
+    listItem.innerHTML = `<div class="faq-question d-flex align-center">
+                        <div class="faq-question-text">${obj.questions[i].question}</div>
+                        <div class="faq-question-icon"></div>
+                      </div>
+                      <div class="faq-answer">
+                        <div class="faq-answer-text">${obj.questions[i].answer}</div>
+                        <div class="faq-answer-link">
+                          <a href="#" class="d-flex align-center">
+                            <div class="answer-link-text">${obj.questions[i].suggestion}</div>
+                            <div class="answer-link-icon"></div>
+                          </a>
+                        </div>
+                      </div>`
+    faqList.append(listItem);
+  }
+  container.append(faqList);
+  section.append(container);
+  elem2.append(section);
 
   // <section class="info-section">
   //     <div class="container faq-wrapper d-flex fw-wr">
@@ -702,7 +729,8 @@ function fillMainSection(element) {
   createBenefitSubsection(element, main);
   createCoursesSubsection(element, main);
   createTestimonialsSubsection(element, main);
-  createPricingSubsection(element, main)
+  createPricingSubsection(element, main);
+  createFaqSubsection(element, main)
 }
 
 async function buildMainPage() {

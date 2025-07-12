@@ -1,10 +1,12 @@
     {
         "sections": [
             {
-                "title": "Home"
+                "title": "Home",
+                "link": "index.html"
             },
             {
                 "title": "Benefits",
+                "link": "#",
                 "description": "Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.",
                 "benefits": [
                     {
@@ -31,8 +33,7 @@
                         "benefit": "Interactive Learning Environment",
                         "description": "Collaborate with fellow learners, exchanging ideas and feedback to enhance your understanding."
                     }
-                ],
-                "link": "#"
+                ]
             },
             {
                 "title": "Our Testimonials",
@@ -314,7 +315,8 @@
                             }
                         ]
                     }
-                ]
+                ],
+                "link" : "pages/courses-page.html"
             },
             {
                 "title": "About Us",
@@ -331,7 +333,8 @@
                         "title": "Our Goals",
                         "link": "#"
                     }
-                ]
+                ],
+                "link" : "pages/about-page.html"
             },
             {
                 "title": "Pricing",
@@ -368,11 +371,12 @@
                         ],
                         "benefitsUnavailable": []
                     }
-                ]
+                ],
+                "link" : "pages/pricing-page.html"
             },
             {
                 "title": "Frequently Asked Questions",
-                "description": "Still you have any questions? Contact our Team via",
+                "description": "Still you have any questions? Contact our Team via <a href=\"mailto:support@skillbridge.com\">support@skillbridge.com<a/>",
                 "questions": [
                     {
                         "question": "Can I enroll in multiple courses at once?",
@@ -431,7 +435,8 @@
                 "supportInfo": {
                     "email": "support@skillbridge.com",
                     "phone": "+91 00000 00000"
-                }
+                },
+                "link" : "pages/contact-page.html"
             },
             {
                 "title": "Sign Up"
