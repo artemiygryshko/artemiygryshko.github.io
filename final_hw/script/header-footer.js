@@ -82,7 +82,7 @@ function feelMainHeader(element) {
         }
 
         menuLink.className = "menu-link";
-        menuLink.id = `menuItem${counter}`;
+        menuLink.id = `login${i+1}`;
         menuLink.textContent = element.sections[loginCounter].title;
         menuLink.addEventListener('click', function (e) {
             setCounter(e);

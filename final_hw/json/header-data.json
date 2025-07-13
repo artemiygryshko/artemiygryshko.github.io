@@ -2,7 +2,7 @@
         "sections": [
             {
                 "title": "Home",
-                "id" : "menuItem1",
+                "id": "menuItem1",
                 "link": "index.html"
             },
             {
@@ -65,7 +65,7 @@
             },
             {
                 "title": "Courses",
-                "id" : "menuItem2",
+                "id": "menuItem2",
                 "description": "Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.",
                 "heroSectionInfo": {
                     "title": "Online Courses on Design and Development",
@@ -299,7 +299,7 @@
                         "images": [
                             "assets/images/aj_1.png",
                             "assets/images/gdb_3.png",
-                            "assets/images/mad_2.png"                            
+                            "assets/images/mad_2.png"
                         ],
                         "link": "#",
                         "period": 6,
@@ -328,7 +328,7 @@
             },
             {
                 "title": "About Us",
-                "id" : "menuItem3",
+                "id": "menuItem3",
                 "heroSectionInfo": {
                     "title": "About Skillbridge",
                     "description": "Welcome to our platform, where we are passionate about empowering individuals to master the world of design and development. We offer a wide range of online courses designed to equip learners with the skills and knowledge needed to succeed in the ever-evolving digital landscape."
@@ -351,7 +351,7 @@
             },
             {
                 "title": "Pricing",
-                "id" : "menuItem4",
+                "id": "menuItem4",
                 "description": "Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.",
                 "heroSectionInfo": {
                     "title": "Our Pricings",
@@ -450,7 +450,7 @@
             },
             {
                 "title": "Contact",
-                "id" : "menuItem5",
+                "id": "menuItem5",
                 "heroSectionInfo": {
                     "title": "Contact Us",
                     "description": "Welcome to SkillBridge's Pricing Plan page, where we offer two comprehensive options to cater to your needs: Free and Pro. We believe in providing flexible and affordable pricing options for our services. Whether you're an individual looking to enhance your skills or a business seeking professional development solutions, we have a plan that suits you. Explore our pricing options below and choose the one that best fits your requirements."
@@ -463,10 +463,12 @@
             },
             {
                 "title": "Sign Up",
-                 "link": "signup-page.html"
+                "greating": "Create an account to unlock exclusive features.",
+                "link": "signup-page.html"
             },
             {
                 "title": "Login",
+                "greating": "Welcome back! Please log in to access your account.",
                 "link": "login-page.html"
             }
         ],

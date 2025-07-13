@@ -20,6 +20,7 @@ async function buildMainPage() {
 
 
     fillLoginSignUpMain(data);
+    console.log(data)
 }
 
 buildMainPage()
@@ -30,10 +31,47 @@ function createStructureOfMain(element) {
     main.innerHTML = "";
     let container = document.createElement("div");
     container.classList = "container";
-
+    let section = {};
+    if (sectionCounter === "login2") {
+        section = element.sections[element.sections.length - 1];
+        console.log(section)
+    }
+    else { section = element.sections[element.sections.length - 2] }
     container.innerHTML = `
             <div class="row-2 testimonials-row">
-               <div class="col col-2-1 col-2-2"></div>
+               <div class="col col-2-1 col-2-2 login-wrapper">
+                    <div class="login-header">
+                       <h2>${section.title}</h2>
+                       <p>${section.greating}</p>
+                    </div>
+                    <div>
+                        <form action="" method="get" class="form-example">
+                            <div class="form-box">
+                               <label for="email">Email </label>
+                               <input type="email" name="email" id="email" required placeholder = "Enter your Email"/>
+                            </div>
+                            <div class="form-box">
+                                <label for="password">Password </label>
+                                <input type="password" name="password" id="password" required placeholder = "Enter your Password"/>
+                            </div>
+                            <div class="form-question"><a href="#">Forgot password?</a></div>
+                            <div class="form-box">
+                                <input type="checkbox" id="remember" name="remember" />
+                                <label for="remember">Remember Me</label>
+                            </div>
+                            <div class="form-box">
+                                <input type="submit" value="Login" />
+                            </div>
+                            <div class="login-suggestion">OR</div>
+                            <div class="login-with form-box">
+                                <a href="#">Login with Google</a>
+                            </div>
+                            <div class="no-account form-box">Don’t have an account? 
+                                <a href="#">Sign Up</a>
+                            </div>
+                        </form>
+                    </div>
+               </div>
                <div class="col col-2-1 col-2-2 testimonials-section"></div>
             </div>`
 
@@ -56,14 +94,14 @@ function fillLoginSignUpMain(element) {
         }
     }
 
-    let row = document.querySelector("main .container .row-2").children;
-
-    row[1].innerHTML = `<div class="header">
+    let row = document.querySelector("main .container .testimonials-row").childNodes;
+    console.log(row)
+    row[3].innerHTML = `<div class="header">
                         <h2>Students Testimonials</h2>
                         <p>${testimonials.description}</p>
                     </div>`
 
-    createTestimonialSlider(testimonials, row[1])
+    createTestimonialSlider(testimonials, row[3])
 
 
 }
@@ -104,9 +142,9 @@ function createTestimonialSlider(elem1, elem2) {
     swiperPrevBtn.classList = "swiper-button-prev";
     let swiperNextBtn = document.createElement("div");
     swiperNextBtn.classList = "swiper-button-next";
-    swiperDiv.append(swiperWrapperDiv, swiperPrevBtn, swiperNextBtn);
+    swiperDiv.append(swiperWrapperDiv);
 
-    testimonialsDiv.append(swiperDiv);
+    testimonialsDiv.append(swiperDiv, swiperPrevBtn, swiperNextBtn);
     elem2.append(testimonialsDiv);
 
     const swiper = new Swiper('.swiper', {
