@@ -38,8 +38,8 @@ function createStructureOfMain(element) {
     }
     else { section = element.sections[element.sections.length - 2] }
     container.innerHTML = `
-            <div class="row-2 testimonials-row">
-               <div class="col col-2-1 col-2-2 login-wrapper">
+            <div class="row-2 testimonials-row d-flex fw-wr">
+               <div class="col-2-1 col-2-2 login-wrapper">
                     <div class="login-header">
                        <h2>${section.title}</h2>
                        <p>${section.greating}</p>
@@ -55,24 +55,25 @@ function createStructureOfMain(element) {
                                 <input type="password" name="password" id="password" required placeholder = "Enter your Password"/>
                             </div>
                             <div class="form-question"><a href="#">Forgot password?</a></div>
-                            <div class="form-box">
+                            <label class="checkbox d-flex align-center" for="remember">Remember Me
                                 <input type="checkbox" id="remember" name="remember" />
-                                <label for="remember">Remember Me</label>
+                                <span class="custom-checkbox"></span>
+                            </label>                          
+                            <div class="form-box login-form-btn">
+                                <input type="submit" value="Login" class="c-white"/>
                             </div>
-                            <div class="form-box">
-                                <input type="submit" value="Login" />
-                            </div>
-                            <div class="login-suggestion">OR</div>
-                            <div class="login-with form-box">
+                            <div class="login-suggestion d-flex align-center just-center">OR</div>
+                            <div class="login-with form-box login-form-btn align-center">
                                 <a href="#">Login with Google</a>
                             </div>
-                            <div class="no-account form-box">Don’t have an account? 
+                            <div class="no-account d-flex align-center just-center">
+                                <span>Don’t have an account?</span>
                                 <a href="#">Sign Up</a>
                             </div>
                         </form>
                     </div>
                </div>
-               <div class="col col-2-1 col-2-2 testimonials-section"></div>
+               <div class="col-2-1 col-2-2 testimonials-section"></div>
             </div>`
 
 

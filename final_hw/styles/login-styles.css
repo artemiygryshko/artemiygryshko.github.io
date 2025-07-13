@@ -1,10 +1,67 @@
 @import url("styles.css");
 @import url("pages-styles.css");
 
+.testimonials-row {
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px;
+    gap: 50px;
+}
+
+.login-wrapper,
+.testimonials-section {
+    width: 100%;
+}
+
 .login-wrapper {
     border-radius: 10px;
     background-color: #fff;
     padding: 30px;
+}
+
+.login-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.login-header h2 {
+    margin-bottom: 12px;
+    font-size: 1.75rem;
+    line-height: 100%;
+    font-weight: 600;
+    color: #262626;
+}
+
+.login-header p {
+    font-size: .875rem;
+    color: #4C4C4D;
+}
+
+form {
+    font-size: .875rem;
+}
+
+label[for="password"],
+label[for="email"],
+.login-btn,
+.no-account a {
+    font-weight: 500;
+    color: #262626;
+}
+
+label[for="password"],
+label[for="email"],
+input[type="email"],
+input[type="password"] {
+    margin-bottom: 10px;
+}
+
+input[type="email"],
+input[type="password"] {
+    padding: 20px;
+    border: 1px solid #F1F1F3;
+    border-radius: 8px;
+    background-color: #FCFCFD;
 }
 
 .form-box {
@@ -16,7 +73,131 @@
     display: block;
 }
 
-.header h2 {
+.form-question {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.form-question a {
+    color: #4C4C4D;
+}
+
+.checkbox {
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 20px;
+    height: 24px;
+    color: #656567;
+}
+
+#remember {
+    position: absolute;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    border: 1px solid #F1F1F3;
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+}
+
+.checkbox input:checked~.custom-checkbox {
+    content: "check";
+    background-color: var(--main-bg-color);
+    border: 3px solid #F1F1F3;
+}
+
+.login-form-btn {
+    height: 49px;
+    background: var(--main-bg-color);
+    margin-bottom: 24px;
+}
+
+.login-form-btn input {
+    height: 100%;
+    background: transparent;
+    border: none;
+}
+
+.login-suggestion {
+    margin-bottom: 24px;
+    color: #98989A;
+    line-height: 150%;
+}
+
+.login-suggestion:before,
+.login-suggestion:after {
+    content: "";
+    display: block;
+    width: calc(100% - 20px);
+    height: 1px;
+    background: #E4E4E7;
+}
+
+.login-suggestion:before {
+    margin-right: 12px;
+}
+
+.login-suggestion:after {
+    margin-left: 12px;
+}
+
+
+.login-with {
+    background-color: #F7F7F8;
+    border: 1px solid #F1F1F3;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.login-with a {
+
+    height: 100%;
+    position: relative;
+    font-weight: 500;
+    line-height: 49px;
+    color: #262626;
+}
+
+
+.login-with a:before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: center no-repeat url("../assets/icons/google-icon.svg");
+    top: 50%;
+    transform: translateY(-50%);
+    left: 66px;
+}
+
+
+
+.no-account a {
+    position: relative;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.no-account a:after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    right: -40px;
+    width: 20px;
+    height: 20px;
+    background: center no-repeat url("../assets/icons/arrow-top-right.svg");
+}
+
+.form .header h2 {
     font-size: 1.75rem;
     font-weight: 500;
     line-height: 150%;
@@ -29,7 +210,7 @@
     color: #59595A;
 }
 
-.col>div:last-child {
+.testimonials {
     margin-top: 40px;
 }
 
