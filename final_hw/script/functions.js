@@ -4,7 +4,7 @@
 function addTopScroll(elem) {
 
     let div = document.createElement("div");
-    div.innerHTML = `<img src="../assets/icons/up-chevron-svgrepo-com.svg" alt="topscroll"></img>`
+    div.innerHTML = `<img src="/assets/icons/up-chevron-svgrepo-com.svg" alt="topscroll"></img>`
     div.classList = "top-scroll";
 
     window.addEventListener("scroll", () => {
