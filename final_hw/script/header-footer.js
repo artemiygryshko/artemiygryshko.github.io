@@ -7,7 +7,7 @@ function createMainHeader() {
                             <div class="desktop-wrapper d-flex align-center">
                               <div class="logo bg-filled-main" onclick = "(()=>{sessionStorage.setItem('choosed menu link', 'menuItem1')})()">
                                 <a href="/" title="Home" rel="home" class="d-flex align-center just-center">
-                                  <img src="assets/icons/shape-17.svg" alt="logo image">
+                                  <img src="assets/icons/shape-17.svg" alt="OnLine courses logo">
                                 </a>
                               </div>
                               <div class="menu">
@@ -70,7 +70,7 @@ function feelMainHeader(element) {
     }
 
   }
-  
+
 
   let loginBtn = document.querySelectorAll(".login-btn");
   let loginCounter = element.sections.length - 2;
@@ -189,7 +189,7 @@ function createMainFooter(element) {
 
   logoContacts.innerHTML = `<div class="footer-logo logo bg-filled-main" onclick = "(()=>{sessionStorage.setItem('choosed menu link', 'menuItem1')})()">
              <a href="/" title="Home" rel="home" class="d-flex align-center just-center">
-               <img src="assets/icons/shape-17.svg" alt="logo image">
+               <img src="assets/icons/shape-17.svg" alt="OnLine courses logo">
              </a>
            </div>
            <div class="contacts">
@@ -299,7 +299,7 @@ function createMainHeaderOnSeconadryPages() {
                             <div class="desktop-wrapper d-flex align-center">
                               <div class="logo bg-filled-main" onclick = "(()=>{sessionStorage.setItem('choosed menu link', 'menuItem1')})()">
                                 <a href="/" title="Home" rel="home" class="d-flex align-center just-center">
-                                  <img src="../assets/icons/shape-17.svg" alt="logo image">
+                                  <img src="../assets/icons/shape-17.svg" alt="OnLine courses logo">
                                 </a>
                               </div>
                               <div class="menu">
@@ -336,7 +336,7 @@ function createMainFooterOnSecondaryPages(element) {
 
   logoContacts.innerHTML = `<div class="footer-logo logo bg-filled-main">
              <a href="/" title="Home" rel="home" class="d-flex align-center just-center">
-               <img src="../assets/icons/shape-17.svg" alt="logo image">
+               <img src="../assets/icons/shape-17.svg" alt="OnLine courses logo">
              </a>
            </div>
            <div class="contacts">
