@@ -28,7 +28,8 @@ async function buildMainPage() {
   }
 
 
-  fillMainCourses(data)
+  fillMainCourses(data);
+
 }
 
 
@@ -58,6 +59,7 @@ function fillMainCourses(element) {
   main.append(container)
 
   showCourses(element);
+  addTopScroll(main);
 }
 
 

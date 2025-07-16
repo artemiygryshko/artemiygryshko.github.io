@@ -464,7 +464,7 @@
             {
                 "title": "Sign Up",
                 "greating": "Create an account to unlock exclusive features.",
-                "link": "signup-page.html"
+                "link": "login-page.html"
             },
             {
                 "title": "Login",

@@ -15,6 +15,10 @@ function setCounter(e) {
     }
 }
 
+function changeCounterSignUp() {
+    sectionCounter = "login1";
+    sessionStorage.setItem("choosed menu link", "login1")
+}
 
 
 

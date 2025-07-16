@@ -39,8 +39,14 @@ function fillMainHeroSection(element) {
 
     if (isEven(i)) {
       button.classList = "c-white bg-filled-main d-flex align-center just-center";
+      button.addEventListener("click", () => {
+        document.getElementById("courses-section").scrollIntoView();
+      })
     } else {
       button.classList = "d-flex align-center just-center";
+      button.addEventListener("click", () => {
+        document.getElementById("pricing-section").scrollIntoView();
+      })
     }
 
     heroMainBtn.append(button);
@@ -216,6 +222,7 @@ function createBenefitSubsection(elem1, elem2) {
 
 function createCoursesSubsection(elem1, elem2) {
   let section = document.createElement("section");
+  section.id = "courses-section";
   section.classList = "info-section courses-section";
   let obj = findTheSectionObject(elem1, "Courses");
   let container = createSectionHeader(obj);
@@ -290,6 +297,7 @@ function createTestimonialsSubsection(elem1, elem2) {
 
 function createPricingSubsection(elem1, elem2) {
   let section = document.createElement("section");
+  section.id = "pricing-section"
   section.classList = "info-section pricing-section";
   let obj = findTheSectionObject(elem1, "Pricing");
   console.log(obj);
@@ -487,7 +495,8 @@ function fillMainSection(element) {
   createCoursesSubsection(element, main);
   createTestimonialsSubsection(element, main);
   createPricingSubsection(element, main);
-  createFaqSubsection(element, main)
+  createFaqSubsection(element, main);
+  addTopScroll(main);
 }
 
 async function buildMainPage() {
@@ -530,6 +539,9 @@ buildMainPage();
 
 
 
+
+
+
 function isEven(n) {
   n = Number(n);
   return n === 0 || !!(n && !(n % 2));
@@ -543,7 +555,6 @@ function getRandomInt(arr) {
 
 function addListenersOnMainPage() {
   addListenersOnPrices();
-
 }
 
 function addListenersOnPrices() {

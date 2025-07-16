@@ -4,6 +4,7 @@
 
 html {
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -1107,6 +1108,26 @@ body {
 
 /* ----------END OF INFO SECTION ----------- */
 
+.top-scroll {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    /* background: center url("../assets/icons/up-chevron-svgrepo-com.svg") var(--main-bg-color); */
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+     transition: all ease 2s;
+}
+
+.scroll-active {
+    opacity: .5;
+    pointer-events: visible;
+    transition: all ease 2s;
+
+}
+
 /* ----------MEDIA QUARIES --------- */
 @media screen and (min-width:400px) {
     .spec-offer .close-btn {
@@ -1281,6 +1302,9 @@ body {
         margin-top: 0;
     }
 
+    .top-scroll {
+    width: 70px;
+    height: 70px;
 
 }
 

@@ -41,7 +41,9 @@ form {
     font-size: .875rem;
 }
 
+label[for="name"],
 label[for="password"],
+label[for="password-check"],
 label[for="email"],
 .login-btn,
 .no-account a {
@@ -49,15 +51,19 @@ label[for="email"],
     color: #262626;
 }
 
+label[for="name"],
 label[for="password"],
+label[for="password-check"],
 label[for="email"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[name="name"] {
     margin-bottom: 10px;
 }
 
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[name="name"] {
     padding: 20px;
     border: 1px solid #F1F1F3;
     border-radius: 8px;
@@ -66,6 +72,10 @@ input[type="password"] {
 
 .form-box {
     width: 100%;
+}
+
+.form-box:has(input:focus)>input {
+    background: #ff86053b;
 }
 
 .form-box * {
@@ -85,9 +95,13 @@ input[type="password"] {
 .checkbox {
     position: relative;
     padding-left: 32px;
-    margin-bottom: 20px;
     height: 24px;
     color: #656567;
+}
+
+.checkbox a {
+    color: #656567;
+    text-decoration: underline;
 }
 
 #remember {
@@ -102,6 +116,7 @@ input[type="password"] {
     display: block;
     top: 0;
     left: 0;
+
     border: 1px solid #F1F1F3;
     border-radius: 4px;
     width: 24px;
@@ -117,7 +132,8 @@ input[type="password"] {
 .login-form-btn {
     height: 49px;
     background: var(--main-bg-color);
-    margin-bottom: 24px;
+    margin: 24px 0;
+    border-radius: 6px;
 }
 
 .login-form-btn input {
@@ -153,8 +169,7 @@ input[type="password"] {
 .login-with {
     background-color: #F7F7F8;
     border: 1px solid #F1F1F3;
-    border-radius: 6px;
-    text-align: center;
+    overflow: hidden;
 }
 
 .login-with a {
@@ -178,7 +193,28 @@ input[type="password"] {
     left: 66px;
 }
 
+.abcRioButton {
+    width: 100% !important;
+    height: 100% !important;
 
+}
+
+.abcRioButtonContentWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.abcRioButtonIcon {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+}
+
+.abcRioButtonContents {
+    text-align: start;
+}
 
 .no-account a {
     position: relative;
@@ -195,6 +231,17 @@ input[type="password"] {
     width: 20px;
     height: 20px;
     background: center no-repeat url("../assets/icons/arrow-top-right.svg");
+}
+
+.error-message {
+    text-align: center;
+    color: #ff1f1f;
+}
+
+input.required {
+
+    border: 1px solid #ff0000;
+    background-color: #ff9c9c4d;
 }
 
 .form .header h2 {
