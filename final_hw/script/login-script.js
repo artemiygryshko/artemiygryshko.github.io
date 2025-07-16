@@ -44,7 +44,8 @@ function createStructureOfMainLogin(element) {
 
 function fillLoginSignUpForm(element) {
     let loginWrapper = document.querySelector(".login-wrapper");
-    if (sessionStorage.getItem("selected user") !== "undefined") {
+    
+    if (sessionStorage.getItem("selected user") && sessionStorage.getItem("selected user") !== "undefined") {
         loginWrapper.textContent = `Hello ${selectedUser.name}`
     }
     else {
