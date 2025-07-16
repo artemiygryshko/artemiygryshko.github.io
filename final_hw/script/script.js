@@ -246,7 +246,7 @@ function createCoursesSubsection(elem1, elem2) {
                <p>${obj.courses[i].shortDescription}</p>
              </div>
              <div class="courses-card-btn">
-               <a href="#" class="d-flex align-center just-center">Get it Now</a>
+               <a href="pages/courses-page.html" class="d-flex align-center just-center">Get it Now</a>
              </div>`
 
     row.append(col);
