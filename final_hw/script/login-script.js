@@ -118,7 +118,7 @@ function fillLoginSignUpForm(element) {
                                 <input type="password" name="password-check" id="password-check" placeholder = "Repeat your Password"/>
                             </div>
                             <div class="form-question"><a href="#">Forgot password?</a></div>
-                            <label class="checkbox" for="remember">I agree with 
+                            <label class="checkbox" for="remember" required>I agree with 
                                 <a href="#">Terms of Use</a>
                                 and
                                 <a href="#">Privacy Policy</a>
