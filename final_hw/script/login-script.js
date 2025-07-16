@@ -15,7 +15,7 @@ async function buildMainPage() {
     createSpecOffer(data);
     createMainFooterOnSecondaryPages(data);
 
-
+console.log(data)
 
 
     fillLoginSignUpMain(data);
